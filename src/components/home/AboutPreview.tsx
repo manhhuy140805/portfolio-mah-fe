@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 import Button from "@/src/components/ui/Button";
 import SectionTitle from "@/src/components/ui/SectionTitle";
 import { serviceCards } from "@/src/lib/portfolio-data";
@@ -14,7 +14,7 @@ const icons = {
   "Continuous Learning": <BookOpen className="w-6 h-6" />,
 };
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -24,7 +24,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,

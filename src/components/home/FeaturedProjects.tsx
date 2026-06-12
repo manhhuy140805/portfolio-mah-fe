@@ -6,7 +6,7 @@ import { portfolioProjects } from "@/src/lib/portfolio-data";
 export default function FeaturedProjects() {
   return (
     <section className="border-b border-white/10 bg-[var(--background)]">
-      <div className="mx-auto w-full max-w-6xl px-6 py-20">
+      <div className="mx-auto w-full max-w-6xl px-6 py-16 lg:py-20">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <SectionTitle
             description="A quick pass at the featured work grid from the UI reference, built as reusable cards."

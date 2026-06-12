@@ -3,51 +3,51 @@ import type { Skill } from "@/src/types/skill.type";
 
 export const serviceCards = [
   {
-    title: "Web Development",
-    metric: "15+ projects",
-    description: "Building responsive, dynamic applications using modern frameworks like Next.js and React.",
+    title: "Visual Memory & Observation",
+    metric: "Pixel-Perfect",
+    description: "Strong visual memory and keen attention to detail. I can quickly spot UI inconsistencies and debug complex code patterns at a glance.",
   },
   {
-    title: "System Analysis & Design",
-    metric: "5+ systems",
-    description: "Designing database schemas, system architectures, and API flows.",
+    title: "Agile Problem Solving",
+    metric: "Fast Reflexes",
+    description: "Quick thinking and rapid adaptation to new challenges. Able to troubleshoot bugs efficiently and handle high-pressure situations.",
   },
   {
-    title: "Problem Solving",
-    metric: "100+ challenges",
-    description: "Tackling algorithmic problems and optimizing software structures.",
+    title: "Microsoft Word Mastery",
+    metric: "High Proficiency",
+    description: "Expert-level skills in Microsoft Word. Highly proficient in fast typing, advanced text formatting, and efficient information processing.",
   },
   {
-    title: "Continuous Learning",
-    metric: "3rd Year IT",
-    description: "Actively exploring new technologies, from cloud computing to AI integration.",
+    title: "Full-Stack Development",
+    metric: "Robust Systems",
+    description: "Combining my observation skills with a strong tech stack to build scalable, responsive, and high-performance web applications.",
   },
 ];
 
 export const portfolioStats = [
-  { value: "3rd", label: "Year IT Student" },
-  { value: "15+", label: "Academic Projects" },
-  { value: "4+", label: "Core Technologies" },
-  { value: "100%", label: "Passion for Coding" },
+  { value: 3, suffix: "rd", label: "Year IT Student" },
+  { value: 15, suffix: "+", label: "Academic Projects" },
+  { value: 4, suffix: "+", label: "Core Technologies" },
+  { value: 100, suffix: "%", label: "Passion for Coding" },
 ];
 
 export const designSkills: Skill[] = [
-  { id: "photoshop", name: "Photoshop", category: "Design", level: "Expert", value: 100 },
   { id: "figma", name: "Figma", category: "Design", level: "Expert", value: 95 },
-  { id: "adobe-xd", name: "Adobe XD", category: "Design", level: "Advanced", value: 60 },
-  {
-    id: "illustrator",
-    name: "Adobe Illustrator",
-    category: "Design",
-    level: "Advanced",
-    value: 70,
-  },
 ];
 
 export const developmentSkills: Skill[] = [
+  { id: "react", name: "React.js", category: "Frontend", level: "Advanced", value: 90 },
   { id: "nextjs", name: "Next.js", category: "Frontend", level: "Advanced", value: 92 },
+  { id: "nestjs", name: "NestJS", category: "Backend", level: "Intermediate", value: 80 },
+  { id: "aspnet", name: "ASP.NET", category: "Backend", level: "Intermediate", value: 75 },
   { id: "typescript", name: "TypeScript", category: "Language", level: "Advanced", value: 88 },
-  { id: "react", name: "React", category: "Frontend", level: "Advanced", value: 90 },
+  { id: "csharp", name: "C#", category: "Language", level: "Intermediate", value: 75 },
+  { id: "java", name: "Java", category: "Language", level: "Intermediate", value: 70 },
+  { id: "kotlin", name: "Kotlin", category: "Language", level: "Intermediate", value: 70 },
+  { id: "sqlserver", name: "SQL Server", category: "Database", level: "Intermediate", value: 75 },
+  { id: "postgresql", name: "PostgreSQL", category: "Database", level: "Intermediate", value: 75 },
+  { id: "mongodb", name: "MongoDB", category: "Database", level: "Intermediate", value: 75 },
+  { id: "firebase", name: "Firebase", category: "Database", level: "Intermediate", value: 80 },
   { id: "tailwind", name: "Tailwind CSS", category: "Styling", level: "Advanced", value: 84 },
 ];
 

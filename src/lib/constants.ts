@@ -1,5 +1,5 @@
 export const SITE_CONFIG = {
-  name: "MAH Portfolio",
+  name: "MA-H Portfolio",
   description: "Personal portfolio website for digital design and frontend work",
 };
 

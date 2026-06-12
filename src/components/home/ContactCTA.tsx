@@ -3,7 +3,7 @@ import Input from "@/src/components/ui/Input";
 
 export default function ContactCTA() {
   return (
-    <section className="mx-auto w-full max-w-6xl px-6 py-20">
+    <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:py-20">
       <div className="grid gap-10 overflow-hidden rounded-lg border border-white/10 bg-[var(--surface)] p-6 text-white shadow-2xl md:grid-cols-[0.8fr_1.2fr] md:p-10">
         <div>
           <p className="text-sm font-semibold uppercase text-[var(--accent)]">

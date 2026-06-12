@@ -3,24 +3,24 @@ import type { Skill } from "@/src/types/skill.type";
 
 export const serviceCards = [
   {
-    title: "Web Design",
-    metric: "120 projects",
-    description: "Landing pages, portfolio systems, and campaign microsites.",
+    title: "Web Development",
+    metric: "15+ projects",
+    description: "Building responsive, dynamic applications using modern frameworks like Next.js and React.",
   },
   {
-    title: "UI/UX Design",
-    metric: "241 projects",
-    description: "Clean flows, component systems, and product interface polish.",
+    title: "System Analysis & Design",
+    metric: "5+ systems",
+    description: "Designing database schemas, system architectures, and API flows.",
   },
   {
-    title: "Web Research",
-    metric: "240 reports",
-    description: "Market, competitor, and product discovery before build time.",
+    title: "Problem Solving",
+    metric: "100+ challenges",
+    description: "Tackling algorithmic problems and optimizing software structures.",
   },
   {
-    title: "Marketing",
-    metric: "331 assets",
-    description: "Conversion-focused content blocks for brand growth.",
+    title: "Continuous Learning",
+    metric: "3rd Year IT",
+    description: "Actively exploring new technologies, from cloud computing to AI integration.",
   },
 ];
 
@@ -104,28 +104,9 @@ export const portfolioProjects: Project[] = [
 
 export const educationItems = [
   {
-    title: "Trainer Marketing",
-    years: "2005-2009",
-    description:
-      "Built a foundation in positioning, customer journeys, and campaign planning.",
-  },
-  {
-    title: "Assistant Director",
-    years: "2010-2014",
-    description:
-      "Led small creative teams and coordinated delivery across content and visual systems.",
-  },
-  {
-    title: "Design Assistant",
-    years: "2008-2012",
-    description:
-      "Supported web, branding, and interface work for early-stage business clients.",
-  },
-  {
-    title: "Product Collaborator",
-    years: "2014-Now",
-    description:
-      "Designed and shipped portfolio, dashboard, and web experiences with modern stacks.",
+    title: "University of Technology and Education, the University of Da Nang",
+    years: "2023 - Present",
+    description: "Studying Information Technology with a focus on software engineering, web development, and system design.",
   },
 ];
 

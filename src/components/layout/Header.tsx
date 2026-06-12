@@ -1,20 +1,38 @@
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "./Navbar";
+import Button from "@/src/components/ui/Button";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-black/85 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
-        <Link
-          className="flex items-center gap-2 text-base font-semibold text-white"
-          href="/"
-        >
-          <span className="grid size-8 place-items-center rounded-md bg-[var(--accent)] text-sm text-white">
-            M
-          </span>
-          MAH Portfolio
+    <header className="sticky top-0 z-40 bg-[var(--background)]">
+      <div className="mx-auto flex w-full items-center justify-between px-6 py-4">
+        {/* Left: Logo */}
+        <Link className="flex items-center gap-3 text-2xl font-bold text-white" href="/">
+          <Image
+            src="/images/logo/logo-1.png"
+            alt="MA-H Logo"
+            width={50}
+            height={50}
+            className="object-contain"
+          />
+          MA-H
         </Link>
-        <Navbar />
+
+        {/* Middle: Navigation */}
+        <div className="hidden lg:block">
+          <Navbar />
+        </div>
+
+        {/* Right: Actions */}
+        <div className="flex items-center gap-4">
+          <Button
+            href="/cv.pdf"
+            className="hidden sm:inline-flex"
+          >
+            Download CV
+          </Button>
+        </div>
       </div>
     </header>
   );

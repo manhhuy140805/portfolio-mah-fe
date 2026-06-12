@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #080807;
+  --background: #080616;
   --foreground: #f7f7f7;
-  --surface: #171614;
-  --surface-soft: #f4efe6;
-  --surface-cream: #fff7df;
+  --surface: #1A1953;
+  --surface-soft: #f0f4f8;
+  --surface-cream: #e6f0fa;
   --muted: #a1a1aa;
   --line: rgba(255, 255, 255, 0.1);
-  --accent: #ff0a68;
-  --accent-warm: #ffc43d;
-  --accent-cyan: #2bd4c5;
+  --accent: #2F2FE4;
+  --accent-warm: #162E93;
+  --accent-cyan: #4db8ff;
 }
 
 @theme inline {
@@ -18,13 +18,14 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-montserrat: var(--font-montserrat);
 }
 
 body {
   background:
-    linear-gradient(180deg, #12100d 0%, var(--background) 34%, #0f0d0b 100%);
+    linear-gradient(180deg, #0b091e 0%, var(--background) 34%, #080616 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
 }
 
 ::selection {
@@ -38,15 +39,15 @@ html {
 
 .bright-section {
   background:
-    linear-gradient(135deg, rgba(255, 196, 61, 0.18), transparent 36%),
-    linear-gradient(180deg, #fff8e6 0%, #f2ede4 100%);
-  color: #17130f;
+    linear-gradient(135deg, rgba(47, 47, 228, 0.15), transparent 36%),
+    linear-gradient(180deg, #f0f4f8 0%, #e6eff7 100%);
+  color: #080616;
 }
 
 .bright-card {
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(24, 19, 15, 0.1);
-  box-shadow: 0 24px 70px rgba(16, 12, 8, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(22, 46, 147, 0.1);
+  box-shadow: 0 24px 70px rgba(8, 6, 22, 0.12);
 }
 
 .accent-rail {

@@ -1,50 +1,121 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/src/lib/constants";
-import Button from "@/src/components/ui/Button";
-import Input from "@/src/components/ui/Input";
+import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[var(--surface)]">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-[1.2fr_0.8fr_1fr]">
-        <div>
-          <div className="flex items-center gap-2 text-base font-semibold text-white">
-            <span className="grid size-8 place-items-center rounded-md bg-[var(--accent)] text-sm">
-              M
-            </span>
-            {SITE_CONFIG.name}
-          </div>
-          <p className="mt-5 max-w-sm text-sm leading-6 text-zinc-400">
-            Get ready to create focused portfolio pages for design, frontend,
-            and product work.
-          </p>
-        </div>
-        <div>
-          <h2 className="text-sm font-semibold text-white">Quick Link</h2>
-          <div className="mt-5 grid gap-3 text-sm text-zinc-400">
-            <Link className="transition hover:text-[var(--accent-warm)]" href="/about">
-              About Me
-            </Link>
-            <Link className="transition hover:text-[var(--accent-warm)]" href="/projects">
-              Projects
-            </Link>
-            <Link className="transition hover:text-[var(--accent-warm)]" href="/contact">
-              Contact Me
-            </Link>
-          </div>
-        </div>
-        <div>
-          <h2 className="text-sm font-semibold text-white">Newsletter</h2>
-          <div className="mt-5 flex gap-2">
-            <Input aria-label="Email address" placeholder="Email address" type="email" />
-            <Button className="shrink-0" type="button">
-              Join
-            </Button>
-          </div>
-        </div>
+    <footer className="relative border-t border-white/10 bg-[#0f0f11] overflow-hidden">
+      {/* Faint Background Shape */}
+      <div className="pointer-events-none absolute -left-20 top-10 opacity-5">
+        <Image
+          src="/images/logo/logo-1.png"
+          alt="Background shape"
+          width={400}
+          height={400}
+          className="object-contain"
+        />
       </div>
-      <div className="border-t border-white/10 px-6 py-4 text-center text-xs text-zinc-500">
-        {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
+
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-12">
+        
+        {/* Left: Logo, Big Text, Email Input */}
+        <div className="flex flex-col gap-8 lg:col-span-5 lg:pr-10">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/images/logo/logo-1.png"
+              alt={`${SITE_CONFIG.name} Logo`}
+              width={40}
+              height={40}
+              className="object-contain"
+            />
+            <span className="text-xl font-bold text-white">{SITE_CONFIG.name}</span>
+          </div>
+          
+          <h2 className="text-4xl sm:text-5xl font-semibold leading-tight text-white">
+            Get Ready To <br />
+            <span className="font-light text-zinc-300">Create Great</span>
+          </h2>
+          
+          <div className="relative mt-4 w-full max-w-sm">
+            <input 
+              type="email" 
+              placeholder="Email Address" 
+              className="w-full border-b border-white/20 bg-transparent py-3 pr-10 text-sm text-white placeholder:text-zinc-500 focus:border-[var(--accent-cyan)] focus:outline-none transition-colors"
+            />
+            <button className="absolute right-0 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white transition-colors">
+              <Mail className="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Middle: Quick Link */}
+        <div className="lg:col-span-3">
+          <h3 className="text-lg font-bold text-white mb-6">Quick Link</h3>
+          <div className="flex flex-col gap-4 text-sm text-zinc-400 font-medium">
+            <Link className="transition hover:text-[var(--accent-cyan)]" href="/">Home</Link>
+            <Link className="transition hover:text-[var(--accent-cyan)]" href="/about">About Me</Link>
+            <Link className="transition hover:text-[var(--accent-cyan)]" href="/projects">Projects</Link>
+            <a className="transition hover:text-[var(--accent-cyan)]" href="/cv.pdf" target="_blank" rel="noopener noreferrer">Resume / CV</a>
+          </div>
+        </div>
+
+        {/* Right: Contact & Socials */}
+        <div className="lg:col-span-4">
+          <h3 className="text-lg font-bold text-white mb-6">Contact</h3>
+          
+          <div className="flex flex-col gap-4 text-sm font-medium text-zinc-300">
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/5 text-white transition-colors hover:bg-[var(--accent-cyan)]">
+                <Mail className="h-4 w-4" />
+              </div>
+              <a href="mailto:trandinhmanhhuy05@gmail.com" className="hover:text-white transition-colors">
+                trandinhmanhhuy05@gmail.com
+              </a>
+            </div>
+            
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/5 text-white transition-colors hover:bg-[var(--accent-cyan)]">
+                <MapPin className="h-4 w-4" />
+              </div>
+              <span>Da Nang, Vietnam</span>
+            </div>
+            
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/5 text-white transition-colors hover:bg-[var(--accent-cyan)]">
+                <Phone className="h-4 w-4" />
+              </div>
+              <a href="tel:+84326149986" className="hover:text-white transition-colors">
+                +84 326 149 986
+              </a>
+            </div>
+          </div>
+          
+          <div className="mt-6 flex gap-3">
+            <a href="https://github.com/manhhuy140805" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 text-white transition-all hover:bg-white/10 hover:scale-110">
+              <FaGithub className="h-4 w-4" />
+            </a>
+            <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 text-white transition-all hover:bg-[#0a66c2] hover:scale-110">
+              <FaLinkedin className="h-4 w-4" />
+            </a>
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 text-white transition-all hover:bg-[#1877f2] hover:scale-110">
+              <FaFacebook className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-white/10 px-6 py-6 sm:flex-row text-xs text-zinc-500 font-medium">
+        <p>
+          &copy; {SITE_CONFIG.name} {new Date().getFullYear()} | All Rights Reserved
+        </p>
+        <div className="flex gap-6">
+          <Link href="#" className="hover:text-white transition-colors">Terms & Condition</Link>
+          <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+          <Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link>
+        </div>
       </div>
     </footer>
   );

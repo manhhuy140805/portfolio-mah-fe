@@ -10,6 +10,7 @@ import {
   serviceCards,
 } from "@/src/lib/portfolio-data";
 import aboutPreview from "@/src/UI/about.png";
+import AnimatedCounter from "@/src/components/ui/AnimatedCounter";
 
 export default function AboutPage() {
   return (
@@ -80,7 +81,7 @@ export default function AboutPage() {
               className="bright-card rounded-lg p-8 text-center"
               key={stat.label}
             >
-              <p className="text-3xl font-bold text-zinc-950">{stat.value}</p>
+              <AnimatedCounter value={stat.value} suffix={stat.suffix} className="text-3xl font-bold text-zinc-950" />
               <p className="mt-2 text-xs text-zinc-600">{stat.label}</p>
             </article>
           ))}

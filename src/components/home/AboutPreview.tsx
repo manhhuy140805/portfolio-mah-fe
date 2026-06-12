@@ -5,13 +5,13 @@ import { motion, useInView, Variants } from "framer-motion";
 import Button from "@/src/components/ui/Button";
 import SectionTitle from "@/src/components/ui/SectionTitle";
 import { serviceCards } from "@/src/lib/portfolio-data";
-import { Code, Network, Puzzle, BookOpen, Zap } from "lucide-react";
+import { Eye, Zap, FileText, Layers } from "lucide-react";
 
 const icons = {
-  "Web Development": <Code className="w-6 h-6" />,
-  "System Analysis & Design": <Network className="w-6 h-6" />,
-  "Problem Solving": <Puzzle className="w-6 h-6" />,
-  "Continuous Learning": <BookOpen className="w-6 h-6" />,
+  "Visual Memory & Observation": <Eye className="w-6 h-6" />,
+  "Agile Problem Solving": <Zap className="w-6 h-6" />,
+  "Microsoft Word Mastery": <FileText className="w-6 h-6" />,
+  "Full-Stack Development": <Layers className="w-6 h-6" />,
 };
 
 const containerVariants: Variants = {

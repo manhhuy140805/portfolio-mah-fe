@@ -3,6 +3,7 @@ import Button from "@/src/components/ui/Button";
 import { portfolioStats } from "@/src/lib/portfolio-data";
 import profileImage from "@/public/images/dev/anh-nua-nguoi.png";
 import Typewriter from "@/src/components/ui/Typewriter";
+import AnimatedCounter from "@/src/components/ui/AnimatedCounter";
 
 export default function HeroSection() {
   return (
@@ -54,7 +55,7 @@ export default function HeroSection() {
                 className="group rounded-lg border border-black/10 bg-[var(--surface-cream)] p-3 sm:p-4 text-zinc-950 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-[var(--accent-cyan)]/20"
                 key={stat.label}
               >
-                <p className="text-2xl sm:text-3xl font-bold">{stat.value}</p>
+                <AnimatedCounter value={stat.value} suffix={stat.suffix} className="text-2xl sm:text-3xl font-bold" />
                 <p className="mt-1 text-xs leading-4 sm:leading-5 text-zinc-600">
                   {stat.label}
                 </p>

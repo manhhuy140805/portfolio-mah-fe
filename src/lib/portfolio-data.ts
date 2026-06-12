@@ -25,10 +25,10 @@ export const serviceCards = [
 ];
 
 export const portfolioStats = [
-  { value: "25", label: "Years of Experience" },
-  { value: "20K+", label: "Projects Complete" },
-  { value: "10K+", label: "Natural Products" },
-  { value: "1,000+", label: "Satisfied Clients" },
+  { value: "3rd", label: "Year IT Student" },
+  { value: "15+", label: "Academic Projects" },
+  { value: "4+", label: "Core Technologies" },
+  { value: "100%", label: "Passion for Coding" },
 ];
 
 export const designSkills: Skill[] = [

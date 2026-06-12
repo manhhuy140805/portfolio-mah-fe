@@ -6,7 +6,8 @@ export const SITE_CONFIG = {
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/skills", label: "Skills" },
+  { href: "/services", label: "Services", hasDropdown: true },
+  { href: "/blog", label: "Blog", hasDropdown: true },
+  { href: "/projects", label: "Project", hasDropdown: true },
   { href: "/contact", label: "Contact" },
 ] as const;

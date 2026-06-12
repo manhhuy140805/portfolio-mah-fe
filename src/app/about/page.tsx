@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "@/src/components/ui/Button";
+import PageHeader from "@/src/components/ui/PageHeader";
 import SectionTitle from "@/src/components/ui/SectionTitle";
 import {
   designSkills,
@@ -13,27 +14,11 @@ import aboutPreview from "@/src/UI/about.png";
 export default function AboutPage() {
   return (
     <main>
-      <section className="overflow-hidden border-b border-white/10 bg-[#0f0d0b]">
-        <div className="accent-rail h-1 w-full" />
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p className="inline-flex rounded-md bg-[var(--surface-cream)] px-3 py-2 text-sm font-semibold uppercase text-zinc-950">
-              About Me
-            </p>
-            <h1 className="mt-4 text-5xl font-bold leading-tight text-white">
-              Designer and frontend builder for sharp digital portfolios
-            </h1>
-            <p className="mt-6 text-base leading-8 text-zinc-400">
-              I turn raw experience, project details, and brand goals into a
-              portfolio that feels intentional from the first scroll.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/projects">See Work</Button>
-              <Button href="/contact" variant="secondary">
-                Start a Brief
-              </Button>
-            </div>
-          </div>
+      <PageHeader
+        label="About Me"
+        title="Designer and frontend builder for sharp digital portfolios"
+        description="I turn raw experience, project details, and brand goals into a portfolio that feels intentional from the first scroll."
+        rightContent={
           <div className="h-[420px] overflow-hidden rounded-lg border border-white/10 bg-[var(--surface)]">
             <Image
               alt="About page visual reference"
@@ -42,8 +27,15 @@ export default function AboutPage() {
               src={aboutPreview}
             />
           </div>
+        }
+      >
+        <div className="flex flex-wrap gap-3">
+          <Button href="/projects">See Work</Button>
+          <Button href="/contact" variant="secondary">
+            Start a Brief
+          </Button>
         </div>
-      </section>
+      </PageHeader>
 
       <section className="bright-section">
         <div className="mx-auto grid max-w-6xl gap-4 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">

@@ -5,9 +5,17 @@ import homePreview from "@/src/UI/home.png";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden border-b border-white/10 bg-[#0f0d0b]">
-      <div className="accent-rail h-1 w-full" />
-      <div className="mx-auto grid min-h-[calc(100svh-74px)] max-w-6xl items-center gap-12 px-6 py-16 lg:grid-cols-[1fr_0.9fr]">
+    <section className="relative overflow-hidden border-b border-white/10 bg-[var(--background)]">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 z-0 h-full w-full object-cover opacity-60"
+      >
+        <source src="/backgroud/bg-black-animation.mp4" type="video/mp4" />
+      </video>
+      <div className="relative z-10 mx-auto grid min-h-[calc(100svh-74px)] max-w-6xl items-center gap-12 px-6 py-16 lg:grid-cols-[1fr_0.9fr]">
         <div>
           <p className="inline-flex rounded-md bg-[var(--surface-cream)] px-3 py-2 text-sm font-semibold uppercase text-zinc-950">
             Web Developer

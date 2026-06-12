@@ -20,11 +20,11 @@ type LinkButtonProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className"
 };
 
 const baseButtonClassName =
-  "inline-flex h-11 items-center justify-center rounded-md px-5 text-sm font-semibold transition disabled:pointer-events-none disabled:opacity-50";
+  "inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-semibold transition disabled:pointer-events-none disabled:opacity-50";
 
 const variantClassNames: Record<ButtonVariant, string> = {
   primary:
-    "bg-[var(--accent)] text-white shadow-[0_0_30px_rgba(255,10,104,0.25)] hover:bg-[#e6005a]",
+    "border border-transparent bg-[var(--accent)] text-white shadow-[0_0_30px_rgba(47,47,228,0.25)] hover:bg-[var(--background)] hover:border-[var(--accent)]",
   secondary:
     "border border-white/15 bg-white/5 text-white hover:border-[var(--accent-warm)] hover:text-[var(--accent-warm)]",
   light:
@@ -68,6 +68,7 @@ export default function Button(props: ButtonProps | LinkButtonProps) {
 
   return (
     <button
+      suppressHydrationWarning
       className={getButtonClassName(variant, className)}
       type={type}
       {...buttonProps}

@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Button from "@/src/components/ui/Button";
 import { portfolioStats } from "@/src/lib/portfolio-data";
-import homePreview from "@/src/UI/home.png";
+import profileImage from "@/public/images/dev/anh-nua-nguoi.png";
+import Typewriter from "@/src/components/ui/Typewriter";
 
 export default function HeroSection() {
   return (
@@ -15,28 +16,42 @@ export default function HeroSection() {
       >
         <source src="/backgroud/bg-black-animation.mp4" type="video/mp4" />
       </video>
-      <div className="relative z-10 mx-auto grid min-h-[calc(100svh-74px)] max-w-6xl items-center gap-12 px-6 py-16 lg:grid-cols-[1fr_0.9fr]">
-        <div>
-          <p className="inline-flex rounded-md bg-[var(--surface-cream)] px-3 py-2 text-sm font-semibold uppercase text-zinc-950">
-            Web Developer
+      <div className="relative z-10 mx-auto grid h-[calc(800px-74px)] max-w-6xl items-center gap-12 px-6 py-0 lg:grid-cols-[1fr_0.9fr]">
+        <div className="relative z-10">
+          {/* Glowing Orb Background */}
+          <div className="absolute top-0 left-0 -z-10 h-72 w-72 rounded-full bg-[var(--accent-cyan)] opacity-20 blur-[100px] animate-pulse-glow"></div>
+          
+          <p className="animate-fade-in-up inline-flex rounded-md bg-[var(--surface-cream)] px-3 py-2 text-sm font-semibold uppercase text-zinc-950" style={{ animationDelay: '0s' }}>
+            3rd-Year IT Student
           </p>
-          <h1 className="mt-4 max-w-3xl text-5xl font-bold leading-tight text-white md:text-6xl">
-            Jackson Clark
+          <h1 className="animate-fade-in-up mt-4 max-w-3xl text-5xl font-bold leading-tight text-white md:text-6xl" style={{ animationDelay: '0.1s' }}>
+            Mạnh Huy
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-300 md:text-lg">
-            I design and build portfolio experiences, strategic landing pages,
-            and product interfaces with a sharp visual system and clean code.
+          <p className="animate-fade-in-up mt-6 max-w-2xl text-base leading-8 text-zinc-300 md:text-lg" style={{ animationDelay: '0.2s' }}>
+            I am a 3rd-year student passionate about web development. I focus on building modern UI/UX experiences, and continuously learning new technologies to hone my skills.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="animate-fade-in-up mt-2 h-[32px] max-w-2xl text-base leading-8 text-[var(--accent-cyan)] font-medium md:text-lg" style={{ animationDelay: '0.3s' }}>
+            <Typewriter 
+              phrases={[
+                "Prioritizing user experience over just visual UI.",
+                "Designing intuitive, accessible, and scalable systems.",
+                "Writing clean code to build high-performance products."
+              ]} 
+              typingSpeed={40}
+              deletingSpeed={20}
+              pauseDuration={2500}
+            />
+          </div>
+          <div className="animate-fade-in-up mt-8 flex flex-wrap gap-3" style={{ animationDelay: '0.4s' }}>
             <Button href="/contact">Hire Portfolio</Button>
             <Button href="/projects" variant="secondary">
               Explore Work
             </Button>
           </div>
-          <div className="mt-12 grid gap-4 sm:grid-cols-4">
+          <div className="animate-fade-in-up mt-12 grid gap-4 sm:grid-cols-4" style={{ animationDelay: '0.5s' }}>
             {portfolioStats.map((stat) => (
               <div
-                className="rounded-lg border border-black/10 bg-[var(--surface-cream)] p-4 text-zinc-950"
+                className="group rounded-lg border border-black/10 bg-[var(--surface-cream)] p-4 text-zinc-950 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-[var(--accent-cyan)]/20"
                 key={stat.label}
               >
                 <p className="text-3xl font-bold">{stat.value}</p>
@@ -47,21 +62,31 @@ export default function HeroSection() {
             ))}
           </div>
         </div>
-        <div className="relative">
-          <div className="absolute -bottom-5 -left-5 h-32 w-48 rounded-lg bg-[var(--accent-warm)]" />
-          <div className="absolute -right-5 top-16 h-24 w-36 rounded-lg bg-[var(--accent-cyan)]" />
-          <div className="absolute right-4 top-4 z-10 rounded-md border border-black/10 bg-[var(--surface-cream)] px-4 py-3 text-zinc-950 shadow-2xl">
-            <p className="text-3xl font-bold">25</p>
-            <p className="text-xs text-zinc-600">Years of experience</p>
+        <div className="relative flex justify-center items-end h-full w-full">
+          {/* Background Text */}
+          <div className="animate-fade-in-up pointer-events-none absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-0" style={{ animationDelay: '0.8s' }}>
+            <div className="animate-float-bg whitespace-nowrap text-2xl md:text-[40px] lg:text-[60px] font-black text-white tracking-tight">
+              WEB DEVELOPER
+            </div>
           </div>
-          <div className="relative h-[560px] overflow-hidden rounded-lg border border-white/15 bg-[var(--surface)] shadow-[0_30px_90px_rgba(0,0,0,0.35)]">
-            <Image
-              alt="Portfolio homepage visual reference"
-              className="h-full w-full object-cover object-top opacity-95"
-              placeholder="blur"
-              priority
-              src={homePreview}
-            />
+          
+          <Image
+            alt="Mạnh Huy"
+            className="animate-fade-in-up relative z-10 h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            style={{ animationDelay: '0.6s' }}
+            placeholder="blur"
+            priority
+            src={profileImage}
+          />
+
+          {/* Foreground Outline Text */}
+          <div className="animate-fade-in-up pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 z-20" style={{ animationDelay: '1.0s' }}>
+            <div 
+              className="animate-float-fg whitespace-nowrap text-6xl md:text-[40px] lg:text-[60px] font-black text-transparent tracking-tight" 
+              style={{ WebkitTextStroke: '2px rgba(255, 255, 255, 0.7)' }}
+            >
+              WEB DEVELOPER
+            </div>
           </div>
         </div>
       </div>

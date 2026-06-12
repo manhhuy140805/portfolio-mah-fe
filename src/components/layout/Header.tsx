@@ -5,7 +5,7 @@ import Button from "@/src/components/ui/Button";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-[var(--background)]">
+    <header className="sticky top-0 z-40 bg-[var(--background)]/75 backdrop-blur-md border-b border-white/5">
       <div className="mx-auto flex w-full items-center justify-between px-6 py-4">
         {/* Left: Logo */}
         <Link className="flex items-center gap-3 text-2xl font-bold text-white" href="/">

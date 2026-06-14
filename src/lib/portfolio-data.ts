@@ -40,6 +40,7 @@ export const developmentSkills: Skill[] = [
   { id: "nextjs", name: "Next.js", category: "Frontend", level: "Advanced", value: 92 },
   { id: "nestjs", name: "NestJS", category: "Backend", level: "Intermediate", value: 80 },
   { id: "aspnet", name: "ASP.NET", category: "Backend", level: "Intermediate", value: 75 },
+  { id: "javascript", name: "JavaScript", category: "Language", level: "Advanced", value: 90 },
   { id: "typescript", name: "TypeScript", category: "Language", level: "Advanced", value: 88 },
   { id: "csharp", name: "C#", category: "Language", level: "Intermediate", value: 75 },
   { id: "java", name: "Java", category: "Language", level: "Intermediate", value: 70 },

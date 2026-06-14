@@ -1,4 +1,5 @@
 import AboutHero from "@/src/components/about/AboutHero";
+import PersonalBio from "@/src/components/about/PersonalBio";
 import ServicesGrid from "@/src/components/about/ServicesGrid";
 import ExperienceStats from "@/src/components/about/ExperienceStats";
 import SkillsSection from "@/src/components/about/SkillsSection";
@@ -12,8 +13,9 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] selection:bg-blue-500/30">
+    <main className="min-h-screen bg-[var(--background)] selection:bg-[var(--accent)]/30">
       <AboutHero />
+      <PersonalBio />
       <ExperienceStats />
       <ServicesGrid />
       <SkillsSection />

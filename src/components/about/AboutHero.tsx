@@ -7,13 +7,39 @@ import aboutPreview from "@/src/UI/about.png";
 
 export default function AboutHero() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-16 lg:pt-40 lg:pb-24">
-      {/* Background glow effects */}
-      <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 opacity-20 blur-[120px]">
-        <div className="h-[400px] w-[600px] rounded-full bg-gradient-to-r from-blue-500 to-purple-500" />
-      </div>
+    <section className="relative overflow-hidden pt-2 pb-16 lg:pt-20 lg:pb-24">
+      {/* Dynamic Background Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
 
-      <div className="mx-auto max-w-6xl px-6">
+      {/* Floating Animated Orbs */}
+      <motion.div 
+        animate={{ 
+          y: [0, -40, 0],
+          scale: [1, 1.1, 1],
+          rotate: [0, 90, 0]
+        }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[10%] left-[10%] w-[400px] h-[400px] bg-[var(--accent)]/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"
+      />
+      <motion.div 
+        animate={{ 
+          y: [0, 50, 0],
+          scale: [1, 1.2, 1],
+          rotate: [0, -90, 0]
+        }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] bg-[var(--accent-warm)]/40 rounded-full blur-[120px] mix-blend-screen pointer-events-none"
+      />
+      <motion.div 
+        animate={{ 
+          x: [0, 40, 0],
+          scale: [1, 1.3, 1]
+        }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[30%] left-[40%] w-[350px] h-[350px] bg-[var(--accent-cyan)]/20 rounded-full blur-[100px] mix-blend-screen pointer-events-none"
+      />
+
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center lg:gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -26,7 +52,7 @@ export default function AboutHero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-medium text-white shadow-sm backdrop-blur-md"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-cyan)]" />
               About Me
             </motion.p>
             <motion.h1
@@ -36,7 +62,7 @@ export default function AboutHero() {
               className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
               Building digital <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent)] bg-clip-text text-transparent">
                 experiences
               </span>{" "}
               with purpose.
@@ -70,20 +96,20 @@ export default function AboutHero() {
           >
             {/* Image container with glow and tilt effect */}
             <div className="relative z-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2 shadow-2xl backdrop-blur-sm">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-xl sm:aspect-[3/4] lg:aspect-[4/5]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-xl sm:aspect-[3/4] lg:aspect-[4/5] group">
                 <Image
                   alt="About page visual reference"
                   src={aboutPreview}
                   placeholder="blur"
                   fill
-                  className="object-cover object-top opacity-90 transition-transform duration-700 hover:scale-105"
+                  className="object-cover object-top transition-transform duration-700 hover:scale-105 brightness-125 contrast-[1.15] saturate-150"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-[var(--accent-cyan)]/10 mix-blend-overlay pointer-events-none opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </div>
             </div>
             
             {/* Decorative background elements behind image */}
-            <div className="absolute -inset-4 z-0 rounded-2xl bg-gradient-to-tr from-blue-500/20 via-purple-500/20 to-transparent opacity-50 blur-xl transition-opacity duration-500 group-hover:opacity-80" />
+            <div className="absolute -inset-4 z-0 rounded-2xl bg-gradient-to-tr from-[var(--accent)]/20 via-[var(--accent-cyan)]/20 to-transparent opacity-50 blur-xl transition-opacity duration-500 group-hover:opacity-80" />
           </motion.div>
         </div>
       </div>

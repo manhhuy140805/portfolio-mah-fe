@@ -19,33 +19,37 @@ function SkillGroup({ skills, title, delayOffset = 0 }: SkillGroupProps) {
   if (!skills.length) return null;
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm sm:p-8">
-      <div className="mb-6 flex items-center gap-4">
-        <h3 className="text-lg font-bold text-white sm:text-xl">{title}</h3>
-        <div className="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent" />
+    <div className="group/card relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl sm:p-8 transition-colors duration-500 hover:bg-white/[0.04]">
+      {/* Subtle corner glow */}
+      <div className="absolute -right-20 -top-20 w-48 h-48 bg-[var(--accent)]/10 rounded-full blur-[60px] group-hover/card:bg-[var(--accent-cyan)]/20 transition-colors duration-700 pointer-events-none" />
+
+      <div className="mb-8 flex items-center gap-4 relative z-10">
+        <h3 className="text-lg font-bold text-white tracking-wide sm:text-xl">{title}</h3>
+        <div className="h-px flex-1 bg-gradient-to-r from-[var(--accent-cyan)]/40 via-white/5 to-transparent" />
       </div>
       
-      <div className="grid gap-5">
-        {skills.map((skill, index) => {
-          const value = skill.value ?? 70;
-          return (
-            <div key={skill.id} className="group">
-              <div className="mb-2 flex items-center justify-between text-sm font-medium">
-                <span className="text-zinc-300 transition-colors group-hover:text-white">{skill.name}</span>
-                <span className="text-zinc-500">{value}%</span>
-              </div>
-              <div className="relative h-2 w-full overflow-hidden rounded-full bg-white/10">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${value}%` }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 1, delay: delayOffset + index * 0.05, ease: "easeOut" }}
-                  className="absolute left-0 top-0 h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
-                />
-              </div>
-            </div>
-          );
-        })}
+      <div className="flex flex-wrap gap-3 relative z-10">
+        {skills.map((skill, index) => (
+          <motion.div
+            key={skill.id}
+            initial={{ opacity: 0, scale: 0.8, y: 10 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: delayOffset + index * 0.05, ease: "easeOut" }}
+            className="group relative flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white/[0.03] border border-white/5 hover:border-[var(--accent-cyan)]/40 hover:bg-[var(--surface)]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_-10px_rgba(77,184,255,0.3)] cursor-default overflow-hidden"
+          >
+            {/* Inner hover gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent-cyan)]/0 to-[var(--accent)]/0 group-hover:from-[var(--accent-cyan)]/10 group-hover:to-[var(--accent)]/10 transition-colors duration-500" />
+            
+            {/* Glowing dot */}
+            <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-[var(--accent-cyan)] transition-colors duration-300 shadow-[0_0_10px_transparent] group-hover:shadow-[0_0_10px_var(--accent-cyan)] relative z-10" />
+            
+            {/* Text */}
+            <span className="text-zinc-400 group-hover:text-white transition-colors duration-300 text-sm font-medium relative z-10">
+              {skill.name}
+            </span>
+          </motion.div>
+        ))}
       </div>
     </div>
   );

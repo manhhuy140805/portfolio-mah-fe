@@ -60,7 +60,7 @@ export const portfolioProjects: Project[] = [
     description:
       "A polished subscription dashboard concept with pricing, analytics, and onboarding flows.",
     technologies: ["Next.js", "Dashboard", "UI Kit"],
-    category: "Product Design",
+    category: "Web App",
     year: "2026",
     outcome: "Sharper trial-to-paid journey",
     role: "UI Designer and Frontend Developer",
@@ -68,11 +68,11 @@ export const portfolioProjects: Project[] = [
   {
     id: "workout-app",
     slug: "workout-app",
-    title: "Workout App Design 3",
+    title: "Workout App Landing Page",
     description:
-      "Mobile-first fitness experience with workout programs, progress tracking, and habit loops.",
-    technologies: ["React", "Mobile UI", "Prototype"],
-    category: "Mobile App",
+      "A high-converting landing page for a fitness experience with workout programs and habit loops.",
+    technologies: ["React", "Landing Page", "Framer Motion"],
+    category: "Landing Page",
     year: "2026",
     outcome: "Clearer daily workout planning",
     role: "Product Designer",
@@ -100,6 +100,18 @@ export const portfolioProjects: Project[] = [
     year: "2025",
     outcome: "Faster operational scanning",
     role: "Frontend Developer",
+  },
+  {
+    id: "ggzone",
+    slug: "ggzone",
+    title: "GGZone Platform",
+    description: "A fully functional deployed platform. Experience the live application directly from this page.",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+    category: "Web App",
+    year: "2026",
+    outcome: "Successfully deployed and active",
+    role: "Full-stack Developer",
+    demoUrl: "https://ggzone-kappa.vercel.app/"
   },
 ];
 

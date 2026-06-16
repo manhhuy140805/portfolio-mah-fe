@@ -64,7 +64,7 @@ export default function ProjectsClient() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-            className="mt-8 max-w-4xl text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl"
+            className="mt-8 max-w-4xl text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white sm:text-6xl lg:text-7xl"
           >
             Transforming ideas into <br className="hidden sm:block" />
             <motion.span 
@@ -81,7 +81,7 @@ export default function ProjectsClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-            className="mt-8 max-w-2xl text-lg leading-8 text-zinc-400"
+            className="mt-8 max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-400"
           >
             A curated gallery of SaaS, mobile, commerce, and dashboard interfaces designed for performance, aesthetics, and user engagement.
           </motion.p>
@@ -94,7 +94,7 @@ export default function ProjectsClient() {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
           className="mt-20 flex flex-col items-center"
         >
-          <div className="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 p-2 backdrop-blur-md hover:bg-white/10 transition-colors duration-500">
+          <div className="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 p-2 backdrop-blur-md hover:bg-zinc-200 dark:hover:bg-white/10 transition-colors duration-500">
             {categories.map((category) => {
               const isActive = activeCategory === category;
               return (
@@ -102,7 +102,7 @@ export default function ProjectsClient() {
                   key={category}
                   onClick={() => setActiveCategory(category)}
                   className={`relative rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
-                    isActive ? "text-white" : "text-zinc-400 hover:text-zinc-200"
+                    isActive ? "text-zinc-900 dark:text-white" : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200"
                   }`}
                 >
                   {isActive && (

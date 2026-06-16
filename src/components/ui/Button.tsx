@@ -24,12 +24,12 @@ const baseButtonClassName =
 
 const variantClassNames: Record<ButtonVariant, string> = {
   primary:
-    "border border-transparent bg-[var(--accent)] text-white shadow-[0_0_30px_rgba(47,47,228,0.25)] hover:bg-[var(--background)] hover:border-[var(--accent)]",
+    "border border-transparent bg-[var(--accent)] text-white shadow-[0_0_30px_rgba(47,47,228,0.25)] hover:bg-[var(--accent-warm)] hover:border-[var(--accent-warm)]",
   secondary:
-    "border border-white/15 bg-white/5 text-white hover:bg-[var(--accent-cyan)]/10 hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)]",
+    "border border-zinc-950/15 dark:border-white/15 bg-zinc-950/5 dark:bg-white/5 text-zinc-950 dark:text-white hover:bg-[var(--accent)]/10 dark:hover:bg-[var(--accent-cyan)]/10 hover:border-[var(--accent)] dark:hover:border-[var(--accent-cyan)] hover:text-[var(--accent)] dark:hover:text-[var(--accent-cyan)]",
   light:
-    "border border-zinc-950/15 bg-white text-zinc-950 hover:border-[var(--accent)] hover:text-[var(--accent)]",
-  ghost: "text-zinc-300 hover:bg-white/5 hover:text-white",
+    "border border-zinc-950/15 dark:border-white/15 bg-white dark:bg-[var(--surface-soft)] text-zinc-950 dark:text-white hover:border-[var(--accent)] dark:hover:border-[var(--accent-cyan)] hover:text-[var(--accent)] dark:hover:text-[var(--accent-cyan)]",
+  ghost: "text-zinc-600 dark:text-zinc-300 hover:bg-zinc-950/5 dark:hover:bg-white/5 hover:text-zinc-950 dark:hover:text-white",
 };
 
 function getButtonClassName(variant: ButtonVariant, className?: string) {

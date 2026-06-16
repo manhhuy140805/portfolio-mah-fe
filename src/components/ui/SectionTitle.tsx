@@ -29,7 +29,7 @@ export default function SectionTitle({
         <h2
           className={[
             "text-3xl font-semibold",
-            isLight ? "text-zinc-950" : "text-white",
+            isLight ? "text-zinc-950" : "text-zinc-900 dark:text-white",
           ].join(" ")}
         >
           {title}
@@ -40,7 +40,7 @@ export default function SectionTitle({
         <p
           className={[
             "mt-4 leading-7",
-            isLight ? "text-zinc-600" : "text-zinc-400",
+            isLight ? "text-zinc-600" : "text-zinc-600 dark:text-zinc-400",
           ].join(" ")}
         >
           {description}

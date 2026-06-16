@@ -26,7 +26,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20, scale: 0.95 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl transition-all hover:shadow-[0_0_40px_rgba(47,47,228,0.15)] hover:bg-white/[0.07]"
+      className="group relative overflow-hidden rounded-2xl bg-zinc-100 dark:bg-white/5 backdrop-blur-md border border-zinc-200 dark:border-white/10 shadow-2xl transition-all hover:shadow-[0_0_40px_rgba(47,47,228,0.15)] hover:bg-zinc-200 dark:hover:bg-white/[0.07]"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/0 via-[var(--accent)]/0 to-[var(--accent)]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
       
@@ -56,22 +56,22 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         <div className="relative p-6">
           <div className="flex items-start justify-between gap-4">
-            <h3 className="text-xl font-bold text-white transition-colors group-hover:text-[var(--accent-cyan)]">
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white transition-colors group-hover:text-[var(--accent-cyan)]">
               {project.title}
             </h3>
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white transition-all group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] group-hover:text-white group-hover:rotate-45">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-200 dark:bg-white/5 border border-zinc-300 dark:border-white/10 text-zinc-900 dark:text-white transition-all group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] group-hover:text-white group-hover:rotate-45">
                <ArrowUpRight className="h-4 w-4" />
             </div>
           </div>
           
-          <p className="mt-3 text-sm leading-relaxed text-zinc-400 line-clamp-2">
+          <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 line-clamp-2">
             {project.description}
           </p>
           
           <ul className="mt-6 flex flex-wrap gap-2">
             {project.technologies.map((technology) => (
               <li
-                className="rounded-md bg-white/5 border border-white/5 px-2.5 py-1 text-[11px] font-medium tracking-wide text-zinc-300 transition-colors group-hover:border-white/10 group-hover:bg-white/10"
+                className="rounded-md bg-zinc-200 dark:bg-white/5 border border-zinc-300 dark:border-white/5 px-2.5 py-1 text-[11px] font-medium tracking-wide text-zinc-700 dark:text-zinc-300 transition-colors group-hover:border-zinc-400 dark:group-hover:border-white/10 group-hover:bg-zinc-300 dark:group-hover:bg-white/10"
                 key={technology}
               >
                 {technology}

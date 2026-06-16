@@ -1,6 +1,25 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  --background: #f8fafc;
+  --foreground: #09090b;
+  --surface: #ffffff;
+  --surface-soft: #f1f5f9;
+  --surface-cream: #e6f0fa;
+  --muted: #71717a;
+  --line: rgba(0, 0, 0, 0.1);
+  --accent: #2F2FE4;
+  --accent-warm: #162E93;
+  --accent-cyan: #4db8ff;
+  --hero-outline: rgba(0, 0, 0, 0.7);
+  
+  --bg-gradient-start: #f8fafc;
+  --bg-gradient-end: #f1f5f9;
+}
+
+.dark {
   --background: #080616;
   --foreground: #f7f7f7;
   --surface: #1A1953;
@@ -11,6 +30,10 @@
   --accent: #2F2FE4;
   --accent-warm: #162E93;
   --accent-cyan: #4db8ff;
+  --hero-outline: rgba(255, 255, 255, 0.7);
+
+  --bg-gradient-start: #0b091e;
+  --bg-gradient-end: #080616;
 }
 
 @theme inline {
@@ -23,9 +46,10 @@
 
 body {
   background:
-    linear-gradient(180deg, #0b091e 0%, var(--background) 34%, #080616 100%);
+    linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--background) 34%, var(--bg-gradient-end) 100%);
   color: var(--foreground);
   font-family: var(--font-montserrat), sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 ::selection {

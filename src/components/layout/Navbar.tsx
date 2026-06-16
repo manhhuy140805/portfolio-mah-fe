@@ -4,7 +4,7 @@ import { NAV_LINKS } from "@/src/lib/constants";
 export default function Navbar() {
   return (
     <nav aria-label="Main navigation">
-      <ul className="flex items-center gap-6 text-sm font-semibold text-white">
+      <ul className="flex items-center gap-6 text-sm font-semibold text-zinc-900 dark:text-white">
         {NAV_LINKS.map((link) => (
           <li key={link.href}>
             <Link

@@ -33,7 +33,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
   }, [isInteractive]);
 
   return (
-    <main className="min-h-screen bg-[var(--background)] pb-24 pt-32 text-white">
+    <main className="min-h-screen bg-[var(--background)] pb-24 pt-32 text-zinc-900 dark:text-white">
       {/* Dynamic Background */}
       <div className="pointer-events-none absolute inset-0 flex justify-center overflow-hidden z-0">
         <div className="absolute top-[-10%] h-[500px] w-[800px] animate-pulse-glow rounded-full bg-[var(--accent)]/5 blur-[120px]" />
@@ -43,7 +43,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors">
+          <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
             <ArrowLeft className="h-4 w-4" />
             Back to Projects
           </Link>
@@ -66,7 +66,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                 </a>
               )}
               {project.sourceUrl && (
-                <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 text-white font-medium transition-colors">
+                <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-200 dark:bg-white/10 hover:bg-zinc-300 dark:hover:bg-white/20 border border-zinc-300 dark:border-white/10 text-zinc-900 dark:text-white font-medium transition-colors">
                   <FaGithub className="h-4 w-4" /> Source
                 </a>
               )}
@@ -109,7 +109,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12"
         >
           <div className="md:col-span-2">
-            <h2 className="text-2xl font-bold text-white mb-6">Overview</h2>
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">Overview</h2>
             <p className="text-lg text-zinc-400 leading-relaxed">
               {project.description}
             </p>
@@ -149,7 +149,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
         {project.demoUrl ? (
           <div className="relative mt-32 group">
             <div className="mb-10 text-center">
-              <h2 className="text-3xl font-bold text-white mb-3">Live Interactive Demo</h2>
+              <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-3">Live Interactive Demo</h2>
               <p className="text-zinc-400">Experience the product directly from this page.</p>
             </div>
             {/* Dynamic Glowing Backdrop */}

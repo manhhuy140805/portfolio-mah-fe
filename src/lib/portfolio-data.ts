@@ -54,18 +54,6 @@ export const developmentSkills: Skill[] = [
 
 export const portfolioProjects: Project[] = [
   {
-    id: "saas-dashboard",
-    slug: "saas-dashboard",
-    title: "SaaS Website Design",
-    description:
-      "A polished subscription dashboard concept with pricing, analytics, and onboarding flows.",
-    technologies: ["Next.js", "Dashboard", "UI Kit"],
-    category: "Web App",
-    year: "2026",
-    outcome: "Sharper trial-to-paid journey",
-    role: "UI Designer and Frontend Developer",
-  },
-  {
     id: "workout-app",
     slug: "workout-app",
     title: "Workout App Landing Page",
@@ -105,13 +93,15 @@ export const portfolioProjects: Project[] = [
     id: "ggzone",
     slug: "ggzone",
     title: "GGZone Platform",
-    description: "A fully functional deployed platform. Experience the live application directly from this page.",
-    technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+    description: "GGZone is a full-stack academic web application prototype built for my Advanced Web Development course. It is designed as a gaming social network and marketplace where users can browse games, join communities, interact with posts, manage profiles, connect with friends, and purchase gaming-related products. The frontend was built with React, TypeScript, Vite, Tailwind CSS, and React Router, following a feature-based architecture with reusable components, centralized API services, protected routes, and JWT authentication. The backend was developed in two versions, ASP.NET and NestJS, with the current demo using the NestJS REST API. The project focuses on demonstrating UI development, API integration, user flows, role-based access, and full-stack application structure for academic purposes.",
+    technologies: ["ReactJS", "NestJS", "Tailwind CSS", "PostgreSQL"],
     category: "Web App",
     year: "2026",
     outcome: "Successfully deployed and active",
     role: "Full-stack Developer",
-    demoUrl: "https://ggzone-kappa.vercel.app/"
+    demoUrl: "https://ggzone-kappa.vercel.app/",
+    frontendDeploy: "Vercel",
+    backendDeploy: "Render",
   },
 ];
 

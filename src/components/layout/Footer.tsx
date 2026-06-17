@@ -15,7 +15,7 @@ export default function Footer() {
           width={0}
           height={0}
           sizes="100vw"
-          className="w-[400px] h-auto object-contain dark:hidden scale-[1.5]"
+          className="w-[400px] h-auto object-contain dark:hidden"
         />
         <Image
           src="/images/logo/logo-theme-dark.png"
@@ -38,7 +38,7 @@ export default function Footer() {
               width={0}
               height={0}
               sizes="100vw"
-              className="h-10 w-auto object-contain dark:hidden scale-[1.5]"
+              className="h-10 w-auto object-contain dark:hidden"
             />
             <Image
               src="/images/logo/logo-theme-dark.png"

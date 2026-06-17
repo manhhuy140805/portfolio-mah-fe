@@ -54,7 +54,7 @@ export default function ProjectsClient() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-4 py-2 text-sm font-medium text-[var(--accent-cyan)] shadow-[0_0_20px_rgba(47,47,228,0.2)]"
+            className="inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-[var(--accent)]/30 bg-blue-50 dark:bg-[var(--accent)]/10 px-4 py-2 text-sm font-medium text-blue-600 dark:text-[var(--accent-cyan)] shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:shadow-[0_0_20px_rgba(47,47,228,0.2)]"
           >
             <Sparkles className="h-4 w-4" />
             <span>Our Portfolio</span>
@@ -102,13 +102,13 @@ export default function ProjectsClient() {
                   key={category}
                   onClick={() => setActiveCategory(category)}
                   className={`relative rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
-                    isActive ? "text-zinc-900 dark:text-white" : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200"
+                    isActive ? "text-blue-700 dark:text-white" : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200"
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activeFilter"
-                      className="absolute inset-0 rounded-xl bg-[var(--accent)]/40 shadow-[0_0_15px_rgba(47,47,228,0.5)]"
+                      className="absolute inset-0 rounded-xl bg-blue-100 dark:bg-[var(--accent)]/40 shadow-sm dark:shadow-[0_0_15px_rgba(47,47,228,0.5)]"
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}

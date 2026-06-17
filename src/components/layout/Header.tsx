@@ -26,7 +26,7 @@ export default function Header() {
             alt="MA-H Logo"
             width={50}
             height={50}
-            className="object-contain dark:hidden scale-[1.5]"
+            className="object-contain dark:hidden"
           />
           <Image
             src="/images/logo/logo-theme-dark.png"

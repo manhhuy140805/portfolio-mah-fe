@@ -13,7 +13,7 @@ export default function EducationTimeline() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl"
           >
             Education & Journey
           </motion.h2>
@@ -41,20 +41,20 @@ export default function EducationTimeline() {
                       whileInView={{ opacity: 1, x: 0, y: 0 }}
                       viewport={{ once: true, margin: "-100px" }}
                       transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
-                      className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-colors hover:border-white/20 hover:bg-white/10"
+                      className="group relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-zinc-300 dark:hover:border-white/20 hover:bg-white dark:hover:bg-white/10 hover:shadow-xl dark:hover:shadow-none"
                     >
                       {/* Glow on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-purple-400/5 dark:from-blue-500/5 dark:to-purple-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       
                       <div className="relative z-10">
                         <div className={`mb-3 flex items-center gap-3 text-sm font-semibold text-blue-400 ${isEven ? 'sm:justify-end' : ''}`}>
                           <GraduationCap className="h-4 w-4" />
                           <span>{item.years}</span>
                         </div>
-                        <h3 className="mb-3 text-xl font-bold text-white">
+                        <h3 className="mb-3 text-xl font-bold text-zinc-900 dark:text-white">
                           {item.title}
                         </h3>
-                        <p className="text-sm leading-relaxed text-zinc-400">
+                        <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
                           {item.description}
                         </p>
                       </div>

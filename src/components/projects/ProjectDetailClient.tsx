@@ -14,11 +14,13 @@ type ProjectDetailClientProps = {
 
 export default function ProjectDetailClient({ project }: ProjectDetailClientProps) {
   const [isInteractive, setIsInteractive] = useState(false);
+  const [isBodyLocked, setIsBodyLocked] = useState(false);
   const iframeContainerRef = useRef<HTMLDivElement>(null);
 
   // Lock body scroll when interacting with iframe to prevent scroll chaining
+  // We use a separate state to delay the lock, allowing smooth scroll to finish first.
   useEffect(() => {
-    if (isInteractive) {
+    if (isBodyLocked) {
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = "hidden";
       document.body.style.paddingRight = `${scrollbarWidth}px`;
@@ -30,10 +32,10 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
       document.body.style.overflow = "";
       document.body.style.paddingRight = "";
     };
-  }, [isInteractive]);
+  }, [isBodyLocked]);
 
   return (
-    <main className="min-h-screen bg-[var(--background)] pb-24 pt-32 text-zinc-900 dark:text-white">
+    <main className="min-h-screen bg-[var(--background)] pb-24 pt-20 text-zinc-900 dark:text-white">
       {/* Dynamic Background */}
       <div className="pointer-events-none absolute inset-0 flex justify-center overflow-hidden z-0">
         <div className="absolute top-[-10%] h-[500px] w-[800px] animate-pulse-glow rounded-full bg-[var(--accent)]/5 blur-[120px]" />
@@ -110,33 +112,52 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
         >
           <div className="md:col-span-2">
             <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">Overview</h2>
-            <p className="text-lg text-zinc-400 leading-relaxed">
+            <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
               {project.description}
             </p>
             {/* Placeholder for more context - you can add this to your data later */}
-            <p className="mt-4 text-lg text-zinc-400 leading-relaxed">
+            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
               This project required a deep dive into complex user flows, optimizing performance, and ensuring a visually stunning interface that aligns perfectly with modern design standards.
             </p>
           </div>
           
-          <div className="flex flex-col gap-8 rounded-2xl bg-white/5 border border-white/10 p-6 shadow-xl">
+          <div className="flex flex-col gap-8 rounded-2xl bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 p-6 shadow-xl dark:shadow-none">
             {project.role && (
               <div>
                 <h3 className="text-xs font-bold text-[var(--accent-cyan)] uppercase tracking-widest mb-2">My Role</h3>
-                <p className="text-zinc-200 font-medium">{project.role}</p>
+                <p className="text-zinc-900 dark:text-zinc-200 font-medium">{project.role}</p>
               </div>
             )}
             {project.outcome && (
               <div>
                 <h3 className="text-xs font-bold text-[var(--accent-cyan)] uppercase tracking-widest mb-2">Outcome</h3>
-                <p className="text-zinc-200 font-medium">{project.outcome}</p>
+                <p className="text-zinc-900 dark:text-zinc-200 font-medium">{project.outcome}</p>
+              </div>
+            )}
+            {(project.frontendDeploy || project.backendDeploy) && (
+              <div>
+                <h3 className="text-xs font-bold text-[var(--accent-cyan)] uppercase tracking-widest mb-2">Deployment</h3>
+                <div className="flex flex-col gap-1.5">
+                  {project.frontendDeploy && (
+                    <div className="flex justify-between items-center border-b border-zinc-100 dark:border-white/5 pb-1">
+                      <span className="text-sm text-zinc-500 dark:text-zinc-400">Frontend</span>
+                      <span className="text-sm font-semibold text-zinc-900 dark:text-zinc-200">{project.frontendDeploy}</span>
+                    </div>
+                  )}
+                  {project.backendDeploy && (
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-zinc-500 dark:text-zinc-400">Backend</span>
+                      <span className="text-sm font-semibold text-zinc-900 dark:text-zinc-200">{project.backendDeploy}</span>
+                    </div>
+                  )}
+                </div>
               </div>
             )}
             <div>
               <h3 className="text-xs font-bold text-[var(--accent-cyan)] uppercase tracking-widest mb-3">Technologies</h3>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
-                  <span key={tech} className="px-3 py-1 text-xs font-medium rounded-md bg-black/40 border border-white/10 text-zinc-300">
+                  <span key={tech} className="px-3 py-1 text-xs font-medium rounded-md bg-zinc-100 dark:bg-black/40 border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-zinc-300">
                     {tech}
                   </span>
                 ))}
@@ -155,40 +176,45 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
             {/* Dynamic Glowing Backdrop */}
             <motion.div 
               initial={{ opacity: 0 }}
-              animate={{ opacity: isInteractive ? 0.4 : 0.15 }}
+              animate={{ opacity: isInteractive ? 0.6 : 0.25 }}
               transition={{ duration: 0.7 }}
               className="absolute inset-0 top-24 -inset-x-4 rounded-[2rem] bg-gradient-to-r from-[var(--accent)] via-[var(--accent-cyan)] to-[var(--accent)] blur-2xl transition-all duration-500" 
             />
             
             <motion.div 
+              ref={iframeContainerRef}
               initial={{ opacity: 0, y: 30 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="relative overflow-hidden rounded-2xl border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)] bg-black/40 backdrop-blur-md z-10"
+              className="relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-white/10 shadow-2xl dark:shadow-[0_0_40px_rgba(0,0,0,0.5)] bg-white/80 dark:bg-black/40 backdrop-blur-md z-10"
             >
             {/* Browser Header */}
-            <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
+            <div className="flex items-center gap-2 border-b border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 px-4 py-3">
               <div className="flex gap-1.5">
                 <div className="h-3 w-3 rounded-full bg-red-500/80" />
                 <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
                 <div className="h-3 w-3 rounded-full bg-green-500/80" />
               </div>
-              <div className="mx-auto flex h-6 w-full max-w-sm items-center justify-center rounded-md bg-black/30 px-3 text-[11px] text-zinc-500 font-mono truncate">
+              <div className="mx-auto flex h-6 w-full max-w-sm items-center justify-center rounded-md bg-zinc-200 dark:bg-black/30 px-3 text-[11px] text-zinc-600 dark:text-zinc-500 font-mono truncate shadow-inner">
                 {project.demoUrl.replace("https://", "").replace("http://", "")}
               </div>
             </div>
             {/* Iframe */}
             <div 
-              ref={iframeContainerRef}
-              className="relative w-full aspect-[16/10] md:aspect-[16/9] bg-zinc-950 overflow-hidden"
-              onMouseLeave={() => setIsInteractive(false)}
+              className="relative w-full aspect-[16/10] md:aspect-[16/9] bg-zinc-100 dark:bg-zinc-950 overflow-hidden"
+              onMouseLeave={() => {
+                setIsInteractive(false);
+                setIsBodyLocked(false);
+              }}
             >
               {!isInteractive && (
                 <div 
-                  className="absolute inset-0 z-10 flex items-center justify-center bg-black/20 hover:bg-black/10 transition-colors cursor-pointer"
+                  className="absolute inset-0 z-10 flex items-center justify-center bg-white/50 hover:bg-white/30 dark:bg-black/20 dark:hover:bg-black/10 transition-colors cursor-pointer"
                   onClick={() => {
-                    setIsInteractive(true);
                     iframeContainerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    setIsInteractive(true);
+                    // Delay body lock to let the smooth scroll animation finish
+                    setTimeout(() => setIsBodyLocked(true), 800);
                   }}
                 >
                   <span className="rounded-full bg-[var(--accent)]/90 px-6 py-2.5 text-sm font-semibold text-white shadow-xl backdrop-blur-md transition-transform hover:scale-105">

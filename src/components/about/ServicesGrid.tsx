@@ -20,7 +20,7 @@ export default function ServicesGrid() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl"
           >
             Core Competencies
           </motion.h2>
@@ -29,7 +29,7 @@ export default function ServicesGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-lg text-zinc-400"
+            className="mt-4 text-lg text-zinc-600 dark:text-zinc-400"
           >
             The unique blend of skills I bring to every project.
           </motion.p>
@@ -47,22 +47,22 @@ export default function ServicesGrid() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-sm backdrop-blur-sm transition-colors hover:border-white/20 hover:bg-white/10"
+                className="group relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 shadow-sm backdrop-blur-sm transition-all hover:border-zinc-300 dark:hover:border-white/20 hover:bg-white dark:hover:bg-white/10 hover:shadow-xl dark:hover:shadow-none"
               >
                 {/* Glow effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-purple-400/5 dark:from-blue-500/10 dark:to-purple-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 
                 <div className="relative z-10">
-                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-blue-400 shadow-inner transition-colors group-hover:bg-blue-400/10 group-hover:text-blue-300">
+                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 text-blue-400 shadow-inner transition-colors group-hover:bg-blue-400/10 group-hover:text-blue-300">
                     <Icon className="h-6 w-6" />
                   </div>
                   <p className="mb-2 text-sm font-semibold text-blue-400">
                     {service.metric}
                   </p>
-                  <h3 className="mb-3 text-xl font-semibold text-white">
+                  <h3 className="mb-3 text-xl font-semibold text-zinc-900 dark:text-white">
                     {service.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-zinc-400">
+                  <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
                     {service.description}
                   </p>
                 </div>

@@ -50,7 +50,7 @@ export default function AboutHero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-medium text-white shadow-sm backdrop-blur-md"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 px-3 py-1.5 text-sm font-medium text-zinc-900 dark:text-white shadow-sm backdrop-blur-md"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-cyan)]" />
               About Me
@@ -59,7 +59,7 @@ export default function AboutHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
+              className="mt-6 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl lg:text-6xl"
             >
               Building digital <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent)] bg-clip-text text-transparent">
@@ -71,7 +71,7 @@ export default function AboutHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mt-6 max-w-lg text-lg leading-8 text-zinc-400"
+              className="mt-6 max-w-lg text-lg leading-8 text-zinc-600 dark:text-zinc-400"
             >
               I am a 3rd-year IT student passionate about turning complex problems into elegant, scalable web applications. Combining design sensibilities with robust engineering to create seamless user journeys.
             </motion.p>
@@ -95,7 +95,7 @@ export default function AboutHero() {
             className="relative mx-auto w-full max-w-md lg:max-w-none"
           >
             {/* Image container with glow and tilt effect */}
-            <div className="relative z-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2 shadow-2xl backdrop-blur-sm">
+            <div className="relative z-10 overflow-hidden rounded-2xl border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 p-2 shadow-2xl backdrop-blur-sm">
               <div className="relative aspect-[4/5] overflow-hidden rounded-xl sm:aspect-[3/4] lg:aspect-[4/5] group">
                 <Image
                   alt="About page visual reference"

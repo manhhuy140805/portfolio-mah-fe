@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function BlogComingSoon() {
   return (
-    <div className="min-h-screen bg-[#030712] flex flex-col items-center justify-center relative overflow-hidden px-6 font-sans">
+    <div className="min-h-screen bg-zinc-50 dark:bg-[#030712] flex flex-col items-center justify-center relative overflow-hidden px-6 font-sans">
       
       {/* Dynamic Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
@@ -48,9 +48,9 @@ export default function BlogComingSoon() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.08] backdrop-blur-md mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-white/[0.03] border border-zinc-300 dark:border-white/[0.08] backdrop-blur-md mb-8">
             <Sparkles className="w-4 h-4 text-emerald-400" />
-            <span className="text-sm font-medium text-gray-300 tracking-wide uppercase">Blog & Articles</span>
+            <span className="text-sm font-medium text-zinc-700 dark:text-gray-300 tracking-wide uppercase">Blog & Articles</span>
           </div>
         </motion.div>
 
@@ -60,7 +60,7 @@ export default function BlogComingSoon() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6"
         >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-emerald-100 to-white drop-shadow-sm">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-900 dark:from-white via-emerald-600 dark:via-emerald-100 to-zinc-900 dark:to-white drop-shadow-sm">
             Coming Soon
           </span>
           <br />
@@ -73,7 +73,7 @@ export default function BlogComingSoon() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
+          className="text-zinc-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
         >
           I'm preparing a space to share my thoughts, devlogs, and tutorials about frontend development, UI/UX design, and technology. 
           Stay tuned for insightful articles and coding experiences!
@@ -86,13 +86,13 @@ export default function BlogComingSoon() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="flex gap-6 mb-12"
         >
-          <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.05] shadow-[0_0_30px_-10px_rgba(16,185,129,0.2)] backdrop-blur-xl">
+          <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.02] border border-zinc-200 dark:border-white/[0.05] shadow-[0_0_30px_-10px_rgba(16,185,129,0.2)] backdrop-blur-xl">
             <BookOpen className="w-8 h-8 text-emerald-400" />
           </div>
-          <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.05] shadow-[0_0_30px_-10px_rgba(20,184,166,0.2)] backdrop-blur-xl -translate-y-4">
+          <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.02] border border-zinc-200 dark:border-white/[0.05] shadow-[0_0_30px_-10px_rgba(20,184,166,0.2)] backdrop-blur-xl -translate-y-4">
             <PenTool className="w-8 h-8 text-teal-400" />
           </div>
-          <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.05] shadow-[0_0_30px_-10px_rgba(6,182,212,0.2)] backdrop-blur-xl">
+          <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.02] border border-zinc-200 dark:border-white/[0.05] shadow-[0_0_30px_-10px_rgba(6,182,212,0.2)] backdrop-blur-xl">
             <Coffee className="w-8 h-8 text-cyan-400" />
           </div>
         </motion.div>
@@ -105,7 +105,7 @@ export default function BlogComingSoon() {
         >
           <Link 
             href="/" 
-            className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] text-white font-medium transition-all duration-300 w-full sm:w-auto"
+            className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-zinc-100 dark:bg-white/[0.05] hover:bg-zinc-200 dark:hover:bg-white/[0.1] border border-zinc-300 dark:border-white/[0.1] text-zinc-900 dark:text-white font-medium transition-all duration-300 w-full sm:w-auto"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             Back to Home

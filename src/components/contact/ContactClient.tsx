@@ -47,12 +47,15 @@ export default function ContactClient() {
           
           {/* Left Column: Text & Context */}
           <div className="w-full lg:w-[45%] flex flex-col justify-center">
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 rounded-full border border-[var(--accent-cyan)]/30 bg-[var(--accent-cyan)]/10 px-4 py-2 text-sm font-semibold tracking-wide text-[var(--accent-cyan)] dark:text-[#4db8ff] backdrop-blur-md mb-8 w-fit shadow-sm"
             >
-              <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent-cyan)]"></span>
+              <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent-cyan)] animate-pulse"></span>
               Available for New Opportunities
-            </div>
+            </motion.div>
             
             <motion.h1
               initial={{ opacity: 0, y: 20 }}

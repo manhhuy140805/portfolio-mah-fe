@@ -4,8 +4,10 @@ import { motion, Variants } from "framer-motion";
 import { Mail, MapPin, Download, ArrowUpRight, Copy, CheckCircle2 } from "lucide-react";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function ContactClient() {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
@@ -54,7 +56,7 @@ export default function ContactClient() {
               className="inline-flex items-center gap-2 rounded-full border border-(--accent-cyan)/30 bg-(--accent-cyan)/10 px-4 py-2 text-sm font-semibold tracking-wide text-(--accent-cyan) dark:text-[#4db8ff] backdrop-blur-md mb-8 w-fit shadow-sm"
             >
               <span className="h-2.5 w-2.5 rounded-full bg-(--accent-cyan) animate-pulse"></span>
-              Available for New Opportunities
+              {t("contact_page.status")}
             </motion.div>
             
             <motion.h1
@@ -63,9 +65,9 @@ export default function ContactClient() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl mb-4"
             >
-              Let's build <br className="hidden lg:block" />
+              {t("contact_page.title_1")} <br className="hidden lg:block" />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-(--accent) to-(--accent-cyan)">
-                something great.
+                {t("contact_page.title_2")}
               </span>
             </motion.h1>
             
@@ -75,7 +77,7 @@ export default function ContactClient() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-base md:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 max-w-lg mb-8"
             >
-              Whether you have a project in mind, a role to fill, or just want to chat about tech—I'm always open to connecting.
+              {t("contact_page.description")}
             </motion.p>
             
             <motion.div
@@ -86,14 +88,14 @@ export default function ContactClient() {
             >
                 <div className="flex -space-x-3">
                   <div className="w-10 h-10 rounded-full border-2 border-background bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center overflow-hidden">
-                     <span className="text-[10px] font-bold text-zinc-500">You</span>
+                     <span className="text-[10px] font-bold text-zinc-500">{t("contact_page.you")}</span>
                   </div>
                   <div className="w-10 h-10 rounded-full border-2 border-background bg-linear-to-br from-(--accent) to-(--accent-cyan) flex items-center justify-center text-white font-bold text-base">
                      M
                   </div>
                 </div>
                 <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
-                  Ready to collaborate.
+                  {t("contact_page.collab")}
                 </p>
             </motion.div>
           </div>
@@ -123,12 +125,12 @@ export default function ContactClient() {
                     className="flex items-center gap-2 text-xs font-semibold text-zinc-700 dark:text-zinc-300 bg-white dark:bg-white/10 hover:bg-zinc-100 dark:hover:bg-white/20 px-3 py-2 rounded-full border border-black/10 dark:border-white/10 shadow-sm transition-all"
                   >
                     {copied ? <CheckCircle2 size={14} className="text-green-500" /> : <Copy size={14} />}
-                    {copied ? "Copied!" : "Copy Email"}
+                    {copied ? t("contact_page.copied") : t("contact_page.copy_email")}
                   </button>
                 </div>
                 
                 <div className="relative z-10">
-                  <p className="text-xs font-semibold text-zinc-500 dark:text-zinc-400 mb-1 uppercase tracking-wider">Start a conversation</p>
+                  <p className="text-xs font-semibold text-zinc-500 dark:text-zinc-400 mb-1 uppercase tracking-wider">{t("contact_page.start_conversation")}</p>
                   <a href="mailto:trandinhmanhhuy05@gmail.com" className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground flex items-center gap-2 group/link break-all sm:break-normal hover:text-(--accent) transition-colors">
                     trandinhmanhhuy05<br className="sm:hidden"/>@gmail.com
                     <ArrowUpRight size={20} className="text-zinc-400 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 group-hover/link:text-(--accent) shrink-0 hidden sm:block transition-all" />
@@ -149,8 +151,8 @@ export default function ContactClient() {
                     <Download size={24} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold">Resume / CV</h3>
-                    <p className="text-xs text-white/80 mt-1 font-medium">Click to download</p>
+                    <h3 className="text-lg font-bold">{t("contact_page.resume")}</h3>
+                    <p className="text-xs text-white/80 mt-1 font-medium">{t("contact_page.click_download")}</p>
                   </div>
                 </a>
               </motion.div>
@@ -166,8 +168,8 @@ export default function ContactClient() {
                     <MapPin size={18} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-0.5">Location</p>
-                    <h3 className="text-sm font-bold text-foreground">Da Nang, VN</h3>
+                    <p className="text-[10px] font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-0.5">{t("contact_page.location")}</p>
+                    <h3 className="text-sm font-bold text-foreground">{t("contact_page.location_value")}</h3>
                   </div>
                 </motion.div>
 

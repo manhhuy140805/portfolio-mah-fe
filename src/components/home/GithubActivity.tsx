@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import SectionTitle from "@/src/components/ui/SectionTitle";
 import dynamic from "next/dynamic";
 import { useTheme } from "next-themes";
@@ -18,6 +19,7 @@ const GitHubCalendar = dynamic(
 export default function GithubActivity() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useTranslation();
   
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -40,9 +42,9 @@ export default function GithubActivity() {
           className="flex flex-col items-center"
         >
           <SectionTitle
-            eyebrow="My GitHub Activity"
-            title="Code Contributions & Stats"
-            description="A visual summary of my coding activity and open-source contributions."
+            eyebrow={t("github.eyebrow")}
+            title={t("github.title")}
+            description={t("github.description")}
           />
         </motion.div>
 
@@ -73,15 +75,15 @@ export default function GithubActivity() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10">
                   <AnimatedCounter value={327} suffix="+" className="text-3xl font-bold text-(--accent-cyan)" />
-                  <span className="text-sm text-(--muted) mt-1">Commits</span>
+                  <span className="text-sm text-(--muted) mt-1">{t("github.commits")}</span>
                 </div>
                 <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10">
                   <AnimatedCounter value={10} suffix="+" className="text-3xl font-bold text-[#39d353]" />
-                  <span className="text-sm text-(--muted) mt-1">Projects</span>
+                  <span className="text-sm text-(--muted) mt-1">{t("github.projects")}</span>
                 </div>
               </div>
               <div className="mt-2">
-                <h4 className="text-sm font-medium text-(--muted) uppercase tracking-wider mb-2">Core Stack</h4>
+                <h4 className="text-sm font-medium text-(--muted) uppercase tracking-wider mb-2">{t("github.core_stack")}</h4>
                 <p className="text-lg font-semibold tracking-wide bg-linear-to-r from-blue-400 via-green-400 to-purple-400 bg-clip-text text-transparent">
                   NestJS • Next.js • PostgreSQL
                 </p>
@@ -115,7 +117,7 @@ export default function GithubActivity() {
             className="group flex items-center gap-3 rounded-full bg-zinc-200 dark:bg-white/5 border border-zinc-300 dark:border-white/10 px-8 py-4 text-sm font-bold text-zinc-900 dark:text-white transition-all hover:bg-zinc-300 dark:hover:bg-white/10 hover:border-zinc-400 dark:hover:border-white/30 hover:scale-105"
           >
             <FaGithub className="h-5 w-5" />
-            View Full Profile on GitHub
+            {t("github.view_profile")}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
         </motion.div>

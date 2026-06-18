@@ -8,6 +8,7 @@ import Button from "@/src/components/ui/Button";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/src/lib/constants";
 import { ThemeToggle } from "@/src/components/ui/ThemeToggle";
+import { LanguageSwitcher } from "@/src/components/ui/LanguageSwitcher";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -27,6 +28,7 @@ export default function Header() {
             width={50}
             height={50}
             className="object-contain dark:hidden"
+            priority
           />
           <Image
             src="/images/logo/logo-theme-dark.png"
@@ -34,6 +36,7 @@ export default function Header() {
             width={50}
             height={50}
             className="object-contain hidden dark:block"
+            priority
           />
           MA-H
         </Link>
@@ -45,6 +48,7 @@ export default function Header() {
 
         {/* Right: Actions */}
         <div className="flex items-center gap-4">
+          <LanguageSwitcher />
           <ThemeToggle />
           <div className="hidden lg:block">
             <Button href="/cv.pdf">

@@ -3,21 +3,25 @@ import type { Skill } from "@/src/types/skill.type";
 
 export const serviceCards = [
   {
+    id: "observation",
     title: "Visual Memory & Observation",
     metric: "Pixel-Perfect",
     description: "Strong visual memory and keen attention to detail. I can quickly spot UI inconsistencies and debug complex code patterns at a glance.",
   },
   {
+    id: "agile",
     title: "Agile Problem Solving",
     metric: "Fast Reflexes",
     description: "Quick thinking and rapid adaptation to new challenges. Able to troubleshoot bugs efficiently and handle high-pressure situations.",
   },
   {
+    id: "word",
     title: "Microsoft Word Mastery",
     metric: "High Proficiency",
     description: "Expert-level skills in Microsoft Word. Highly proficient in fast typing, advanced text formatting, and efficient information processing.",
   },
   {
+    id: "fullstack",
     title: "Full-Stack Development",
     metric: "Robust Systems",
     description: "Combining my observation skills with a strong tech stack to build scalable, responsive, and high-performance web applications.",
@@ -25,10 +29,10 @@ export const serviceCards = [
 ];
 
 export const portfolioStats = [
-  { value: 3, suffix: "rd", label: "Year IT Student" },
-  { value: 15, suffix: "+", label: "Academic Projects" },
-  { value: 4, suffix: "+", label: "Core Technologies" },
-  { value: 100, suffix: "%", label: "Passion for Coding" },
+  { id: "year", value: 3, suffix: "rd", label: "Year IT Student" },
+  { id: "projects", value: 10, suffix: "+", label: "Academic Projects" },
+  { id: "tech", value: 4, suffix: "+", label: "Core Technologies" },
+  { id: "passion", value: 100, suffix: "%", label: "Passion for Coding" },
 ];
 
 export const designSkills: Skill[] = [
@@ -107,6 +111,7 @@ export const portfolioProjects: Project[] = [
 
 export const educationItems = [
   {
+    id: "ute",
     title: "University of Technology and Education, the University of Da Nang",
     years: "2023 - Present",
     description: "Studying Information Technology with a focus on software engineering, web development, and system design.",

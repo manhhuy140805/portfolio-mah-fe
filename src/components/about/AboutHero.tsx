@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import Button from "@/src/components/ui/Button";
 import aboutPreview from "@/src/UI/about.png";
 
 export default function AboutHero() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative overflow-hidden pt-2 pb-16 lg:pt-20 lg:pb-24">
       {/* Dynamic Background Grid */}
@@ -53,7 +56,7 @@ export default function AboutHero() {
               className="inline-flex items-center gap-2 rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 px-3 py-1.5 text-sm font-medium text-zinc-900 dark:text-white shadow-sm backdrop-blur-md"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-cyan)]" />
-              About Me
+              {t("about_page.hero.eyebrow")}
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -61,11 +64,11 @@ export default function AboutHero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-6 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl lg:text-6xl"
             >
-              Building digital <br className="hidden sm:block" />
+              {t("about_page.hero.title_1")} <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent)] bg-clip-text text-transparent">
-                experiences
+                {t("about_page.hero.title_2")}
               </span>{" "}
-              with purpose.
+              {t("about_page.hero.title_3")}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -73,7 +76,7 @@ export default function AboutHero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-6 max-w-lg text-lg leading-8 text-zinc-600 dark:text-zinc-400"
             >
-              I am a 3rd-year IT student passionate about turning complex problems into elegant, scalable web applications. Combining design sensibilities with robust engineering to create seamless user journeys.
+              {t("about_page.hero.description")}
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -81,9 +84,9 @@ export default function AboutHero() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="mt-8 flex flex-wrap gap-4"
             >
-              <Button href="/projects">See My Work</Button>
+              <Button href="/projects">{t("about_page.hero.see_work")}</Button>
               <Button href="/contact" variant="secondary">
-                Get In Touch
+                {t("about_page.hero.get_in_touch")}
               </Button>
             </motion.div>
           </motion.div>

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import Button from "@/src/components/ui/Button";
 import { portfolioStats } from "@/src/lib/portfolio-data";
 import profileImage from "@/public/images/dev/anh-nua-nguoi.png";
@@ -6,6 +9,8 @@ import Typewriter from "@/src/components/ui/Typewriter";
 import AnimatedCounter from "@/src/components/ui/AnimatedCounter";
 
 export default function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative overflow-hidden border-b border-white/10 bg-background">
       <video
@@ -23,20 +28,20 @@ export default function HeroSection() {
           <div className="absolute top-0 left-0 -z-10 h-72 w-72 rounded-full bg-sky-300 dark:bg-(--accent-cyan) opacity-30 blur-[100px] animate-pulse-glow"></div>
           
           <p className="animate-fade-in-up inline-flex rounded-md bg-(--surface-cream) px-3 py-2 text-sm font-semibold uppercase text-zinc-950" style={{ animationDelay: '0s' }}>
-            3rd-Year IT Student
+            {t("hero.role")}
           </p>
           <h1 className="animate-fade-in-up mt-4 max-w-3xl text-4xl sm:text-5xl font-bold leading-tight text-zinc-900 dark:text-white md:text-6xl" style={{ animationDelay: '0.1s' }}>
             Mạnh Huy
           </h1>
           <p className="animate-fade-in-up mt-6 max-w-2xl text-sm sm:text-base leading-7 sm:leading-8 text-zinc-600 dark:text-zinc-300 md:text-lg" style={{ animationDelay: '0.2s' }}>
-            I am a 3rd-year student passionate about web development. I focus on building modern UI/UX experiences, and continuously learning new technologies to hone my skills.
+            {t("hero.description")}
           </p>
           <div className="animate-fade-in-up mt-2 h-12 sm:h-8 max-w-2xl text-sm sm:text-base leading-6 sm:leading-8 text-(--accent) dark:text-(--accent-cyan) font-medium md:text-lg" style={{ animationDelay: '0.3s' }}>
             <Typewriter 
               phrases={[
-                "Prioritizing user experience over just visual UI.",
-                "Designing intuitive, accessible, and scalable systems.",
-                "Writing clean code to build high-performance products."
+                t("hero.typing_1"),
+                t("hero.typing_2"),
+                t("hero.typing_3")
               ]} 
               typingSpeed={40}
               deletingSpeed={20}
@@ -44,20 +49,24 @@ export default function HeroSection() {
             />
           </div>
           <div className="animate-fade-in-up mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3" style={{ animationDelay: '0.4s' }}>
-            <Button href="/contact">Hire Portfolio</Button>
+            <Button href="/contact">{t("hero.hire")}</Button>
             <Button href="/projects" variant="secondary">
-              Explore Work
+              {t("hero.explore")}
             </Button>
           </div>
           <div className="animate-fade-in-up mt-10 sm:mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4" style={{ animationDelay: '0.5s' }}>
             {portfolioStats.map((stat) => (
               <div
                 className="group rounded-lg border border-black/10 bg-(--surface-cream) p-3 sm:p-4 text-zinc-950 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-(--accent)/20 dark:hover:shadow-(--accent-cyan)/20"
-                key={stat.label}
+                key={stat.id}
               >
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} className="text-2xl sm:text-3xl font-bold" />
+                <AnimatedCounter 
+                  value={stat.value} 
+                  suffix={t(`hero.stats.${stat.id}.suffix`, { defaultValue: stat.suffix })} 
+                  className="text-2xl sm:text-3xl font-bold" 
+                />
                 <p className="mt-1 text-xs leading-4 sm:leading-5 text-zinc-600">
-                  {stat.label}
+                  {t(`hero.stats.${stat.id}.label`, { defaultValue: stat.label })}
                 </p>
               </div>
             ))}

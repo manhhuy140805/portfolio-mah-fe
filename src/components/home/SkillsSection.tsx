@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import SectionTitle from "@/src/components/ui/SectionTitle";
 import { designSkills, developmentSkills } from "@/src/lib/portfolio-data";
 import { 
@@ -33,6 +34,7 @@ const iconMap: Record<string, React.ReactNode> = {
 export default function SkillsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useTranslation();
 
   // Combine and duplicate skills for continuous marquee effect
   const allSkills = [...developmentSkills, ...designSkills];
@@ -53,9 +55,9 @@ export default function SkillsSection() {
           className="text-center flex flex-col items-center"
         >
           <SectionTitle
-            eyebrow="My Tech Stack"
-            title="Tools & Technologies I Work With"
-            description="A comprehensive list of technologies I use to bring ideas to life."
+            eyebrow={t("skills.eyebrow")}
+            title={t("skills.title")}
+            description={t("skills.description")}
           />
         </motion.div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { serviceCards } from "@/src/lib/portfolio-data";
 import { Sparkles, Zap, FileText, Code2 } from "lucide-react";
 
@@ -12,6 +13,8 @@ const iconMap = {
 };
 
 export default function ServicesGrid() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
@@ -22,7 +25,7 @@ export default function ServicesGrid() {
             viewport={{ once: true }}
             className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl"
           >
-            Core Competencies
+            {t("about_page.services.title")}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -31,7 +34,7 @@ export default function ServicesGrid() {
             transition={{ delay: 0.1 }}
             className="mt-4 text-lg text-zinc-600 dark:text-zinc-400"
           >
-            The unique blend of skills I bring to every project.
+            {t("about_page.services.description")}
           </motion.p>
         </div>
 
@@ -41,7 +44,7 @@ export default function ServicesGrid() {
             
             return (
               <motion.article
-                key={service.title}
+                key={service.id || service.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -57,13 +60,13 @@ export default function ServicesGrid() {
                     <Icon className="h-6 w-6" />
                   </div>
                   <p className="mb-2 text-sm font-semibold text-blue-400">
-                    {service.metric}
+                    {t(`about.services.${service.id}.metric`, { defaultValue: service.metric })}
                   </p>
                   <h3 className="mb-3 text-xl font-semibold text-zinc-900 dark:text-white">
-                    {service.title}
+                    {t(`about.services.${service.id}.title`, { defaultValue: service.title })}
                   </h3>
                   <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                    {service.description}
+                    {t(`about.services.${service.id}.description`, { defaultValue: service.description })}
                   </p>
                 </div>
               </motion.article>

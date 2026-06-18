@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { educationItems } from "@/src/lib/portfolio-data";
 import { GraduationCap } from "lucide-react";
 
 export default function EducationTimeline() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative overflow-hidden py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
@@ -15,7 +18,7 @@ export default function EducationTimeline() {
             viewport={{ once: true }}
             className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl"
           >
-            Education & Journey
+            {t("about_page.education.title")}
           </motion.h2>
         </div>
 
@@ -27,7 +30,7 @@ export default function EducationTimeline() {
             {educationItems.map((item, index) => {
               const isEven = index % 2 === 0;
               return (
-                <div key={`${item.title}-${item.years}`} className="relative flex flex-col items-center sm:flex-row">
+                <div key={`${item.id || item.title}-${item.years}`} className="relative flex flex-col items-center sm:flex-row">
                   
                   {/* Timeline Node */}
                   <div className="absolute left-4 top-0 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border border-blue-500/30 bg-background shadow-[0_0_15px_rgba(59,130,246,0.5)] sm:top-1/2 sm:left-1/2 sm:-translate-y-1/2">
@@ -52,10 +55,10 @@ export default function EducationTimeline() {
                           <span>{item.years}</span>
                         </div>
                         <h3 className="mb-3 text-xl font-bold text-zinc-900 dark:text-white">
-                          {item.title}
+                          {t(`education_items.${item.id}.title`, { defaultValue: item.title })}
                         </h3>
                         <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                          {item.description}
+                          {t(`education_items.${item.id}.description`, { defaultValue: item.description })}
                         </p>
                       </div>
                     </motion.article>

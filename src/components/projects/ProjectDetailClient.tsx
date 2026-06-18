@@ -7,12 +7,14 @@ import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import type { Project } from "@/src/types/project.type";
+import { useTranslation } from "react-i18next";
 
 type ProjectDetailClientProps = {
   project: Project;
 };
 
 export default function ProjectDetailClient({ project }: ProjectDetailClientProps) {
+  const { t } = useTranslation();
   const [isInteractive, setIsInteractive] = useState(false);
   const [isBodyLocked, setIsBodyLocked] = useState(false);
   const iframeContainerRef = useRef<HTMLDivElement>(null);
@@ -47,29 +49,29 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
             <ArrowLeft className="h-4 w-4" />
-            Back to Projects
+            {t("projects_page.detail.back")}
           </Link>
           
           <div className="mt-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <div className="flex items-center gap-3 text-sm text-(--accent-cyan) font-medium mb-3">
-                <span className="px-3 py-1 rounded-full bg-(--accent-cyan)/10 border border-(--accent-cyan)/20">{project.category}</span>
+                <span className="px-3 py-1 rounded-full bg-(--accent-cyan)/10 border border-(--accent-cyan)/20">{t(`projects_page.categories.${project.category}`, { defaultValue: project.category })}</span>
                 <span>•</span>
                 <span>{project.year}</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">{project.title}</h1>
+              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">{t(`portfolio_projects.${project.id}.title`, { defaultValue: project.title })}</h1>
             </div>
             
             {/* Actions */}
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               {project.demoUrl && (
                 <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-(--accent) hover:bg-(--accent-warm) text-white font-medium transition-colors shadow-[0_0_15px_rgba(47,47,228,0.4)]">
-                  Visit Live Site <ExternalLink className="h-4 w-4" />
+                  {t("projects_page.detail.visit_live")} <ExternalLink className="h-4 w-4" />
                 </a>
               )}
               {project.sourceUrl && (
                 <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-200 dark:bg-white/10 hover:bg-zinc-300 dark:hover:bg-white/20 border border-zinc-300 dark:border-white/10 text-zinc-900 dark:text-white font-medium transition-colors">
-                  <FaGithub className="h-4 w-4" /> Source
+                  <FaGithub className="h-4 w-4" /> {t("projects_page.detail.source")}
                 </a>
               )}
             </div>
@@ -111,42 +113,42 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12"
         >
           <div className="md:col-span-2">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">Overview</h2>
-            <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              {project.description}
-            </p>
-            {/* Placeholder for more context - you can add this to your data later */}
-            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              This project required a deep dive into complex user flows, optimizing performance, and ensuring a visually stunning interface that aligns perfectly with modern design standards.
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">{t("projects_page.detail.overview")}</h2>
+            <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed whitespace-pre-line">
+              {t(`portfolio_projects.${project.id}.description`, { defaultValue: project.description })}
             </p>
           </div>
           
           <div className="flex flex-col gap-8 rounded-2xl bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 p-6 shadow-xl dark:shadow-none">
             {project.role && (
               <div>
-                <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-2">My Role</h3>
-                <p className="text-zinc-900 dark:text-zinc-200 font-medium">{project.role}</p>
+                <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-2">{t("projects_page.detail.my_role")}</h3>
+                <p className="text-zinc-900 dark:text-zinc-200 font-medium">
+                  {t(`portfolio_projects.${project.id}.role`, { defaultValue: project.role })}
+                </p>
               </div>
             )}
             {project.outcome && (
               <div>
-                <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-2">Outcome</h3>
-                <p className="text-zinc-900 dark:text-zinc-200 font-medium">{project.outcome}</p>
+                <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-2">{t("projects_page.detail.outcome")}</h3>
+                <p className="text-zinc-900 dark:text-zinc-200 font-medium">
+                  {t(`portfolio_projects.${project.id}.outcome`, { defaultValue: project.outcome })}
+                </p>
               </div>
             )}
             {(project.frontendDeploy || project.backendDeploy) && (
               <div>
-                <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-2">Deployment</h3>
+                <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-2">{t("projects_page.detail.deployment")}</h3>
                 <div className="flex flex-col gap-1.5">
                   {project.frontendDeploy && (
                     <div className="flex justify-between items-center border-b border-zinc-100 dark:border-white/5 pb-1">
-                      <span className="text-sm text-zinc-500 dark:text-zinc-400">Frontend</span>
+                      <span className="text-sm text-zinc-500 dark:text-zinc-400">{t("projects_page.detail.frontend")}</span>
                       <span className="text-sm font-semibold text-zinc-900 dark:text-zinc-200">{project.frontendDeploy}</span>
                     </div>
                   )}
                   {project.backendDeploy && (
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-zinc-500 dark:text-zinc-400">Backend</span>
+                      <span className="text-sm text-zinc-500 dark:text-zinc-400">{t("projects_page.detail.backend")}</span>
                       <span className="text-sm font-semibold text-zinc-900 dark:text-zinc-200">{project.backendDeploy}</span>
                     </div>
                   )}
@@ -154,7 +156,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               </div>
             )}
             <div>
-              <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-3">Technologies</h3>
+              <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-3">{t("projects_page.detail.technologies")}</h3>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
                   <span key={tech} className="px-3 py-1 text-xs font-medium rounded-md bg-zinc-100 dark:bg-black/40 border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-zinc-300">
@@ -170,8 +172,8 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
         {project.demoUrl ? (
           <div className="relative mt-32 group">
             <div className="mb-10 text-center">
-              <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-3">Live Interactive Demo</h2>
-              <p className="text-zinc-400">Experience the product directly from this page.</p>
+              <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-3">{t("projects_page.detail.live_demo.title")}</h2>
+              <p className="text-zinc-400">{t("projects_page.detail.live_demo.subtitle")}</p>
             </div>
             {/* Dynamic Glowing Backdrop */}
             <motion.div 
@@ -218,7 +220,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                   }}
                 >
                   <span className="rounded-full bg-(--accent)/90 px-6 py-2.5 text-sm font-semibold text-white shadow-xl backdrop-blur-md transition-transform hover:scale-105">
-                    Click to Interact
+                    {t("projects_page.detail.live_demo.click")}
                   </span>
                 </div>
               )}
@@ -244,8 +246,8 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-32 flex aspect-video w-full flex-col items-center justify-center rounded-2xl border border-white/10 border-dashed bg-white/5"
           >
-             <p className="text-zinc-400">No live preview available.</p>
-             <p className="text-sm text-zinc-500">Image gallery coming soon.</p>
+             <p className="text-zinc-400">{t("projects_page.detail.no_preview.title")}</p>
+             <p className="text-sm text-zinc-500">{t("projects_page.detail.no_preview.subtitle")}</p>
           </motion.div>
         )}
       </div>

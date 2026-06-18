@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { portfolioStats } from "@/src/lib/portfolio-data";
 import AnimatedCounter from "@/src/components/ui/AnimatedCounter";
 
 export default function ExperienceStats() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative border-y border-white/5 bg-zinc-50 dark:bg-white/[0.02] py-20">
       <div className="mx-auto max-w-6xl px-6">
@@ -16,10 +19,10 @@ export default function ExperienceStats() {
             className="max-w-xl"
           >
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
-              Driven by <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">curiosity</span> and a passion for learning.
+              {t("about_page.experience.title_1")} <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">{t("about_page.experience.title_2")}</span> {t("about_page.experience.title_3")}
             </h2>
             <p className="text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-              As an active IT student, I continuously build, break, and learn. My journey isn't measured in decades, but in the intensity of my focus and the quality of the projects I deliver.
+              {t("about_page.experience.description")}
             </p>
           </motion.article>
           
@@ -42,7 +45,9 @@ export default function ExperienceStats() {
                     suffix={stat.suffix} 
                     className="text-4xl font-bold text-zinc-900 dark:text-white transition-all group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent sm:text-5xl" 
                   />
-                  <p className="mt-3 text-sm font-medium text-zinc-500 transition-colors group-hover:text-zinc-600 dark:hover:group-hover:text-zinc-400">{stat.label}</p>
+                  <p className="mt-3 text-sm font-medium text-zinc-500 transition-colors group-hover:text-zinc-600 dark:hover:group-hover:text-zinc-400">
+                    {t(`hero.stats.${stat.id}.label`, { defaultValue: stat.label })}
+                  </p>
                 </div>
               </motion.article>
             ))}

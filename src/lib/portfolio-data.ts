@@ -113,8 +113,3 @@ export const educationItems = [
   },
 ];
 
-export const pricingPlans = [
-  { name: "Starter", price: "$5.00", features: ["5 social accounts", "Free platform access", "24/7 support"] },
-  { name: "Basic", price: "$230.00", features: ["Premium assets", "Marketing platform", "Lifetime support"] },
-  { name: "Premium", price: "$45.00", features: ["5 social accounts", "Priority support", "Brand review"] },
-];

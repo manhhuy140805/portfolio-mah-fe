@@ -27,9 +27,9 @@ export default function GithubActivity() {
   const username = "manhhuy140805";
 
   return (
-    <section className="relative border-b border-zinc-200 dark:border-white/5 bg-[var(--background)] py-16 lg:py-28 overflow-hidden">
+    <section className="relative border-b border-zinc-200 dark:border-white/5 bg-background py-16 lg:py-28 overflow-hidden">
       {/* Decorative gradient */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[var(--accent)]/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-75 bg-(--accent)/10 rounded-full blur-[120px] pointer-events-none -z-10" />
 
       <div className="mx-auto w-full max-w-7xl px-6">
         <motion.div
@@ -53,7 +53,7 @@ export default function GithubActivity() {
           className="mt-16 flex flex-col items-center justify-center gap-12"
         >
           {/* GitHub Calendar Card */}
-          <div className="w-full overflow-x-auto rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-[var(--surface)]/40 p-6 md:p-10 shadow-lg backdrop-blur-sm transition-colors hover:border-zinc-300 dark:hover:border-white/20 flex justify-center">
+          <div className="w-full overflow-x-auto rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-(--surface)/40 p-6 md:p-10 shadow-lg backdrop-blur-sm transition-colors hover:border-zinc-300 dark:hover:border-white/20 flex justify-center">
             <GitHubCalendar
               username={username}
               colorScheme={isDark ? "dark" : "light"}
@@ -69,32 +69,32 @@ export default function GithubActivity() {
 
           {/* GitHub Stats Cards (Using github-readme-stats API) */}
           <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-2xl border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-[var(--surface)]/40 overflow-hidden shadow-lg backdrop-blur-sm transition-colors hover:border-zinc-300 dark:hover:border-white/20 flex flex-col justify-center p-8 gap-6 text-zinc-900 dark:text-white text-center">
+            <div className="rounded-2xl border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-(--surface)/40 overflow-hidden shadow-lg backdrop-blur-sm transition-colors hover:border-zinc-300 dark:hover:border-white/20 flex flex-col justify-center p-8 gap-6 text-zinc-900 dark:text-white text-center">
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10">
-                  <AnimatedCounter value={327} suffix="+" className="text-3xl font-bold text-[var(--accent-cyan)]" />
-                  <span className="text-sm text-[var(--muted)] mt-1">Commits</span>
+                  <AnimatedCounter value={327} suffix="+" className="text-3xl font-bold text-(--accent-cyan)" />
+                  <span className="text-sm text-(--muted) mt-1">Commits</span>
                 </div>
                 <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10">
                   <AnimatedCounter value={10} suffix="+" className="text-3xl font-bold text-[#39d353]" />
-                  <span className="text-sm text-[var(--muted)] mt-1">Projects</span>
+                  <span className="text-sm text-(--muted) mt-1">Projects</span>
                 </div>
               </div>
               <div className="mt-2">
-                <h4 className="text-sm font-medium text-[var(--muted)] uppercase tracking-wider mb-2">Core Stack</h4>
-                <p className="text-lg font-semibold tracking-wide bg-gradient-to-r from-blue-400 via-green-400 to-purple-400 bg-clip-text text-transparent">
+                <h4 className="text-sm font-medium text-(--muted) uppercase tracking-wider mb-2">Core Stack</h4>
+                <p className="text-lg font-semibold tracking-wide bg-linear-to-r from-blue-400 via-green-400 to-purple-400 bg-clip-text text-transparent">
                   NestJS • Next.js • PostgreSQL
                 </p>
               </div>
             </div>
-            <div className="rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-[var(--surface)]/40 overflow-hidden shadow-lg backdrop-blur-sm transition-colors hover:border-zinc-300 dark:hover:border-white/20 flex justify-center p-4">
+            <div className="rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-(--surface)/40 overflow-hidden shadow-lg backdrop-blur-sm transition-colors hover:border-zinc-300 dark:hover:border-white/20 flex justify-center p-4">
               <img
                 src={isDark 
                   ? `https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=transparent&hide_border=true&title_color=ffffff&text_color=9f9f9f&bg_color=00000000`
                   : `https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=transparent&hide_border=true&title_color=18181b&text_color=52525b&bg_color=00000000`
                 }
                 alt={`${username} Top Languages`}
-                className="w-full max-w-[450px]"
+                className="w-full max-w-112.5"
                 loading="lazy"
               />
             </div>

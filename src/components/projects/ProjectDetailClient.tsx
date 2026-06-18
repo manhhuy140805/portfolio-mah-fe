@@ -35,11 +35,11 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
   }, [isBodyLocked]);
 
   return (
-    <main className="min-h-screen bg-[var(--background)] pb-24 pt-20 text-zinc-900 dark:text-white">
+    <main className="min-h-screen bg-background pb-24 pt-20 text-zinc-900 dark:text-white">
       {/* Dynamic Background */}
       <div className="pointer-events-none absolute inset-0 flex justify-center overflow-hidden z-0">
-        <div className="absolute top-[-10%] h-[500px] w-[800px] animate-pulse-glow rounded-full bg-[var(--accent)]/5 blur-[120px]" />
-        <div className="absolute right-[-5%] top-[20%] h-[300px] w-[400px] animate-float-bg rounded-full bg-[var(--accent-cyan)]/5 blur-[100px]" />
+        <div className="absolute top-[-10%] h-125 w-200 animate-pulse-glow rounded-full bg-(--accent)/5 blur-[120px]" />
+        <div className="absolute right-[-5%] top-[20%] h-75 w-100 animate-float-bg rounded-full bg-(--accent-cyan)/5 blur-[100px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6">
@@ -52,8 +52,8 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           
           <div className="mt-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <div className="flex items-center gap-3 text-sm text-[var(--accent-cyan)] font-medium mb-3">
-                <span className="px-3 py-1 rounded-full bg-[var(--accent-cyan)]/10 border border-[var(--accent-cyan)]/20">{project.category}</span>
+              <div className="flex items-center gap-3 text-sm text-(--accent-cyan) font-medium mb-3">
+                <span className="px-3 py-1 rounded-full bg-(--accent-cyan)/10 border border-(--accent-cyan)/20">{project.category}</span>
                 <span>•</span>
                 <span>{project.year}</span>
               </div>
@@ -63,7 +63,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
             {/* Actions */}
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               {project.demoUrl && (
-                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] hover:bg-[var(--accent-warm)] text-white font-medium transition-colors shadow-[0_0_15px_rgba(47,47,228,0.4)]">
+                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-(--accent) hover:bg-(--accent-warm) text-white font-medium transition-colors shadow-[0_0_15px_rgba(47,47,228,0.4)]">
                   Visit Live Site <ExternalLink className="h-4 w-4" />
                 </a>
               )}
@@ -81,7 +81,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           initial={{ opacity: 0, scale: 0.95 }} 
           animate={{ opacity: 1, scale: 1 }} 
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative mt-12 w-full aspect-[21/9] md:aspect-[3/1] rounded-3xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl group"
+          className="relative mt-12 w-full aspect-21/9 md:aspect-3/1 rounded-3xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl group"
         >
           {project.imageUrl ? (
             <Image 
@@ -93,14 +93,14 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               priority
             />
           ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/20 via-zinc-900 to-[var(--accent-cyan)]/20 flex items-center justify-center">
+            <div className="absolute inset-0 bg-linear-to-br from-(--accent)/20 via-zinc-900 to-(--accent-cyan)/20 flex items-center justify-center">
               {/* Optional placeholder pattern */}
-              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:24px_24px]" />
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-size-[24px_24px]" />
               <p className="text-zinc-500 font-medium uppercase tracking-widest text-sm z-10">Cover Image Placeholder</p>
             </div>
           )}
           {/* Subtle overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] to-transparent opacity-60" />
+          <div className="absolute inset-0 bg-linear-to-t from-background to-transparent opacity-60" />
         </motion.div>
 
         {/* Introduction Section */}
@@ -124,19 +124,19 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           <div className="flex flex-col gap-8 rounded-2xl bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 p-6 shadow-xl dark:shadow-none">
             {project.role && (
               <div>
-                <h3 className="text-xs font-bold text-[var(--accent-cyan)] uppercase tracking-widest mb-2">My Role</h3>
+                <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-2">My Role</h3>
                 <p className="text-zinc-900 dark:text-zinc-200 font-medium">{project.role}</p>
               </div>
             )}
             {project.outcome && (
               <div>
-                <h3 className="text-xs font-bold text-[var(--accent-cyan)] uppercase tracking-widest mb-2">Outcome</h3>
+                <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-2">Outcome</h3>
                 <p className="text-zinc-900 dark:text-zinc-200 font-medium">{project.outcome}</p>
               </div>
             )}
             {(project.frontendDeploy || project.backendDeploy) && (
               <div>
-                <h3 className="text-xs font-bold text-[var(--accent-cyan)] uppercase tracking-widest mb-2">Deployment</h3>
+                <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-2">Deployment</h3>
                 <div className="flex flex-col gap-1.5">
                   {project.frontendDeploy && (
                     <div className="flex justify-between items-center border-b border-zinc-100 dark:border-white/5 pb-1">
@@ -154,7 +154,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               </div>
             )}
             <div>
-              <h3 className="text-xs font-bold text-[var(--accent-cyan)] uppercase tracking-widest mb-3">Technologies</h3>
+              <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-3">Technologies</h3>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
                   <span key={tech} className="px-3 py-1 text-xs font-medium rounded-md bg-zinc-100 dark:bg-black/40 border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-zinc-300">
@@ -178,7 +178,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               initial={{ opacity: 0 }}
               animate={{ opacity: isInteractive ? 0.6 : 0.25 }}
               transition={{ duration: 0.7 }}
-              className="absolute inset-0 top-24 -inset-x-4 rounded-[2rem] bg-gradient-to-r from-[var(--accent)] via-[var(--accent-cyan)] to-[var(--accent)] blur-2xl transition-all duration-500" 
+              className="absolute inset-0 top-24 -inset-x-4 rounded-4xl bg-linear-to-r from-(--accent) via-(--accent-cyan) to-(--accent) blur-2xl transition-all duration-500" 
             />
             
             <motion.div 
@@ -201,7 +201,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
             </div>
             {/* Iframe */}
             <div 
-              className="relative w-full aspect-[16/10] md:aspect-[16/9] bg-zinc-100 dark:bg-zinc-950 overflow-hidden"
+              className="relative w-full aspect-16/10 md:aspect-video bg-zinc-100 dark:bg-zinc-950 overflow-hidden"
               onMouseLeave={() => {
                 setIsInteractive(false);
                 setIsBodyLocked(false);
@@ -217,7 +217,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                     setTimeout(() => setIsBodyLocked(true), 800);
                   }}
                 >
-                  <span className="rounded-full bg-[var(--accent)]/90 px-6 py-2.5 text-sm font-semibold text-white shadow-xl backdrop-blur-md transition-transform hover:scale-105">
+                  <span className="rounded-full bg-(--accent)/90 px-6 py-2.5 text-sm font-semibold text-white shadow-xl backdrop-blur-md transition-transform hover:scale-105">
                     Click to Interact
                   </span>
                 </div>
@@ -242,7 +242,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
             initial={{ opacity: 0, y: 30 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-32 flex aspect-[16/9] w-full flex-col items-center justify-center rounded-2xl border border-white/10 border-dashed bg-white/5"
+            className="mt-32 flex aspect-video w-full flex-col items-center justify-center rounded-2xl border border-white/10 border-dashed bg-white/5"
           >
              <p className="text-zinc-400">No live preview available.</p>
              <p className="text-sm text-zinc-500">Image gallery coming soon.</p>

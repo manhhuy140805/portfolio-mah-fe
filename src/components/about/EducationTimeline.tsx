@@ -21,7 +21,7 @@ export default function EducationTimeline() {
 
         <div className="relative mx-auto max-w-3xl">
           {/* Vertical Line */}
-          <div className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-blue-500/50 via-purple-500/50 to-transparent sm:left-1/2 sm:-translate-x-1/2" />
+          <div className="absolute bottom-0 left-4 top-0 w-px bg-linear-to-b from-blue-500/50 via-purple-500/50 to-transparent sm:left-1/2 sm:-translate-x-1/2" />
 
           <div className="space-y-12">
             {educationItems.map((item, index) => {
@@ -44,7 +44,7 @@ export default function EducationTimeline() {
                       className="group relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-zinc-300 dark:hover:border-white/20 hover:bg-white dark:hover:bg-white/10 hover:shadow-xl dark:hover:shadow-none"
                     >
                       {/* Glow on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-purple-400/5 dark:from-blue-500/5 dark:to-purple-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <div className="absolute inset-0 bg-linear-to-br from-blue-400/5 to-purple-400/5 dark:from-blue-500/5 dark:to-purple-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       
                       <div className="relative z-10">
                         <div className={`mb-3 flex items-center gap-3 text-sm font-semibold text-blue-400 ${isEven ? 'sm:justify-end' : ''}`}>

@@ -33,7 +33,7 @@ export default function ProjectsClient() {
   }, [mouseX, mouseY]);
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[var(--background)]">
+    <main className="relative min-h-screen overflow-hidden bg-background">
       {/* Spotlight that follows cursor */}
       <motion.div
         className="pointer-events-none fixed inset-0 z-0 hidden sm:block"
@@ -42,9 +42,9 @@ export default function ProjectsClient() {
 
       {/* Dynamic Background Elements */}
       <div className="pointer-events-none absolute inset-0 flex justify-center overflow-hidden z-0">
-        <div className="absolute top-[-10%] h-[500px] w-[800px] animate-pulse-glow rounded-full bg-[var(--accent)]/10 blur-[120px]" />
-        <div className="absolute right-[-5%] top-[20%] h-[300px] w-[400px] animate-float-bg rounded-full bg-[var(--accent-cyan)]/10 blur-[100px]" />
-        <div className="absolute left-[-5%] top-[40%] h-[400px] w-[400px] animate-float-fg rounded-full bg-[var(--accent-warm)]/10 blur-[120px]" />
+        <div className="absolute top-[-10%] h-125 w-200 animate-pulse-glow rounded-full bg-(--accent)/10 blur-[120px]" />
+        <div className="absolute right-[-5%] top-[20%] h-75 w-100 animate-float-bg rounded-full bg-(--accent-cyan)/10 blur-[100px]" />
+        <div className="absolute left-[-5%] top-[40%] h-100 w-100 animate-float-fg rounded-full bg-(--accent-warm)/10 blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 py-24 sm:py-32">
@@ -54,7 +54,7 @@ export default function ProjectsClient() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-[var(--accent)]/30 bg-blue-50 dark:bg-[var(--accent)]/10 px-4 py-2 text-sm font-medium text-blue-600 dark:text-[var(--accent-cyan)] shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:shadow-[0_0_20px_rgba(47,47,228,0.2)]"
+            className="inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-(--accent)/30 bg-blue-50 dark:bg-(--accent)/10 px-4 py-2 text-sm font-medium text-blue-600 dark:text-(--accent-cyan) shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:shadow-[0_0_20px_rgba(47,47,228,0.2)]"
           >
             <Sparkles className="h-4 w-4" />
             <span>Our Portfolio</span>
@@ -71,7 +71,7 @@ export default function ProjectsClient() {
               initial={{ backgroundPosition: "200% center" }}
               animate={{ backgroundPosition: "0% center" }}
               transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
-              className="bg-gradient-to-r from-[var(--accent-cyan)] via-[var(--accent)] to-[var(--accent-warm)] bg-[length:200%_auto] bg-clip-text text-transparent"
+              className="bg-linear-to-r from-(--accent-cyan) via-(--accent) to-(--accent-warm) bg-size-[200%_auto] bg-clip-text text-transparent"
             >
               exceptional digital experiences
             </motion.span>
@@ -108,7 +108,7 @@ export default function ProjectsClient() {
                   {isActive && (
                     <motion.div
                       layoutId="activeFilter"
-                      className="absolute inset-0 rounded-xl bg-blue-100 dark:bg-[var(--accent)]/40 shadow-sm dark:shadow-[0_0_15px_rgba(47,47,228,0.5)]"
+                      className="absolute inset-0 rounded-xl bg-blue-100 dark:bg-(--accent)/40 shadow-sm dark:shadow-[0_0_15px_rgba(47,47,228,0.5)]"
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}

@@ -4,12 +4,15 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/src/types/project.type";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 type ProjectCardProps = {
   project: Project;
 };
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const { t } = useTranslation();
+  
   const visualTone =
     project.slug === "workout-app"
       ? "from-zinc-800 via-stone-800/80 to-zinc-900"
@@ -36,7 +39,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           
           <div className="relative h-full flex flex-col justify-between rounded-xl border border-white/10 bg-black/20 backdrop-blur-sm p-5 shadow-inner transition-transform duration-500 group-hover:-translate-y-1">
             <div className="flex items-center justify-between text-xs font-medium tracking-wide text-zinc-300">
-              <span className="rounded-full bg-white/10 px-3 py-1">{project.category ?? "Project"}</span>
+              <span className="rounded-full bg-white/10 px-3 py-1">{t(`projects_page.categories.${project.category}`, { defaultValue: project.category ?? "Project" })}</span>
               <span className="flex items-center gap-1.5 rounded-full bg-black/40 px-3 py-1">
                  {project.year ?? "2026"}
               </span>
@@ -57,7 +60,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div className="relative p-6">
           <div className="flex items-start justify-between gap-4">
             <h3 className="text-xl font-bold text-zinc-900 dark:text-white transition-colors group-hover:text-(--accent-cyan)">
-              {project.title}
+              {t(`portfolio_projects.${project.id}.title`, { defaultValue: project.title })}
             </h3>
             <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-200 dark:bg-white/5 border border-zinc-300 dark:border-white/10 text-zinc-900 dark:text-white transition-all group-hover:bg-(--accent) group-hover:border-(--accent) group-hover:text-white group-hover:rotate-45">
                <ArrowUpRight className="h-4 w-4" />
@@ -65,7 +68,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
           
           <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 line-clamp-2">
-            {project.description}
+            {t(`portfolio_projects.${project.id}.description`, { defaultValue: project.description })}
           </p>
           
           <ul className="mt-6 flex flex-wrap gap-2">

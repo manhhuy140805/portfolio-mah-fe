@@ -1,0 +1,233 @@
+{
+  "hero": {
+    "role": "Sinh viên năm 3 ngành CNTT",
+    "description": "Tôi là sinh viên năm 3 đam mê lập trình web. Tôi hướng đến việc xây dựng trải nghiệm UI/UX hiện đại và không ngừng cập nhật các công nghệ mới để hoàn thiện bộ kỹ năng của mình.",
+    "typing_1": "Đề cao trải nghiệm người dùng, không chỉ dừng lại ở giao diện đẹp.",
+    "typing_2": "Xây dựng các hệ thống trực quan, dễ tiếp cận và có tính mở rộng cao.",
+    "typing_3": "Viết mã nguồn sạch để tạo ra những sản phẩm hiệu năng cao.",
+    "hire": "Tuyển Dụng",
+    "explore": "Khám Phá Dự Án",
+    "stats": {
+      "year": { "suffix": "", "label": "Năm theo học CNTT" },
+      "projects": { "suffix": "+", "label": "Dự án học thuật" },
+      "tech": { "suffix": "+", "label": "Công nghệ cốt lõi" },
+      "passion": { "suffix": "%", "label": "Đam mê lập trình" }
+    }
+  },
+  "about": {
+    "eyebrow": "Về Tôi",
+    "title": "Kiến tạo các giải pháp phần mềm tối ưu, dễ mở rộng và hướng tới người dùng",
+    "description": "Đam mê phát triển ứng dụng, liên tục cập nhật công nghệ mới và dùng code để giải quyết các bài toán thực tế.",
+    "more": "Xem Thêm Về Tôi",
+    "services": {
+      "observation": {
+        "metric": "Hoàn hảo từng Pixel",
+        "title": "Trí Nhớ Hình Ảnh & Chú Trọng Tiểu Tiết",
+        "description": "Khả năng ghi nhớ hình ảnh tốt và cực kỳ chú ý đến các chi tiết nhỏ. Tôi có thể nhanh chóng phát hiện các lỗi giao diện và debug những đoạn code phức tạp."
+      },
+      "agile": {
+        "metric": "Phản xạ Nhanh",
+        "title": "Giải Quyết Vấn Đề Linh Hoạt",
+        "description": "Tư duy nhạy bén và dễ dàng thích nghi với thử thách mới. Tìm ra giải pháp hiệu quả ngay cả trong môi trường có áp lực cao."
+      },
+      "word": {
+        "metric": "Thành Thạo Cao",
+        "title": "Làm Chủ Microsoft Word",
+        "description": "Sử dụng thành thạo Microsoft Word. Tốc độ đánh máy nhanh, kỹ năng trình bày văn bản chuyên nghiệp và xử lý thông tin nhạy bén."
+      },
+      "fullstack": {
+        "metric": "Hệ Thống Vững Chắc",
+        "title": "Phát Triển Full-Stack",
+        "description": "Vận dụng công nghệ hiện đại cùng tư duy logic để xây dựng các ứng dụng web toàn diện, tối ưu hiệu suất và mang lại trải nghiệm mượt mà."
+      }
+    }
+  },
+  "skills": {
+    "eyebrow": "Kỹ Năng Kỹ Thuật",
+    "title": "Những Công Nghệ & Công Cụ Tôi Thường Dùng",
+    "description": "Tổng hợp những công cụ, ngôn ngữ và framework mà tôi áp dụng để biến ý tưởng thành sản phẩm thực tế.",
+    "levels": {
+      "expert": "Chuyên gia",
+      "advanced": "Nâng cao",
+      "intermediate": "Trung bình",
+      "beginner": "Cơ bản"
+    }
+  },
+  "github": {
+    "eyebrow": "Hoạt Động GitHub",
+    "title": "Hoạt Động & Thống Kê Lập Trình",
+    "description": "Góc nhìn tổng quan về nhịp độ làm việc và các đóng góp mã nguồn của tôi trên GitHub.",
+    "commits": "Lượt commit",
+    "projects": "Dự án",
+    "core_stack": "Công nghệ cốt lõi",
+    "view_profile": "Xem Hồ Sơ GitHub"
+  },
+  "projects": {
+    "eyebrow": "Dự Án Gần Đây",
+    "title": "Biến ý tưởng thành những sản phẩm chất lượng",
+    "description": "Khám phá các dự án tâm huyết mà tôi đã tham gia thiết kế và phát triển.",
+    "view_all": "Xem Tất Cả Dự Án"
+  },
+  "contact": {
+    "status": "Đang tìm kiếm cơ hội",
+    "title_1": "Cùng nhau kiến tạo",
+    "title_2": "những điều tuyệt vời.",
+    "description": "Tôi luôn đón nhận các cơ hội thực tập, công việc chính thức hoặc những dự án tự do thú vị. Dù bạn đang tìm kiếm ứng viên hay chỉ đơn giản muốn kết nối, đừng ngần ngại liên hệ với tôi!",
+    "email": "Gửi Email",
+    "resume": "Tải CV",
+    "fast_response": "Phản hồi nhanh",
+    "available": "Sẵn sàng ngay",
+    "cards": {
+      "email": { "label": "Gửi Email" },
+      "phone": { "label": "Gọi điện / Zalo" },
+      "linkedin": { "label": "Kết Nối", "desc": "Hồ Sơ LinkedIn" },
+      "github": { "label": "Xem Mã Nguồn", "desc": "Hồ Sơ GitHub" }
+    }
+  },
+  "about_page": {
+    "hero": {
+      "eyebrow": "Về Tôi",
+      "title_1": "Kiến tạo trải nghiệm",
+      "title_2": "công nghệ",
+      "title_3": "thực tiễn và ý nghĩa.",
+      "description": "Là một sinh viên IT năm 3, tôi đam mê việc giải quyết những bài toán hóc búa bằng các ứng dụng web tối ưu. Tôi luôn cố gắng dung hòa giữa tư duy thiết kế và kỹ năng lập trình để mang lại trải nghiệm mượt mà nhất cho người dùng.",
+      "see_work": "Xem Dự Án",
+      "get_in_touch": "Liên Hệ Ngay"
+    },
+    "bio": {
+      "role": "Lập Trình Viên Web",
+      "location": "Đà Nẵng, Việt Nam",
+      "download_cv": "Tải CV",
+      "profile_summary": "Giới Thiệu Ngắn",
+      "p1": "Xin chào! Tôi là một sinh viên năm 3 tràn đầy nhiệt huyết với việc xây dựng các <strong>Ứng dụng Web</strong> hiện đại. Điều làm tôi hứng thú nhất là khả năng đơn giản hóa những luồng xử lý phức tạp thành một giao diện trực quan và đẹp mắt.",
+      "p2": "Tôi luôn giữ tinh thần học hỏi không ngừng để cập nhật công nghệ mới, rèn luyện kỹ năng viết code sạch và đem đến những sản phẩm tốt nhất cho người dùng.",
+      "quick_details": "Thông Tin Cơ Bản",
+      "availability_label": "Trạng Thái",
+      "availability_value": "Sẵn sàng nhận việc / Thực tập",
+      "education_label": "Học Vấn",
+      "education_value": "Sinh viên IT năm 3",
+      "languages_label": "Ngôn Ngữ",
+      "languages_value": "Tiếng Việt, Tiếng Anh",
+      "interests_label": "Sở Thích",
+      "interests_value": "Lập trình, Thiết kế, Âm nhạc"
+    },
+    "experience": {
+      "title_1": "Làm việc bằng",
+      "title_2": "sự tò mò",
+      "title_3": "và khát khao học hỏi không ngừng.",
+      "description": "Hành trình lập trình của tôi là chuỗi ngày liên tục thử nghiệm, đập đi xây lại và đúc kết kinh nghiệm. Với tôi, năng lực không chỉ đong đếm bằng năm tháng, mà bằng sự tập trung cao độ và giá trị thực sự của từng dự án."
+    },
+    "services": {
+      "title": "Năng Lực Cốt Lõi",
+      "description": "Sự kết hợp giữa tư duy thiết kế và logic lập trình để đáp ứng trọn vẹn yêu cầu dự án."
+    },
+    "skills": {
+      "title": "Kho Công Nghệ",
+      "description": "Danh sách những công nghệ và công cụ tôi không ngừng trau dồi mỗi ngày.",
+      "always_learning": "Luôn Cập Nhật",
+      "learning_desc": "Thế giới công nghệ vận động không ngừng. Đó là lý do tôi luôn dành thời gian nghiên cứu và trải nghiệm các công cụ mới mỗi tuần."
+    },
+    "education": {
+      "title": "Hành Trình Học Vấn"
+    }
+  },
+  "education_items": {
+    "ute": {
+      "title": "Trường Đại Học Sư Phạm Kỹ Thuật - Đại Học Đà Nẵng",
+      "description": "Đang theo học chuyên ngành Công nghệ Thông tin, định hướng chuyên sâu vào Công nghệ Phần mềm, Phát triển Web và Thiết kế Hệ thống."
+    }
+  },
+  "coming_soon": {
+    "title_1": "Sắp Ra Mắt",
+    "title_2": "Đang Xây Dựng",
+    "back_home": "Về Trang Chủ",
+    "explore_projects": "Khám Phá Dự Án",
+    "services": {
+      "eyebrow": "Dịch Vụ & Hợp Tác",
+      "description": "Hiện tại, tôi đang tập trung hoàn thành chương trình đại học và nghiên cứu các công nghệ mới. Các dịch vụ phát triển phần mềm và thiết kế web của tôi sẽ sớm được ra mắt với chất lượng tốt nhất. Rất mong được hợp tác cùng bạn trong tương lai gần!"
+    },
+    "blog": {
+      "eyebrow": "Blog & Bài Viết",
+      "description": "Tôi đang xây dựng một không gian để chia sẻ những suy nghĩ, nhật ký lập trình và các bài viết về phát triển Frontend, UI/UX và công nghệ. Hãy cùng đón chờ những trải nghiệm thú vị nhé!"
+    }
+  },
+  "projects_page": {
+    "eyebrow": "Dự Án Của Tôi",
+    "title_1": "Biến ý tưởng thành",
+    "title_2": "những trải nghiệm số xuất sắc",
+    "description": "Bộ sưu tập các dự án ứng dụng web, thương mại điện tử và trang quản trị được thiết kế hướng tới hiệu năng, tính thẩm mỹ và trải nghiệm người dùng.",
+    "categories": {
+      "All": "Tất Cả",
+      "Web App": "Web App",
+      "E-Commerce": "Thương Mại Điện Tử",
+      "Dashboard": "Trang Quản Trị",
+      "Landing Page": "Landing Page"
+    },
+    "empty": {
+      "title": "Không có dự án nào trong danh mục này.",
+      "subtitle": "Vui lòng thử chọn một bộ lọc khác."
+    },
+    "detail": {
+      "back": "Quay Lại",
+      "visit_live": "Xem Trang Thực Tế",
+      "source": "Mã Nguồn",
+      "overview": "Tổng Quan",
+      "my_role": "Vai Trò",
+      "outcome": "Kết Quả Đạt Được",
+      "deployment": "Triển Khai",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "technologies": "Công Nghệ",
+      "live_demo": {
+        "title": "Trải Nghiệm Trực Tiếp",
+        "subtitle": "Dùng thử sản phẩm ngay trên trang web này.",
+        "click": "Bấm Để Tương Tác"
+      },
+      "no_preview": {
+        "title": "Bản xem trước hiện chưa có sẵn.",
+        "subtitle": "Thư viện hình ảnh sẽ sớm được cập nhật."
+      }
+    }
+  },
+  "portfolio_projects": {
+    "workout-app": {
+      "title": "Trang Đích Cho Ứng Dụng Thể Hình",
+      "description": "Một trang đích (landing page) tối ưu tỷ lệ chuyển đổi cho trải nghiệm tập thể hình với các chương trình tập luyện và vòng lặp thói quen.",
+      "outcome": "Lên kế hoạch tập luyện hàng ngày rõ ràng hơn",
+      "role": "Thiết Kế Sản Phẩm"
+    },
+    "ecommerce-design": {
+      "title": "Thiết Kế Thương Mại Điện Tử",
+      "description": "Một giao diện mua sắm tinh tế, tập trung vào việc truyền tải câu chuyện sản phẩm, xây dựng niềm tin và tối ưu quá trình thanh toán.",
+      "outcome": "Tăng cường trải nghiệm duyệt web và sự tự tin khi thanh toán",
+      "role": "Thiết Kế UX"
+    },
+    "dashboard-design": {
+      "title": "Thiết Kế Trang Quản Trị",
+      "description": "Trang quản trị vận hành với các thẻ thông tin dày đặc nhưng dễ đọc, hiển thị số liệu, hoạt động và đánh giá nhóm.",
+      "outcome": "Tăng tốc độ quét thông tin vận hành",
+      "role": "Lập Trình Viên Frontend"
+    },
+    "ggzone": {
+      "title": "Nền Tảng GGZone",
+      "description": "GGZone là một mẫu ứng dụng web học thuật toàn diện được xây dựng cho khóa học Phát Triển Web Nâng Cao của tôi. Nó được thiết kế như một mạng xã hội và thị trường mua bán game, nơi người dùng có thể duyệt game, tham gia cộng đồng, tương tác với các bài viết, quản lý hồ sơ cá nhân, kết bạn và mua các sản phẩm liên quan đến game. Phía frontend được xây dựng bằng React, TypeScript, Vite, Tailwind CSS và React Router, tuân theo kiến trúc chia theo tính năng với các component tái sử dụng, dịch vụ API tập trung, định tuyến bảo mật và xác thực JWT. Phía backend được phát triển với hai phiên bản: ASP.NET và NestJS, trong đó bản demo hiện tại sử dụng NestJS REST API. Dự án tập trung vào việc thể hiện kỹ năng phát triển UI, tích hợp API, luồng người dùng, phân quyền và cấu trúc ứng dụng toàn diện cho mục đích học thuật.",
+      "outcome": "Triển khai thành công và đang hoạt động",
+      "role": "Lập Trình Viên Full-stack"
+    }
+  },
+  "contact_page": {
+    "status": "Đang Tìm Kiếm Cơ Hội Mới",
+    "title_1": "Cùng nhau kiến tạo",
+    "title_2": "những điều tuyệt vời.",
+    "description": "Dù bạn đang ấp ủ một dự án, có một vị trí cần tuyển, hay chỉ đơn giản là muốn trò chuyện về công nghệ—tôi luôn sẵn sàng kết nối.",
+    "collab": "Sẵn sàng hợp tác.",
+    "you": "Bạn",
+    "copied": "Đã sao chép!",
+    "copy_email": "Sao chép Email",
+    "start_conversation": "Bắt đầu cuộc trò chuyện",
+    "resume": "Tải CV",
+    "click_download": "Nhấn để tải xuống",
+    "location": "Địa Điểm",
+    "location_value": "Đà Nẵng, VN"
+  }
+}

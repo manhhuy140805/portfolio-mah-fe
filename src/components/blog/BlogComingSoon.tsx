@@ -4,8 +4,11 @@ import Link from "next/link";
 import { ArrowLeft, Sparkles, BookOpen, PenTool, Coffee } from "lucide-react";
 import Button from "@/src/components/ui/Button";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function BlogComingSoon() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-[#030712] flex flex-col items-center justify-center relative overflow-hidden px-6 font-sans">
       
@@ -50,7 +53,7 @@ export default function BlogComingSoon() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-white/[0.03] border border-zinc-300 dark:border-white/[0.08] backdrop-blur-md mb-8">
             <Sparkles className="w-4 h-4 text-emerald-400" />
-            <span className="text-sm font-medium text-zinc-700 dark:text-gray-300 tracking-wide uppercase">Blog & Articles</span>
+            <span className="text-sm font-medium text-zinc-700 dark:text-gray-300 tracking-wide uppercase">{t("coming_soon.blog.eyebrow")}</span>
           </div>
         </motion.div>
 
@@ -61,11 +64,11 @@ export default function BlogComingSoon() {
           className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6"
         >
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-900 dark:from-white via-emerald-600 dark:via-emerald-100 to-zinc-900 dark:to-white drop-shadow-sm">
-            Coming Soon
+            {t("coming_soon.title_1")}
           </span>
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 whitespace-nowrap">
-            Under Construction
+            {t("coming_soon.title_2")}
           </span>
         </motion.h1>
 
@@ -75,8 +78,7 @@ export default function BlogComingSoon() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-zinc-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
         >
-          I'm preparing a space to share my thoughts, devlogs, and tutorials about frontend development, UI/UX design, and technology. 
-          Stay tuned for insightful articles and coding experiences!
+          {t("coming_soon.blog.description")}
         </motion.p>
 
         {/* Floating Icons to represent blog */}
@@ -108,12 +110,12 @@ export default function BlogComingSoon() {
             className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-zinc-100 dark:bg-white/[0.05] hover:bg-zinc-200 dark:hover:bg-white/[0.1] border border-zinc-300 dark:border-white/[0.1] text-zinc-900 dark:text-white font-medium transition-all duration-300 w-full sm:w-auto"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-            Back to Home
+            {t("coming_soon.back_home")}
           </Link>
           
           <Link href="/projects" className="w-full sm:w-auto">
             <Button className="w-full sm:w-auto px-8 py-4 text-base justify-center shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_0_60px_-15px_rgba(16,185,129,0.7)] transition-shadow">
-              Explore Projects
+              {t("coming_soon.explore_projects")}
             </Button>
           </Link>
         </motion.div>

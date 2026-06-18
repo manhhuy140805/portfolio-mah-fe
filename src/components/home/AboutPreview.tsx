@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView, Variants } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import Button from "@/src/components/ui/Button";
 import SectionTitle from "@/src/components/ui/SectionTitle";
 import { serviceCards } from "@/src/lib/portfolio-data";
@@ -36,6 +37,7 @@ const itemVariants: Variants = {
 export default function AboutPreview() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useTranslation();
 
   return (
     <section className="relative border-b border-zinc-200 dark:border-white/5 bg-background overflow-hidden">
@@ -52,13 +54,13 @@ export default function AboutPreview() {
           className="flex flex-col items-start"
         >
           <SectionTitle
-            description="Focused on building scalable applications, learning modern technologies, and solving real-world problems through code."
-            eyebrow="About Me"
-            title="Building solutions that are robust, scalable, and user-centric"
+            description={t("about.description")}
+            eyebrow={t("about.eyebrow")}
+            title={t("about.title")}
           />
           <div className="mt-10">
             <Button href="/about" variant="secondary" className="group">
-              More About Me
+              {t("about.more")}
               <span className="inline-block transition-transform duration-300 group-hover:translate-x-1 ml-2">
                 →
               </span>
@@ -88,16 +90,16 @@ export default function AboutPreview() {
                   {icons[service.title as keyof typeof icons] || <Zap className="w-6 h-6" />}
                 </div>
                 <span className="text-sm font-semibold tracking-wider text-(--muted) group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
-                  {service.metric}
+                  {t(`about.services.${service.id}.metric`, { defaultValue: service.metric })}
                 </span>
               </div>
 
               <div className="relative z-10 mt-8">
                 <h3 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white mb-3">
-                  {service.title}
+                  {t(`about.services.${service.id}.title`, { defaultValue: service.title })}
                 </h3>
                 <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-300 transition-colors">
-                  {service.description}
+                  {t(`about.services.${service.id}.description`, { defaultValue: service.description })}
                 </p>
               </div>
             </motion.article>

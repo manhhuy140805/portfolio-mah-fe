@@ -5,8 +5,10 @@ import { motion, useMotionValue, useSpring, useMotionTemplate } from "framer-mot
 import ProjectList from "@/src/components/projects/ProjectList";
 import { portfolioProjects } from "@/src/lib/portfolio-data";
 import { Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function ProjectsClient() {
+  const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState("All");
 
   const categories = ["All", "Web App", "E-Commerce", "Dashboard", "Landing Page"];
@@ -57,7 +59,7 @@ export default function ProjectsClient() {
             className="inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-(--accent)/30 bg-blue-50 dark:bg-(--accent)/10 px-4 py-2 text-sm font-medium text-blue-600 dark:text-(--accent-cyan) shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:shadow-[0_0_20px_rgba(47,47,228,0.2)]"
           >
             <Sparkles className="h-4 w-4" />
-            <span>Our Portfolio</span>
+            <span>{t("projects_page.eyebrow")}</span>
           </motion.div>
           
           <motion.h1 
@@ -66,14 +68,14 @@ export default function ProjectsClient() {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
             className="mt-8 max-w-4xl text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white sm:text-6xl lg:text-7xl"
           >
-            Transforming ideas into <br className="hidden sm:block" />
+            {t("projects_page.title_1")} <br className="hidden sm:block" />
             <motion.span 
               initial={{ backgroundPosition: "200% center" }}
               animate={{ backgroundPosition: "0% center" }}
               transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
               className="bg-linear-to-r from-(--accent-cyan) via-(--accent) to-(--accent-warm) bg-size-[200%_auto] bg-clip-text text-transparent"
             >
-              exceptional digital experiences
+              {t("projects_page.title_2")}
             </motion.span>
           </motion.h1>
           
@@ -83,7 +85,7 @@ export default function ProjectsClient() {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
             className="mt-8 max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-400"
           >
-            A curated gallery of SaaS, mobile, commerce, and dashboard interfaces designed for performance, aesthetics, and user engagement.
+            {t("projects_page.description")}
           </motion.p>
         </div>
 
@@ -112,7 +114,7 @@ export default function ProjectsClient() {
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}
-                  <span className="relative z-10">{category}</span>
+                  <span className="relative z-10">{t(`projects_page.categories.${category}`, { defaultValue: category })}</span>
                 </button>
               );
             })}

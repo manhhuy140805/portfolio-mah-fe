@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 import { ThemeProvider } from "@/src/components/ThemeProvider";
+import { I18nProvider } from "@/src/components/providers/I18nProvider";
 
 export const metadata: Metadata = {
   title: "MA-H Portfolio",
@@ -39,11 +40,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            <div className="flex-1">{children}</div>
-            <Footer />
-          </div>
+          <I18nProvider>
+            <div className="flex min-h-screen flex-col">
+              <Header />
+              <div className="flex-1">{children}</div>
+              <Footer />
+            </div>
+          </I18nProvider>
         </ThemeProvider>
       </body>
     </html>

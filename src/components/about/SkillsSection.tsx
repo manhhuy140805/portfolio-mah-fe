@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { designSkills, developmentSkills } from "@/src/lib/portfolio-data";
 
 type Skill = {
@@ -56,6 +57,8 @@ function SkillGroup({ skills, title, delayOffset = 0 }: SkillGroupProps) {
 }
 
 export default function SkillsSection() {
+  const { t } = useTranslation();
+  
   const frontendSkills = developmentSkills.filter(s => s.category === 'Frontend');
   const backendSkills = developmentSkills.filter(s => s.category === 'Backend');
   const languageSkills = developmentSkills.filter(s => s.category === 'Language');
@@ -72,7 +75,7 @@ export default function SkillsSection() {
             viewport={{ once: true }}
             className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl"
           >
-            Technical Arsenal
+            {t("about_page.skills.title")}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -81,7 +84,7 @@ export default function SkillsSection() {
             transition={{ delay: 0.1 }}
             className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400"
           >
-            A constantly evolving toolkit of modern web technologies and design systems.
+            {t("about_page.skills.description")}
           </motion.p>
         </div>
 
@@ -111,9 +114,9 @@ export default function SkillsSection() {
             {/* Soft glowing decoration */}
             <div className="relative hidden min-h-40 flex-1 flex-col items-center justify-center overflow-hidden rounded-2xl border border-zinc-200 dark:border-white/5 bg-zinc-50 dark:bg-white/2 p-8 text-center sm:flex">
                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1)_0,transparent_70%)]" />
-               <h4 className="relative z-10 text-lg font-semibold text-zinc-900 dark:text-white">Always Learning</h4>
+               <h4 className="relative z-10 text-lg font-semibold text-zinc-900 dark:text-white">{t("about_page.skills.always_learning")}</h4>
                <p className="relative z-10 mt-2 max-w-62.5 text-sm text-zinc-600 dark:text-zinc-400">
-                 Technology moves fast. I spend time every week exploring new frameworks and tools.
+                 {t("about_page.skills.learning_desc")}
                </p>
             </div>
           </motion.div>

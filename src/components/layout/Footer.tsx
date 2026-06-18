@@ -15,7 +15,7 @@ export default function Footer() {
           width={0}
           height={0}
           sizes="100vw"
-          className="w-[400px] h-auto object-contain dark:hidden"
+          className="w-100 h-auto object-contain dark:hidden"
         />
         <Image
           src="/images/logo/logo-theme-dark.png"
@@ -23,7 +23,7 @@ export default function Footer() {
           width={0}
           height={0}
           sizes="100vw"
-          className="w-[400px] h-auto object-contain hidden dark:block"
+          className="w-100 h-auto object-contain hidden dark:block"
         />
       </div>
 
@@ -60,7 +60,7 @@ export default function Footer() {
             <input 
               type="email" 
               placeholder="Email Address" 
-              className="w-full border-b border-zinc-300 dark:border-white/20 bg-transparent py-3 pr-10 text-sm text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:border-[var(--accent-cyan)] focus:outline-none transition-colors"
+              className="w-full border-b border-zinc-300 dark:border-white/20 bg-transparent py-3 pr-10 text-sm text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:border-(--accent-cyan) focus:outline-none transition-colors"
             />
             <button className="absolute right-0 top-1/2 -translate-y-1/2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">
               <Mail className="h-5 w-5" />
@@ -72,10 +72,10 @@ export default function Footer() {
         <div className="lg:col-span-3">
           <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-6">Quick Link</h3>
           <div className="flex flex-col gap-4 text-sm text-zinc-600 dark:text-zinc-400 font-medium">
-            <Link className="transition hover:text-[var(--accent-cyan)]" href="/">Home</Link>
-            <Link className="transition hover:text-[var(--accent-cyan)]" href="/about">About Me</Link>
-            <Link className="transition hover:text-[var(--accent-cyan)]" href="/projects">Projects</Link>
-            <a className="transition hover:text-[var(--accent-cyan)]" href="/cv.pdf" target="_blank" rel="noopener noreferrer">Resume / CV</a>
+            <Link className="transition hover:text-(--accent-cyan)" href="/">Home</Link>
+            <Link className="transition hover:text-(--accent-cyan)" href="/about">About Me</Link>
+            <Link className="transition hover:text-(--accent-cyan)" href="/projects">Projects</Link>
+            <a className="transition hover:text-(--accent-cyan)" href="/cv.pdf" target="_blank" rel="noopener noreferrer">Resume / CV</a>
           </div>
         </div>
 
@@ -85,7 +85,7 @@ export default function Footer() {
           
           <div className="flex flex-col gap-4 text-sm font-medium text-zinc-600 dark:text-zinc-300">
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-zinc-200 dark:bg-white/5 text-zinc-900 dark:text-white transition-colors hover:bg-[var(--accent-cyan)] hover:text-white">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-zinc-200 dark:bg-white/5 text-zinc-900 dark:text-white transition-colors hover:bg-(--accent-cyan) hover:text-white">
                 <Mail className="h-4 w-4" />
               </div>
               <a href="mailto:trandinhmanhhuy05@gmail.com" className="hover:text-zinc-900 dark:hover:text-white transition-colors">
@@ -94,14 +94,14 @@ export default function Footer() {
             </div>
             
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-zinc-200 dark:bg-white/5 text-zinc-900 dark:text-white transition-colors hover:bg-[var(--accent-cyan)] hover:text-white">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-zinc-200 dark:bg-white/5 text-zinc-900 dark:text-white transition-colors hover:bg-(--accent-cyan) hover:text-white">
                 <MapPin className="h-4 w-4" />
               </div>
               <span>Da Nang, Vietnam</span>
             </div>
             
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-zinc-200 dark:bg-white/5 text-zinc-900 dark:text-white transition-colors hover:bg-[var(--accent-cyan)] hover:text-white">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-zinc-200 dark:bg-white/5 text-zinc-900 dark:text-white transition-colors hover:bg-(--accent-cyan) hover:text-white">
                 <Phone className="h-4 w-4" />
               </div>
               <a href="tel:+84326149986" className="hover:text-zinc-900 dark:hover:text-white transition-colors">

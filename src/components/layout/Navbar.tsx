@@ -8,7 +8,7 @@ export default function Navbar() {
         {NAV_LINKS.map((link) => (
           <li key={link.href}>
             <Link
-              className="flex items-center gap-1 transition hover:text-[var(--accent)]"
+              className="flex items-center gap-1 transition hover:text-(--accent)"
               href={link.href}
             >
               {link.label}

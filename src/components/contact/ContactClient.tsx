@@ -32,11 +32,11 @@ export default function ContactClient() {
       {/* Ambient Background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden flex justify-center">
         {/* Modern Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[32px_32px] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
         
         {/* Animated Glowing Orbs */}
-        <div className="absolute top-[10%] right-[10%] h-[15rem] w-[15rem] rounded-full bg-[var(--accent-cyan)] opacity-15 dark:opacity-10 blur-[100px] animate-pulse-glow" />
-        <div className="absolute bottom-[20%] left-[20%] h-[15rem] w-[15rem] rounded-full bg-[var(--accent)] opacity-15 dark:opacity-10 blur-[100px] animate-float-bg" />
+        <div className="absolute top-[10%] right-[10%] h-60 w-60 rounded-full bg-(--accent-cyan) opacity-15 dark:opacity-10 blur-[100px] animate-pulse-glow" />
+        <div className="absolute bottom-[20%] left-[20%] h-60 w-60 rounded-full bg-(--accent) opacity-15 dark:opacity-10 blur-[100px] animate-float-bg" />
         
         {/* Noise Texture Overlay */}
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] dark:opacity-[0.05] mix-blend-overlay" />
@@ -51,9 +51,9 @@ export default function ContactClient() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--accent-cyan)]/30 bg-[var(--accent-cyan)]/10 px-4 py-2 text-sm font-semibold tracking-wide text-[var(--accent-cyan)] dark:text-[#4db8ff] backdrop-blur-md mb-8 w-fit shadow-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-(--accent-cyan)/30 bg-(--accent-cyan)/10 px-4 py-2 text-sm font-semibold tracking-wide text-(--accent-cyan) dark:text-[#4db8ff] backdrop-blur-md mb-8 w-fit shadow-sm"
             >
-              <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent-cyan)] animate-pulse"></span>
+              <span className="h-2.5 w-2.5 rounded-full bg-(--accent-cyan) animate-pulse"></span>
               Available for New Opportunities
             </motion.div>
             
@@ -64,7 +64,7 @@ export default function ContactClient() {
               className="text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl mb-4"
             >
               Let's build <br className="hidden lg:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] to-[var(--accent-cyan)]">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-(--accent) to-(--accent-cyan)">
                 something great.
               </span>
             </motion.h1>
@@ -88,7 +88,7 @@ export default function ContactClient() {
                   <div className="w-10 h-10 rounded-full border-2 border-background bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center overflow-hidden">
                      <span className="text-[10px] font-bold text-zinc-500">You</span>
                   </div>
-                  <div className="w-10 h-10 rounded-full border-2 border-background bg-gradient-to-br from-[var(--accent)] to-[var(--accent-cyan)] flex items-center justify-center text-white font-bold text-base">
+                  <div className="w-10 h-10 rounded-full border-2 border-background bg-linear-to-br from-(--accent) to-(--accent-cyan) flex items-center justify-center text-white font-bold text-base">
                      M
                   </div>
                 </div>
@@ -112,7 +112,7 @@ export default function ContactClient() {
                 variants={itemVariants}
                 className="group relative sm:col-span-2 rounded-3xl border border-black/5 dark:border-white/10 bg-white/60 dark:bg-white/5 p-6 overflow-hidden backdrop-blur-2xl shadow-xl dark:shadow-none transition-all hover:shadow-2xl hover:bg-white/80 dark:hover:bg-white/10"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 via-transparent to-[var(--accent-cyan)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-br from-(--accent)/5 via-transparent to-(--accent-cyan)/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
                   <div className="h-12 w-12 rounded-2xl bg-black/5 dark:bg-white/10 flex items-center justify-center text-zinc-800 dark:text-zinc-200 shadow-sm backdrop-blur-md">
@@ -129,9 +129,9 @@ export default function ContactClient() {
                 
                 <div className="relative z-10">
                   <p className="text-xs font-semibold text-zinc-500 dark:text-zinc-400 mb-1 uppercase tracking-wider">Start a conversation</p>
-                  <a href="mailto:trandinhmanhhuy05@gmail.com" className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground flex items-center gap-2 group/link break-all sm:break-normal hover:text-[var(--accent)] transition-colors">
+                  <a href="mailto:trandinhmanhhuy05@gmail.com" className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground flex items-center gap-2 group/link break-all sm:break-normal hover:text-(--accent) transition-colors">
                     trandinhmanhhuy05<br className="sm:hidden"/>@gmail.com
-                    <ArrowUpRight size={20} className="text-zinc-400 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 group-hover/link:text-[var(--accent)] shrink-0 hidden sm:block transition-all" />
+                    <ArrowUpRight size={20} className="text-zinc-400 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 group-hover/link:text-(--accent) shrink-0 hidden sm:block transition-all" />
                   </a>
                 </div>
               </motion.div>
@@ -139,7 +139,7 @@ export default function ContactClient() {
               {/* Resume Card */}
               <motion.div 
                 variants={itemVariants}
-                className="group relative rounded-3xl border border-transparent bg-gradient-to-br from-[var(--accent)] to-[var(--accent-cyan)] p-6 overflow-hidden transition-all shadow-xl hover:shadow-2xl hover:scale-[1.02] flex flex-col items-center justify-center text-center min-h-[180px]"
+                className="group relative rounded-3xl border border-transparent bg-linear-to-br from-(--accent) to-(--accent-cyan) p-6 overflow-hidden transition-all shadow-xl hover:shadow-2xl hover:scale-[1.02] flex flex-col items-center justify-center text-center min-h-45"
               >
                 <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay pointer-events-none" />
                 <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -162,7 +162,7 @@ export default function ContactClient() {
                   variants={itemVariants}
                   className="group relative rounded-3xl border border-black/5 dark:border-white/10 bg-white/60 dark:bg-white/5 p-5 overflow-hidden backdrop-blur-xl shadow-lg dark:shadow-none transition-all hover:bg-white/80 dark:hover:bg-white/10 flex items-center gap-4 h-full"
                 >
-                  <div className="h-10 w-10 rounded-xl bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center shrink-0">
+                  <div className="h-10 w-10 rounded-xl bg-(--accent)/10 text-(--accent) flex items-center justify-center shrink-0">
                     <MapPin size={18} />
                   </div>
                   <div>

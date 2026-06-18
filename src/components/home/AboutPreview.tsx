@@ -38,10 +38,10 @@ export default function AboutPreview() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative border-b border-zinc-200 dark:border-white/5 bg-[var(--background)] overflow-hidden">
+    <section className="relative border-b border-zinc-200 dark:border-white/5 bg-background overflow-hidden">
       {/* Decorative Background Elements */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-      <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-[var(--accent)] opacity-20 blur-[100px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
+      <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-77.5 w-77.5 rounded-full bg-(--accent) opacity-20 blur-[100px]"></div>
 
       <div className="relative mx-auto grid w-full max-w-7xl gap-10 lg:gap-16 px-6 py-16 lg:py-28 lg:grid-cols-[1fr_1.2fr] items-center">
         {/* Left Column: Title & CTA */}
@@ -79,15 +79,15 @@ export default function AboutPreview() {
               key={service.title}
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className="group relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-white/10 bg-[var(--surface)]/40 p-8 shadow-lg backdrop-blur-sm transition-colors hover:bg-[var(--surface)]/80 hover:border-zinc-300 dark:hover:border-white/20"
+              className="group relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-white/10 bg-(--surface)/40 p-8 shadow-lg backdrop-blur-sm transition-colors hover:bg-(--surface)/80 hover:border-zinc-300 dark:hover:border-white/20"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-linear-to-br from-(--accent)/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               
               <div className="relative z-10 flex items-center justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black/5 dark:bg-white/5 text-[var(--accent-cyan)] ring-1 ring-black/10 dark:ring-white/10 transition-transform duration-300 group-hover:scale-110 group-hover:bg-[var(--accent)] group-hover:text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black/5 dark:bg-white/5 text-(--accent-cyan) ring-1 ring-black/10 dark:ring-white/10 transition-transform duration-300 group-hover:scale-110 group-hover:bg-(--accent) group-hover:text-white">
                   {icons[service.title as keyof typeof icons] || <Zap className="w-6 h-6" />}
                 </div>
-                <span className="text-sm font-semibold tracking-wider text-[var(--muted)] group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
+                <span className="text-sm font-semibold tracking-wider text-(--muted) group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
                   {service.metric}
                 </span>
               </div>

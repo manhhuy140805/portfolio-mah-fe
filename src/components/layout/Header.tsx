@@ -13,7 +13,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-[var(--background)]/75 backdrop-blur-md border-b border-zinc-200 dark:border-white/5">
+    <header className="sticky top-0 z-40 bg-(--background)/75 backdrop-blur-md border-b border-zinc-200 dark:border-white/5">
       <div className="mx-auto flex w-full items-center justify-between px-6 py-4">
         {/* Left: Logo */}
         <Link 
@@ -54,7 +54,7 @@ export default function Header() {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="lg:hidden text-zinc-900 dark:text-white hover:text-[var(--accent)] transition-colors"
+            className="lg:hidden text-zinc-900 dark:text-white hover:text-(--accent) transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -65,13 +65,13 @@ export default function Header() {
 
       {/* Mobile Navigation Dropdown */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden border-t border-zinc-200 dark:border-white/10 bg-[var(--background)] absolute top-full left-0 w-full shadow-2xl">
+        <div className="lg:hidden border-t border-zinc-200 dark:border-white/10 bg-background absolute top-full left-0 w-full shadow-2xl">
           <nav className="px-6 py-4">
             <ul className="flex flex-col gap-4 text-base font-semibold text-zinc-900 dark:text-white">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
-                    className="flex items-center justify-between w-full py-2 hover:text-[var(--accent)] transition"
+                    className="flex items-center justify-between w-full py-2 hover:text-(--accent) transition"
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

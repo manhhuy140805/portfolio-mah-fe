@@ -5,7 +5,7 @@ import { portfolioProjects } from "@/src/lib/portfolio-data";
 
 export default function FeaturedProjects() {
   return (
-    <section className="border-b border-zinc-200 dark:border-white/10 bg-[var(--background)]">
+    <section className="border-b border-zinc-200 dark:border-white/10 bg-background">
       <div className="mx-auto w-full max-w-6xl px-6 py-16 lg:py-20">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <SectionTitle

@@ -19,7 +19,7 @@ export default function SectionTitle({
         <p
           className={[
             "text-sm font-semibold uppercase",
-            isLight ? "text-[var(--accent)]" : "text-[var(--accent)]",
+            isLight ? "text-(--accent)" : "text-(--accent)",
           ].join(" ")}
         >
           {eyebrow}
@@ -34,7 +34,7 @@ export default function SectionTitle({
         >
           {title}
         </h2>
-        <span className="hidden h-px w-16 bg-[var(--accent-warm)] sm:block" />
+        <span className="hidden h-px w-16 bg-(--accent-warm) sm:block" />
       </div>
       {description ? (
         <p

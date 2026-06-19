@@ -11,7 +11,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     <input
       suppressHydrationWarning
       className={[
-        "h-12 rounded-md border border-white/10 bg-black/30 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[var(--accent)] focus:bg-black/50",
+        "h-12 rounded-md border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-black/30 px-4 text-sm text-zinc-900 dark:text-white outline-none transition placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:border-(--accent) focus:bg-zinc-200 dark:focus:bg-black/50",
         className,
       ]
         .filter(Boolean)

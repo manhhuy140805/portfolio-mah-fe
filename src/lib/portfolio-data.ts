@@ -3,21 +3,25 @@ import type { Skill } from "@/src/types/skill.type";
 
 export const serviceCards = [
   {
+    id: "observation",
     title: "Visual Memory & Observation",
     metric: "Pixel-Perfect",
     description: "Strong visual memory and keen attention to detail. I can quickly spot UI inconsistencies and debug complex code patterns at a glance.",
   },
   {
+    id: "agile",
     title: "Agile Problem Solving",
     metric: "Fast Reflexes",
     description: "Quick thinking and rapid adaptation to new challenges. Able to troubleshoot bugs efficiently and handle high-pressure situations.",
   },
   {
+    id: "word",
     title: "Microsoft Word Mastery",
     metric: "High Proficiency",
     description: "Expert-level skills in Microsoft Word. Highly proficient in fast typing, advanced text formatting, and efficient information processing.",
   },
   {
+    id: "fullstack",
     title: "Full-Stack Development",
     metric: "Robust Systems",
     description: "Combining my observation skills with a strong tech stack to build scalable, responsive, and high-performance web applications.",
@@ -25,10 +29,10 @@ export const serviceCards = [
 ];
 
 export const portfolioStats = [
-  { value: 3, suffix: "rd", label: "Year IT Student" },
-  { value: 15, suffix: "+", label: "Academic Projects" },
-  { value: 4, suffix: "+", label: "Core Technologies" },
-  { value: 100, suffix: "%", label: "Passion for Coding" },
+  { id: "year", value: 3, suffix: "rd", label: "Year IT Student" },
+  { id: "projects", value: 10, suffix: "+", label: "Academic Projects" },
+  { id: "tech", value: 4, suffix: "+", label: "Core Technologies" },
+  { id: "passion", value: 100, suffix: "%", label: "Passion for Coding" },
 ];
 
 export const designSkills: Skill[] = [
@@ -54,25 +58,13 @@ export const developmentSkills: Skill[] = [
 
 export const portfolioProjects: Project[] = [
   {
-    id: "saas-dashboard",
-    slug: "saas-dashboard",
-    title: "SaaS Website Design",
-    description:
-      "A polished subscription dashboard concept with pricing, analytics, and onboarding flows.",
-    technologies: ["Next.js", "Dashboard", "UI Kit"],
-    category: "Product Design",
-    year: "2026",
-    outcome: "Sharper trial-to-paid journey",
-    role: "UI Designer and Frontend Developer",
-  },
-  {
     id: "workout-app",
     slug: "workout-app",
-    title: "Workout App Design 3",
+    title: "Workout App Landing Page",
     description:
-      "Mobile-first fitness experience with workout programs, progress tracking, and habit loops.",
-    technologies: ["React", "Mobile UI", "Prototype"],
-    category: "Mobile App",
+      "A high-converting landing page for a fitness experience with workout programs and habit loops.",
+    technologies: ["React", "Landing Page", "Framer Motion"],
+    category: "Landing Page",
     year: "2026",
     outcome: "Clearer daily workout planning",
     role: "Product Designer",
@@ -101,18 +93,28 @@ export const portfolioProjects: Project[] = [
     outcome: "Faster operational scanning",
     role: "Frontend Developer",
   },
+  {
+    id: "ggzone",
+    slug: "ggzone",
+    title: "GGZone Platform",
+    description: "GGZone is a full-stack academic web application prototype built for my Advanced Web Development course. It is designed as a gaming social network and marketplace where users can browse games, join communities, interact with posts, manage profiles, connect with friends, and purchase gaming-related products. The frontend was built with React, TypeScript, Vite, Tailwind CSS, and React Router, following a feature-based architecture with reusable components, centralized API services, protected routes, and JWT authentication. The backend was developed in two versions, ASP.NET and NestJS, with the current demo using the NestJS REST API. The project focuses on demonstrating UI development, API integration, user flows, role-based access, and full-stack application structure for academic purposes.",
+    technologies: ["ReactJS", "NestJS", "Tailwind CSS", "PostgreSQL"],
+    category: "Web App",
+    year: "2026",
+    outcome: "Successfully deployed and active",
+    role: "Full-stack Developer",
+    demoUrl: "https://ggzone-kappa.vercel.app/",
+    frontendDeploy: "Vercel",
+    backendDeploy: "Render",
+  },
 ];
 
 export const educationItems = [
   {
+    id: "ute",
     title: "University of Technology and Education, the University of Da Nang",
     years: "2023 - Present",
     description: "Studying Information Technology with a focus on software engineering, web development, and system design.",
   },
 ];
 
-export const pricingPlans = [
-  { name: "Starter", price: "$5.00", features: ["5 social accounts", "Free platform access", "24/7 support"] },
-  { name: "Basic", price: "$230.00", features: ["Premium assets", "Marketing platform", "Lifetime support"] },
-  { name: "Premium", price: "$45.00", features: ["5 social accounts", "Priority support", "Brand review"] },
-];

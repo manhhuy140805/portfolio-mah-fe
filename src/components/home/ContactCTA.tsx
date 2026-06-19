@@ -1,7 +1,12 @@
+"use client";
+
 import { Mail, Phone, Download, ArrowRight, CheckCircle2 } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export default function ContactCTA() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative w-full border-y border-white/5 bg-black py-16 lg:py-24 overflow-hidden">
       {/* 2/3 Width Video Background on the Right */}
@@ -22,34 +27,34 @@ export default function ContactCTA() {
         
         {/* Left: Text & Primary Actions */}
         <div className="flex flex-col items-start text-left relative z-10 rounded-3xl bg-black/60 p-6 backdrop-blur-md sm:p-8 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--accent-cyan)]/30 bg-[var(--accent-cyan)]/10 px-4 py-2">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-(--accent-cyan)/30 bg-(--accent-cyan)/10 px-4 py-2">
             <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-cyan)] opacity-75"></span>
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[var(--accent-cyan)]"></span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-(--accent-cyan) opacity-75"></span>
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-(--accent-cyan)"></span>
             </span>
-            <span className="text-xs font-semibold uppercase tracking-wider text-[var(--accent-cyan)]">
-              Actively seeking opportunities
+            <span className="text-xs font-semibold uppercase tracking-wider text-(--accent-cyan)">
+              {t("contact.status")}
             </span>
           </div>
 
           <h2 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-            Let&apos;s build the <br className="hidden lg:block" />
-            <span className="bg-gradient-to-r from-[var(--accent-cyan)] to-blue-500 bg-clip-text text-transparent">
-              next big thing.
+            {t("contact.title_1")} <br className="hidden lg:block" />
+            <span className="bg-linear-to-r from-(--accent-cyan) to-blue-500 bg-clip-text text-transparent">
+              {t("contact.title_2")}
             </span>
           </h2>
           
           <p className="mb-8 max-w-lg text-lg text-zinc-400">
-            I am currently open for full-time roles or exciting freelance projects. Whether you have a position to fill or just want to connect, I&apos;d love to hear from you.
+            {t("contact.description")}
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
             <a 
               href="mailto:trandinhmanhhuy05@gmail.com" 
-              className="group flex h-14 items-center gap-3 rounded-full bg-[var(--accent-cyan)] px-8 font-bold text-black transition-all hover:scale-105 hover:bg-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
+              className="group flex h-14 items-center gap-3 rounded-full bg-(--accent-cyan) px-8 font-bold text-black transition-all hover:scale-105 hover:bg-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
             >
               <Mail className="h-5 w-5" />
-              Drop an Email
+              {t("contact.email")}
             </a>
             <a 
               href="/cv.pdf" 
@@ -57,16 +62,16 @@ export default function ContactCTA() {
               className="group flex h-14 items-center gap-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-8 font-bold text-white transition-all hover:bg-white/20 hover:border-white/40"
             >
               <Download className="h-5 w-5 text-zinc-400 transition-colors group-hover:text-white" />
-              Get Resume
+              {t("contact.resume")}
             </a>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-6 text-sm font-medium text-zinc-500">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-[#39d353]" /> Fast Response
+              <CheckCircle2 className="h-4 w-4 text-[#39d353]" /> {t("contact.fast_response")}
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-[#39d353]" /> Available Immediately
+              <CheckCircle2 className="h-4 w-4 text-[#39d353]" /> {t("contact.available")}
             </div>
           </div>
         </div>
@@ -75,16 +80,16 @@ export default function ContactCTA() {
         <div className="grid gap-4 sm:grid-cols-2">
           
           {/* Email Card */}
-          <a href="mailto:trandinhmanhhuy05@gmail.com" className="group relative flex flex-col items-start gap-4 overflow-hidden rounded-2xl border border-white/10 bg-[#121214] p-6 transition-all hover:-translate-y-1 hover:border-[var(--accent-cyan)]/50 hover:bg-[#1a1a1c] hover:shadow-[0_10px_30px_rgba(6,182,212,0.1)]">
-            <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[var(--accent-cyan)]/20 blur-2xl transition-all group-hover:bg-[var(--accent-cyan)]/40"></div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-white transition-colors group-hover:bg-[var(--accent-cyan)] group-hover:text-black">
+          <a href="mailto:trandinhmanhhuy05@gmail.com" className="group relative flex flex-col items-start gap-4 overflow-hidden rounded-2xl border border-white/10 bg-[#121214] p-6 transition-all hover:-translate-y-1 hover:border-(--accent-cyan)/50 hover:bg-[#1a1a1c] hover:shadow-[0_10px_30px_rgba(6,182,212,0.1)]">
+            <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-(--accent-cyan)/20 blur-2xl transition-all group-hover:bg-(--accent-cyan)/40"></div>
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-white transition-colors group-hover:bg-(--accent-cyan) group-hover:text-black">
               <Mail className="h-5 w-5" />
             </div>
             <div className="relative z-10 w-full overflow-hidden">
-              <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">Email Me</p>
+              <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">{t("contact.cards.email.label")}</p>
               <p className="mt-1 truncate font-semibold text-zinc-200">trandinhmanhhuy05@gmail.com</p>
             </div>
-            <ArrowRight className="absolute bottom-6 right-6 h-5 w-5 -translate-x-4 text-zinc-600 opacity-0 transition-all group-hover:translate-x-0 group-hover:text-[var(--accent-cyan)] group-hover:opacity-100" />
+            <ArrowRight className="absolute bottom-6 right-6 h-5 w-5 -translate-x-4 text-zinc-600 opacity-0 transition-all group-hover:translate-x-0 group-hover:text-(--accent-cyan) group-hover:opacity-100" />
           </a>
 
           {/* Phone Card */}
@@ -94,7 +99,7 @@ export default function ContactCTA() {
               <Phone className="h-5 w-5" />
             </div>
             <div className="relative z-10">
-              <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">Call / Zalo</p>
+              <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">{t("contact.cards.phone.label")}</p>
               <p className="mt-1 font-semibold text-zinc-200">+84 326 149 986</p>
             </div>
             <ArrowRight className="absolute bottom-6 right-6 h-5 w-5 -translate-x-4 text-zinc-600 opacity-0 transition-all group-hover:translate-x-0 group-hover:text-[#39d353] group-hover:opacity-100" />
@@ -107,8 +112,8 @@ export default function ContactCTA() {
               <FaLinkedin className="h-5 w-5" />
             </div>
             <div className="relative z-10">
-              <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">Connect</p>
-              <p className="mt-1 font-semibold text-zinc-200">LinkedIn Profile</p>
+              <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">{t("contact.cards.linkedin.label")}</p>
+              <p className="mt-1 font-semibold text-zinc-200">{t("contact.cards.linkedin.desc")}</p>
             </div>
             <ArrowRight className="absolute bottom-6 right-6 h-5 w-5 -translate-x-4 text-zinc-600 opacity-0 transition-all group-hover:translate-x-0 group-hover:text-[#0a66c2] group-hover:opacity-100" />
           </a>
@@ -120,8 +125,8 @@ export default function ContactCTA() {
               <FaGithub className="h-5 w-5" />
             </div>
             <div className="relative z-10">
-              <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">View Code</p>
-              <p className="mt-1 font-semibold text-zinc-200">GitHub Profile</p>
+              <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">{t("contact.cards.github.label")}</p>
+              <p className="mt-1 font-semibold text-zinc-200">{t("contact.cards.github.desc")}</p>
             </div>
             <ArrowRight className="absolute bottom-6 right-6 h-5 w-5 -translate-x-4 text-zinc-600 opacity-0 transition-all group-hover:translate-x-0 group-hover:text-white group-hover:opacity-100" />
           </a>

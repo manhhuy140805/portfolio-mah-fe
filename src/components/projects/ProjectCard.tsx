@@ -1,64 +1,88 @@
+"use client";
+
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/src/types/project.type";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 type ProjectCardProps = {
   project: Project;
 };
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const { t } = useTranslation();
+  
   const visualTone =
     project.slug === "workout-app"
-      ? "from-zinc-900 via-stone-800 to-zinc-950"
+      ? "from-zinc-800 via-stone-800/80 to-zinc-900"
       : project.slug === "ecommerce-design"
-        ? "from-zinc-900 via-neutral-700 to-stone-950"
+        ? "from-zinc-800 via-neutral-700/80 to-stone-900"
         : project.slug === "dashboard-design"
-          ? "from-black via-zinc-900 to-[#1d1020]"
-          : "from-zinc-950 via-neutral-900 to-[#26151d]";
+          ? "from-zinc-900 via-zinc-800/80 to-[#1d1020]"
+          : "from-zinc-800 via-neutral-800/80 to-[#26151d]";
 
   return (
-    <article className="group overflow-hidden rounded-lg border border-white/10 bg-[var(--surface)] shadow-[0_24px_80px_rgba(0,0,0,0.18)] transition hover:border-[var(--accent)]">
-      <Link aria-label={`View ${project.title}`} href={`/projects/${project.slug}`}>
-        <div className={`aspect-[4/3] bg-gradient-to-br ${visualTone} p-5`}>
-          <div className="flex h-full flex-col justify-between rounded-md border border-white/10 bg-black/25 p-4">
-            <div className="flex items-center justify-between text-xs text-zinc-400">
-              <span>{project.category ?? "Project"}</span>
-              <span>{project.year ?? "2026"}</span>
+    <motion.article 
+      layout
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20, scale: 0.95 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="group relative overflow-hidden rounded-2xl bg-zinc-100 dark:bg-white/5 backdrop-blur-md border border-zinc-200 dark:border-white/10 shadow-2xl transition-all hover:shadow-[0_0_40px_rgba(47,47,228,0.15)] hover:bg-zinc-200 dark:hover:bg-white/[0.07]"
+    >
+      <div className="absolute inset-0 bg-linear-to-br from-(--accent)/0 via-(--accent)/0 to-(--accent)/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
+      
+      <Link aria-label={`View ${project.title}`} href={`/projects/${project.slug}`} className="block h-full">
+        <div className={`relative aspect-video overflow-hidden p-6`}>
+          <div className={`absolute inset-0 bg-linear-to-br ${visualTone} opacity-80 group-hover:scale-105 transition-transform duration-700 ease-in-out`} />
+          
+          <div className="relative h-full flex flex-col justify-between rounded-xl border border-white/10 bg-black/20 backdrop-blur-sm p-5 shadow-inner transition-transform duration-500 group-hover:-translate-y-1">
+            <div className="flex items-center justify-between text-xs font-medium tracking-wide text-zinc-300">
+              <span className="rounded-full bg-white/10 px-3 py-1">{t(`projects_page.categories.${project.category}`, { defaultValue: project.category ?? "Project" })}</span>
+              <span className="flex items-center gap-1.5 rounded-full bg-black/40 px-3 py-1">
+                 {project.year ?? "2026"}
+              </span>
             </div>
-            <div className="space-y-3">
-              <div className="h-3 w-24 rounded-md bg-[var(--accent)]" />
-              <div className="h-3 w-36 rounded-md bg-white/75" />
-              <div className="grid grid-cols-3 gap-2">
-                <span className="h-16 rounded-md bg-white/10" />
-                <span className="h-16 rounded-md bg-[var(--accent-warm)]/30" />
-                <span className="h-16 rounded-md bg-[var(--accent-cyan)]/25" />
+            
+            <div className="space-y-3 opacity-70 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="h-2.5 w-1/4 rounded-full bg-(--accent-cyan)/80 shadow-[0_0_10px_rgba(77,184,255,0.5)]" />
+              <div className="h-2.5 w-1/2 rounded-full bg-white/80" />
+              <div className="grid grid-cols-3 gap-3 pt-2">
+                <span className="h-12 rounded-lg bg-white/10 border border-white/5" />
+                <span className="h-12 rounded-lg bg-(--accent-warm)/20 border border-(--accent-warm)/20" />
+                <span className="h-12 rounded-lg bg-(--accent)/20 border border-(--accent)/20" />
               </div>
             </div>
           </div>
         </div>
-      </Link>
-      <div className="p-5">
-        <div className="flex items-start justify-between gap-4">
-          <h3 className="text-xl font-semibold text-white">
-            <Link href={`/projects/${project.slug}`}>{project.title}</Link>
-          </h3>
-          <span className="text-xs font-semibold text-[var(--accent-warm)]">
-            View
-          </span>
+
+        <div className="relative p-6">
+          <div className="flex items-start justify-between gap-4">
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white transition-colors group-hover:text-(--accent-cyan)">
+              {t(`portfolio_projects.${project.id}.title`, { defaultValue: project.title })}
+            </h3>
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-200 dark:bg-white/5 border border-zinc-300 dark:border-white/10 text-zinc-900 dark:text-white transition-all group-hover:bg-(--accent) group-hover:border-(--accent) group-hover:text-white group-hover:rotate-45">
+               <ArrowUpRight className="h-4 w-4" />
+            </div>
+          </div>
+          
+          <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 line-clamp-2">
+            {t(`portfolio_projects.${project.id}.description`, { defaultValue: project.description })}
+          </p>
+          
+          <ul className="mt-6 flex flex-wrap gap-2">
+            {project.technologies.map((technology) => (
+              <li
+                className="rounded-md bg-zinc-200 dark:bg-white/5 border border-zinc-300 dark:border-white/5 px-2.5 py-1 text-[11px] font-medium tracking-wide text-zinc-700 dark:text-zinc-300 transition-colors group-hover:border-zinc-400 dark:group-hover:border-white/10 group-hover:bg-zinc-300 dark:group-hover:bg-white/10"
+                key={technology}
+              >
+                {technology}
+              </li>
+            ))}
+          </ul>
         </div>
-        <p className="mt-3 text-sm leading-6 text-zinc-400">
-          {project.description}
-        </p>
-        <ul className="mt-5 flex flex-wrap gap-2">
-          {project.technologies.map((technology) => (
-            <li
-              className="rounded-md border border-white/10 px-2 py-1 text-xs font-medium text-zinc-300"
-              key={technology}
-            >
-              {technology}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </article>
+      </Link>
+    </motion.article>
   );
 }

@@ -1,0 +1,233 @@
+{
+  "hero": {
+    "role": "3rd-Year IT Student",
+    "description": "I am a 3rd-year student passionate about web development. I focus on building modern UI/UX experiences, and continuously learning new technologies to hone my skills.",
+    "typing_1": "Prioritizing user experience over just visual UI.",
+    "typing_2": "Designing intuitive, accessible, and scalable systems.",
+    "typing_3": "Writing clean code to build high-performance products.",
+    "hire": "Hire Portfolio",
+    "explore": "Explore Work",
+    "stats": {
+      "year": { "suffix": "rd", "label": "Year IT Student" },
+      "projects": { "suffix": "+", "label": "Academic Projects" },
+      "tech": { "suffix": "+", "label": "Core Technologies" },
+      "passion": { "suffix": "%", "label": "Passion for Coding" }
+    }
+  },
+  "about": {
+    "eyebrow": "About Me",
+    "title": "Building solutions that are robust, scalable, and user-centric",
+    "description": "Focused on building scalable applications, learning modern technologies, and solving real-world problems through code.",
+    "more": "More About Me",
+    "services": {
+      "observation": {
+        "metric": "Pixel-Perfect",
+        "title": "Visual Memory & Observation",
+        "description": "Strong visual memory and keen attention to detail. I can quickly spot UI inconsistencies and debug complex code patterns at a glance."
+      },
+      "agile": {
+        "metric": "Fast Reflexes",
+        "title": "Agile Problem Solving",
+        "description": "Quick thinking and rapid adaptation to new challenges. Able to troubleshoot bugs efficiently and handle high-pressure situations."
+      },
+      "word": {
+        "metric": "High Proficiency",
+        "title": "Microsoft Word Mastery",
+        "description": "Expert-level skills in Microsoft Word. Highly proficient in fast typing, advanced text formatting, and efficient information processing."
+      },
+      "fullstack": {
+        "metric": "Robust Systems",
+        "title": "Full-Stack Development",
+        "description": "Combining my observation skills with a strong tech stack to build scalable, responsive, and high-performance web applications."
+      }
+    }
+  },
+  "skills": {
+    "eyebrow": "My Tech Stack",
+    "title": "Tools & Technologies I Work With",
+    "description": "A comprehensive list of technologies I use to bring ideas to life.",
+    "levels": {
+      "expert": "Expert",
+      "advanced": "Advanced",
+      "intermediate": "Intermediate",
+      "beginner": "Beginner"
+    }
+  },
+  "github": {
+    "eyebrow": "My GitHub Activity",
+    "title": "Code Contributions & Stats",
+    "description": "A visual summary of my coding activity and open-source contributions.",
+    "commits": "Commits",
+    "projects": "Projects",
+    "core_stack": "Core Stack",
+    "view_profile": "View Full Profile on GitHub"
+  },
+  "projects": {
+    "eyebrow": "Recent Portfolio",
+    "title": "Transforming ideas into exceptional work",
+    "description": "A quick pass at the featured work grid from the UI reference, built as reusable cards.",
+    "view_all": "View All Projects"
+  },
+  "contact": {
+    "status": "Actively seeking opportunities",
+    "title_1": "Let's build the",
+    "title_2": "next big thing.",
+    "description": "I am currently open for full-time roles or exciting freelance projects. Whether you have a position to fill or just want to connect, I'd love to hear from you.",
+    "email": "Drop an Email",
+    "resume": "Get Resume",
+    "fast_response": "Fast Response",
+    "available": "Available Immediately",
+    "cards": {
+      "email": { "label": "Email Me" },
+      "phone": { "label": "Call / Zalo" },
+      "linkedin": { "label": "Connect", "desc": "LinkedIn Profile" },
+      "github": { "label": "View Code", "desc": "GitHub Profile" }
+    }
+  },
+  "about_page": {
+    "hero": {
+      "eyebrow": "About Me",
+      "title_1": "Building digital",
+      "title_2": "experiences",
+      "title_3": "with purpose.",
+      "description": "I am a 3rd-year IT student passionate about turning complex problems into elegant, scalable web applications. Combining design sensibilities with robust engineering to create seamless user journeys.",
+      "see_work": "See My Work",
+      "get_in_touch": "Get In Touch"
+    },
+    "bio": {
+      "role": "Web Developer",
+      "location": "Da Nang City, VN",
+      "download_cv": "Download CV",
+      "profile_summary": "Profile Summary",
+      "p1": "Hi! I am a 3rd-year IT student passionate about building scalable and engaging <strong>Web Applications</strong>. I enjoy turning complex problems into simple, beautiful, and intuitive interfaces.",
+      "p2": "I am always eager to learn new technologies, write clean code, and create seamless digital experiences for users.",
+      "quick_details": "Quick Details",
+      "availability_label": "Availability",
+      "availability_value": "Open to Internships",
+      "education_label": "Education",
+      "education_value": "3rd-Year IT Student",
+      "languages_label": "Languages",
+      "languages_value": "Vietnamese, English",
+      "interests_label": "Interests",
+      "interests_value": "Coding, Design, Music"
+    },
+    "experience": {
+      "title_1": "Driven by",
+      "title_2": "curiosity",
+      "title_3": "and a passion for learning.",
+      "description": "As an active IT student, I continuously build, break, and learn. My journey isn't measured in decades, but in the intensity of my focus and the quality of the projects I deliver."
+    },
+    "services": {
+      "title": "Core Competencies",
+      "description": "The unique blend of skills I bring to every project."
+    },
+    "skills": {
+      "title": "Technical Arsenal",
+      "description": "A constantly evolving toolkit of modern web technologies and design systems.",
+      "always_learning": "Always Learning",
+      "learning_desc": "Technology moves fast. I spend time every week exploring new frameworks and tools."
+    },
+    "education": {
+      "title": "Education & Journey"
+    }
+  },
+  "education_items": {
+    "ute": {
+      "title": "University of Technology and Education, the University of Da Nang",
+      "description": "Studying Information Technology with a focus on software engineering, web development, and system design."
+    }
+  },
+  "coming_soon": {
+    "title_1": "Coming Soon",
+    "title_2": "Under Construction",
+    "back_home": "Back to Home",
+    "explore_projects": "Explore Projects",
+    "services": {
+      "eyebrow": "Services & Collaboration",
+      "description": "I am currently dedicating my time to completing my university studies and exploring new technologies. My software development and web design services will be launched soon with the highest standards. I look forward to collaborating with you in the near future!"
+    },
+    "blog": {
+      "eyebrow": "Blog & Articles",
+      "description": "I'm preparing a space to share my thoughts, devlogs, and tutorials about frontend development, UI/UX design, and technology. Stay tuned for insightful articles and coding experiences!"
+    }
+  },
+  "projects_page": {
+    "eyebrow": "Our Portfolio",
+    "title_1": "Transforming ideas into",
+    "title_2": "exceptional digital experiences",
+    "description": "A curated gallery of SaaS, mobile, commerce, and dashboard interfaces designed for performance, aesthetics, and user engagement.",
+    "categories": {
+      "All": "All",
+      "Web App": "Web App",
+      "E-Commerce": "E-Commerce",
+      "Dashboard": "Dashboard",
+      "Landing Page": "Landing Page"
+    },
+    "empty": {
+      "title": "No projects found in this category.",
+      "subtitle": "Try selecting a different filter."
+    },
+    "detail": {
+      "back": "Back to Projects",
+      "visit_live": "Visit Live Site",
+      "source": "Source",
+      "overview": "Overview",
+      "my_role": "My Role",
+      "outcome": "Outcome",
+      "deployment": "Deployment",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "technologies": "Technologies",
+      "live_demo": {
+        "title": "Live Interactive Demo",
+        "subtitle": "Experience the product directly from this page.",
+        "click": "Click to Interact"
+      },
+      "no_preview": {
+        "title": "No live preview available.",
+        "subtitle": "Image gallery coming soon."
+      }
+    }
+  },
+  "portfolio_projects": {
+    "workout-app": {
+      "title": "Workout App Landing Page",
+      "description": "A high-converting landing page for a fitness experience with workout programs and habit loops.",
+      "outcome": "Clearer daily workout planning",
+      "role": "Product Designer"
+    },
+    "ecommerce-design": {
+      "title": "E-Commerce Design",
+      "description": "A refined shopping interface focused on product storytelling, trust, and checkout clarity.",
+      "outcome": "Better browsing and checkout confidence",
+      "role": "UX Designer"
+    },
+    "dashboard-design": {
+      "title": "Dashboard Design 4",
+      "description": "Operations dashboard with dense but readable cards for metrics, activity, and team review.",
+      "outcome": "Faster operational scanning",
+      "role": "Frontend Developer"
+    },
+    "ggzone": {
+      "title": "GGZone Platform",
+      "description": "GGZone is a full-stack academic web application prototype built for my Advanced Web Development course. It is designed as a gaming social network and marketplace where users can browse games, join communities, interact with posts, manage profiles, connect with friends, and purchase gaming-related products. The frontend was built with React, TypeScript, Vite, Tailwind CSS, and React Router, following a feature-based architecture with reusable components, centralized API services, protected routes, and JWT authentication. The backend was developed in two versions, ASP.NET and NestJS, with the current demo using the NestJS REST API. The project focuses on demonstrating UI development, API integration, user flows, role-based access, and full-stack application structure for academic purposes.",
+      "outcome": "Successfully deployed and active",
+      "role": "Full-stack Developer"
+    }
+  },
+  "contact_page": {
+    "status": "Available for New Opportunities",
+    "title_1": "Let's build",
+    "title_2": "something great.",
+    "description": "Whether you have a project in mind, a role to fill, or just want to chat about tech—I'm always open to connecting.",
+    "collab": "Ready to collaborate.",
+    "you": "You",
+    "copied": "Copied!",
+    "copy_email": "Copy Email",
+    "start_conversation": "Start a conversation",
+    "resume": "Resume / CV",
+    "click_download": "Click to download",
+    "location": "Location",
+    "location_value": "Da Nang, VN"
+  }
+}

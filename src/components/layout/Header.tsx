@@ -7,25 +7,36 @@ import Navbar from "./Navbar";
 import Button from "@/src/components/ui/Button";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/src/lib/constants";
+import { ThemeToggle } from "@/src/components/ui/ThemeToggle";
+import { LanguageSwitcher } from "@/src/components/ui/LanguageSwitcher";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-[var(--background)]/75 backdrop-blur-md border-b border-white/5">
+    <header className="sticky top-0 z-40 bg-(--background)/75 backdrop-blur-md border-b border-zinc-200 dark:border-white/5">
       <div className="mx-auto flex w-full items-center justify-between px-6 py-4">
         {/* Left: Logo */}
         <Link 
-          className="flex items-center gap-3 text-2xl font-bold text-white" 
+          className="flex items-center gap-3 text-2xl font-bold text-zinc-900 dark:text-white" 
           href="/"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           <Image
-            src="/images/logo/logo-1.png"
+            src="/images/logo/logo-theme-light.png"
             alt="MA-H Logo"
             width={50}
             height={50}
-            className="object-contain"
+            className="object-contain dark:hidden"
+            priority
+          />
+          <Image
+            src="/images/logo/logo-theme-dark.png"
+            alt="MA-H Logo"
+            width={50}
+            height={50}
+            className="object-contain hidden dark:block"
+            priority
           />
           MA-H
         </Link>
@@ -37,6 +48,8 @@ export default function Header() {
 
         {/* Right: Actions */}
         <div className="flex items-center gap-4">
+          <LanguageSwitcher />
+          <ThemeToggle />
           <div className="hidden lg:block">
             <Button href="/cv.pdf">
               Download CV
@@ -45,7 +58,7 @@ export default function Header() {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="lg:hidden text-white hover:text-[var(--accent)] transition-colors"
+            className="lg:hidden text-zinc-900 dark:text-white hover:text-(--accent) transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -56,13 +69,13 @@ export default function Header() {
 
       {/* Mobile Navigation Dropdown */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden border-t border-white/10 bg-[var(--background)] absolute top-full left-0 w-full shadow-2xl">
+        <div className="lg:hidden border-t border-zinc-200 dark:border-white/10 bg-background absolute top-full left-0 w-full shadow-2xl">
           <nav className="px-6 py-4">
-            <ul className="flex flex-col gap-4 text-base font-semibold text-white">
+            <ul className="flex flex-col gap-4 text-base font-semibold text-zinc-900 dark:text-white">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
-                    className="flex items-center justify-between w-full py-2 hover:text-[var(--accent)] transition"
+                    className="flex items-center justify-between w-full py-2 hover:text-(--accent) transition"
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -85,7 +98,7 @@ export default function Header() {
                   </Link>
                 </li>
               ))}
-              <li className="pt-4 border-t border-white/10">
+              <li className="pt-4 border-t border-zinc-200 dark:border-white/10">
                 <Button href="/cv.pdf" className="w-full justify-center">
                   Download CV
                 </Button>

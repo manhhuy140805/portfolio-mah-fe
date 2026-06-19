@@ -12,4 +12,6 @@ export type Project = {
   role?: string;
   sourceUrl?: string;
   year?: string;
+  frontendDeploy?: string;
+  backendDeploy?: string;
 };

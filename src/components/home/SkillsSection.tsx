@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import SectionTitle from "@/src/components/ui/SectionTitle";
 import { designSkills, developmentSkills } from "@/src/lib/portfolio-data";
 import { 
@@ -15,7 +16,7 @@ import { DiMsqlServer } from "react-icons/di";
 
 const iconMap: Record<string, React.ReactNode> = {
   "react": <SiReact className="w-5 h-5 text-[#61DAFB]" />,
-  "nextjs": <SiNextdotjs className="w-5 h-5 text-white" />,
+  "nextjs": <SiNextdotjs className="w-5 h-5 text-zinc-900 dark:text-white" />,
   "nestjs": <SiNestjs className="w-5 h-5 text-[#E0234E]" />,
   "aspnet": <SiDotnet className="w-5 h-5 text-[#512BD4]" />,
   "typescript": <SiTypescript className="w-5 h-5 text-[#3178C6]" />,
@@ -33,6 +34,7 @@ const iconMap: Record<string, React.ReactNode> = {
 export default function SkillsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useTranslation();
 
   // Combine and duplicate skills for continuous marquee effect
   const allSkills = [...developmentSkills, ...designSkills];
@@ -40,9 +42,9 @@ export default function SkillsSection() {
   const marqueeItems = [...allSkills, ...allSkills, ...allSkills];
 
   return (
-    <section className="relative border-b border-white/5 bg-[var(--background)] py-16 lg:py-28 overflow-hidden">
+    <section className="relative border-b border-zinc-200 dark:border-white/5 bg-background py-16 lg:py-28 overflow-hidden">
       {/* Decorative gradient */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[var(--accent-cyan)]/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-100 bg-(--accent-cyan)/10 rounded-full blur-[120px] pointer-events-none -z-10" />
 
       <div className="mx-auto w-full max-w-7xl px-6 mb-12">
         <motion.div
@@ -53,9 +55,9 @@ export default function SkillsSection() {
           className="text-center flex flex-col items-center"
         >
           <SectionTitle
-            eyebrow="My Tech Stack"
-            title="Tools & Technologies I Work With"
-            description="A comprehensive list of technologies I use to bring ideas to life."
+            eyebrow={t("skills.eyebrow")}
+            title={t("skills.title")}
+            description={t("skills.description")}
           />
         </motion.div>
       </div>
@@ -63,8 +65,8 @@ export default function SkillsSection() {
       {/* Marquee Container */}
       <div className="relative flex overflow-hidden w-full group mt-16">
         {/* Left and right fade gradients for smooth entering/exiting */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[var(--background)] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[var(--background)] to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-linear-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-linear-to-l from-background to-transparent z-10 pointer-events-none" />
 
         {/* First Marquee Row (Moving Left) */}
         <motion.div
@@ -79,7 +81,7 @@ export default function SkillsSection() {
           {marqueeItems.map((skill, index) => (
             <div
               key={`${skill.id}-${index}-row1`}
-              className="flex items-center gap-3 whitespace-nowrap rounded-full border border-white/10 bg-[var(--surface)]/50 px-6 py-3 shadow-sm backdrop-blur-md transition-colors hover:bg-[var(--surface)] hover:border-white/20"
+              className="flex items-center gap-3 whitespace-nowrap rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-(--surface)/50 px-6 py-3 shadow-sm backdrop-blur-md transition-colors hover:bg-zinc-200 dark:hover:bg-(--surface) hover:border-zinc-300 dark:hover:border-white/20"
             >
               {iconMap[skill.id] || (
                 <span 
@@ -93,10 +95,10 @@ export default function SkillsSection() {
                   }`}
                 />
               )}
-              <span className="text-base font-medium text-white/90">
+              <span className="text-base font-medium text-zinc-800 dark:text-white/90">
                 {skill.name}
               </span>
-              <span className="ml-2 rounded-full bg-white/5 px-2 py-0.5 text-xs text-[var(--muted)]">
+              <span className="ml-2 rounded-full bg-zinc-200 dark:bg-white/5 px-2 py-0.5 text-xs text-(--muted)">
                 {skill.level}
               </span>
             </div>
@@ -118,7 +120,7 @@ export default function SkillsSection() {
           {marqueeItems.reverse().map((skill, index) => (
             <div
               key={`${skill.id}-${index}-row2`}
-              className="flex items-center gap-3 whitespace-nowrap rounded-full border border-white/10 bg-[var(--surface)]/50 px-6 py-3 shadow-sm backdrop-blur-md transition-colors hover:bg-[var(--surface)] hover:border-white/20"
+              className="flex items-center gap-3 whitespace-nowrap rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-(--surface)/50 px-6 py-3 shadow-sm backdrop-blur-md transition-colors hover:bg-zinc-200 dark:hover:bg-(--surface) hover:border-zinc-300 dark:hover:border-white/20"
             >
               {iconMap[skill.id] || (
                 <span 
@@ -132,10 +134,10 @@ export default function SkillsSection() {
                   }`}
                 />
               )}
-              <span className="text-base font-medium text-white/90">
+              <span className="text-base font-medium text-zinc-800 dark:text-white/90">
                 {skill.name}
               </span>
-              <span className="ml-2 rounded-full bg-white/5 px-2 py-0.5 text-xs text-[var(--muted)]">
+              <span className="ml-2 rounded-full bg-zinc-200 dark:bg-white/5 px-2 py-0.5 text-xs text-(--muted)">
                 {skill.level}
               </span>
             </div>

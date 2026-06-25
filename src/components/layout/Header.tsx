@@ -51,7 +51,7 @@ export default function Header() {
           <LanguageSwitcher />
           <ThemeToggle />
           <div className="hidden lg:block">
-            <Button href="/Tran-Dinh-Manh-Huy-CV.pdf" target="_blank">
+            <Button href="/Tran-Dinh-Manh-Huy-CV-Intern.pdf" target="_blank">
               Download CV
             </Button>
           </div>
@@ -99,7 +99,7 @@ export default function Header() {
                 </li>
               ))}
               <li className="pt-4 border-t border-zinc-200 dark:border-white/10">
-                <Button href="/Tran-Dinh-Manh-Huy-CV.pdf" target="_blank" className="w-full justify-center">
+                <Button href="/Tran-Dinh-Manh-Huy-CV-Intern.pdf" target="_blank" className="w-full justify-center">
                   Download CV
                 </Button>
               </li>

@@ -57,7 +57,7 @@ export default function ContactCTA() {
               {t("contact.email")}
             </a>
             <a 
-              href="/Tran-Dinh-Manh-Huy-CV.pdf" 
+              href="/Tran-Dinh-Manh-Huy-CV-Intern.pdf" 
               target="_blank"
               className="group flex h-14 items-center gap-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-8 font-bold text-white transition-all hover:bg-white/20 hover:border-white/40"
             >

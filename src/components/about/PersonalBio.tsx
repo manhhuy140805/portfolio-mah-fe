@@ -69,7 +69,7 @@ export default function PersonalBio() {
 
               {/* Action Button */}
               <div className="w-full pt-4">
-                <Button href="/Tran-Dinh-Manh-Huy-CV.pdf" target="_blank" className="w-full flex justify-center py-4 bg-zinc-100 dark:bg-(--surface) text-zinc-900 dark:text-white hover:bg-(--accent) hover:text-white border border-zinc-200 dark:border-white/10 shadow-lg group">
+                <Button href="/Tran-Dinh-Manh-Huy-CV-Intern.pdf" target="_blank" className="w-full flex justify-center py-4 bg-zinc-100 dark:bg-(--surface) text-zinc-900 dark:text-white hover:bg-(--accent) hover:text-white border border-zinc-200 dark:border-white/10 shadow-lg group">
                   <Download className="w-5 h-5 mr-2 group-hover:-translate-y-1 transition-transform" /> {t("about_page.bio.download_cv")}
                 </Button>
               </div>

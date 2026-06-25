@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink, Users } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
@@ -52,18 +52,18 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
             {t("projects_page.detail.back")}
           </Link>
           
-          <div className="mt-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="mt-8 flex flex-col gap-6">
             <div>
               <div className="flex items-center gap-3 text-sm text-(--accent-cyan) font-medium mb-3">
                 <span className="px-3 py-1 rounded-full bg-(--accent-cyan)/10 border border-(--accent-cyan)/20">{t(`projects_page.categories.${project.category}`, { defaultValue: project.category })}</span>
                 <span>•</span>
                 <span>{project.year}</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">{t(`portfolio_projects.${project.id}.title`, { defaultValue: project.title })}</h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">{t(`portfolio_projects.${project.id}.title`, { defaultValue: project.title })}</h1>
             </div>
             
             {/* Actions */}
-            <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <div className="flex flex-wrap items-center gap-3 mt-2 shrink-0">
               {project.demoUrl && (
                 <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-(--accent) hover:bg-(--accent-warm) text-white font-medium transition-colors shadow-[0_0_15px_rgba(47,47,228,0.4)]">
                   {t("projects_page.detail.visit_live")} <ExternalLink className="h-4 w-4" />
@@ -74,6 +74,11 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                   <FaGithub className="h-4 w-4" /> {t("projects_page.detail.source")}
                 </a>
               )}
+              {project.sourceUrls && project.sourceUrls.map((src) => (
+                <a key={src.url} href={src.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-200 dark:bg-white/10 hover:bg-zinc-300 dark:hover:bg-white/20 border border-zinc-300 dark:border-white/10 text-zinc-900 dark:text-white font-medium transition-colors">
+                  <FaGithub className="h-4 w-4" /> {src.label}
+                </a>
+              ))}
             </div>
           </div>
         </motion.div>
@@ -120,6 +125,15 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
           </div>
           
           <div className="flex flex-col gap-8 rounded-2xl bg-white dark:bg-white/5 border border-zinc-200 dark:border-white/10 p-6 shadow-xl dark:shadow-none">
+            {project.teamSize && (
+              <div>
+                <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-2">{t("projects_page.detail.team_size", { defaultValue: "Team Size" })}</h3>
+                <p className="text-zinc-900 dark:text-zinc-200 font-medium flex items-center gap-2">
+                  <Users className="h-4 w-4 text-(--accent-cyan)" />
+                  {project.teamSize} {t("projects_page.detail.members", { defaultValue: "members" })}
+                </p>
+              </div>
+            )}
             {project.role && (
               <div>
                 <h3 className="text-xs font-bold text-(--accent-cyan) uppercase tracking-widest mb-2">{t("projects_page.detail.my_role")}</h3>
@@ -238,6 +252,33 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               />
             </div>
           </motion.div>
+          </div>
+        ) : project.galleryUrls && project.galleryUrls.length > 0 ? (
+          <div className="relative mt-32">
+            <div className="mb-10 text-center">
+              <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-3">{t("projects_page.detail.gallery.title", { defaultValue: "App Screenshots" })}</h2>
+              <p className="text-zinc-400">{t("projects_page.detail.gallery.subtitle", { defaultValue: "Actual UI of the application" })}</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+              {project.galleryUrls.map((url, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: Math.min(index * 0.1, 0.5) }}
+                  className="relative aspect-[9/19] rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10 shadow-lg dark:shadow-none group bg-white dark:bg-black/40"
+                >
+                  <Image 
+                    src={url} 
+                    alt={`Screenshot ${index + 1}`} 
+                    fill 
+                    sizes="(max-w-768px) 50vw, (max-w-1024px) 33vw, 20vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
         ) : (
           <motion.div 

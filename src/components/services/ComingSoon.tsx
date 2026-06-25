@@ -13,7 +13,7 @@ export default function ComingSoon() {
     <div className="min-h-screen bg-zinc-50 dark:bg-[#030712] flex flex-col items-center justify-center relative overflow-hidden px-6 font-sans">
       
       {/* Dynamic Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 
       {/* Floating Animated Orbs */}
       <motion.div 
@@ -23,7 +23,7 @@ export default function ComingSoon() {
           rotate: [0, 90, 0]
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-[var(--accent)]/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"
+        className="absolute top-[10%] left-[20%] w-125 h-125 bg-(--accent)/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"
       />
       <motion.div 
         animate={{ 
@@ -32,7 +32,7 @@ export default function ComingSoon() {
           rotate: [0, -90, 0]
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-[10%] right-[15%] w-[600px] h-[600px] bg-[var(--accent-warm)]/40 rounded-full blur-[120px] mix-blend-screen pointer-events-none"
+        className="absolute bottom-[10%] right-[15%] w-150 h-150 bg-(--accent-warm)/40 rounded-full blur-[120px] mix-blend-screen pointer-events-none"
       />
       <motion.div 
         animate={{ 
@@ -40,7 +40,7 @@ export default function ComingSoon() {
           scale: [1, 1.3, 1]
         }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[40%] left-[40%] w-[400px] h-[400px] bg-[var(--accent-cyan)]/20 rounded-full blur-[100px] mix-blend-screen pointer-events-none"
+        className="absolute top-[40%] left-[40%] w-100 h-100 bg-(--accent-cyan)/20 rounded-full blur-[100px] mix-blend-screen pointer-events-none"
       />
 
       {/* Main Content */}
@@ -51,8 +51,8 @@ export default function ComingSoon() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-white/[0.03] border border-zinc-300 dark:border-white/[0.08] backdrop-blur-md mb-8">
-            <Sparkles className="w-4 h-4 text-[var(--accent-cyan)]" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 dark:bg-white/3 border border-zinc-300 dark:border-white/8 backdrop-blur-md mb-8">
+            <Sparkles className="w-4 h-4 text-(--accent-cyan)" />
             <span className="text-sm font-medium text-zinc-700 dark:text-gray-300 tracking-wide uppercase">{t("coming_soon.services.eyebrow")}</span>
           </div>
         </motion.div>
@@ -63,11 +63,11 @@ export default function ComingSoon() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6"
         >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-900 dark:from-white via-indigo-600 dark:via-indigo-200 to-zinc-900 dark:to-white drop-shadow-sm">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-zinc-900 dark:from-white via-indigo-600 dark:via-indigo-200 to-zinc-900 dark:to-white drop-shadow-sm">
             {t("coming_soon.title_1")}
           </span>
           <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] via-[var(--accent-cyan)] to-[var(--accent-warm)] whitespace-nowrap">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-(--accent) via-(--accent-cyan) to-(--accent-warm) whitespace-nowrap">
             {t("coming_soon.title_2")}
           </span>
         </motion.h1>
@@ -88,14 +88,14 @@ export default function ComingSoon() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="flex gap-6 mb-12"
         >
-          <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.02] border border-zinc-200 dark:border-white/[0.05] shadow-[0_0_30px_-10px_rgba(47,47,228,0.2)] backdrop-blur-xl">
-            <Code2 className="w-8 h-8 text-[var(--accent-cyan)]" />
+          <div className="p-4 rounded-2xl bg-white dark:bg-white/2 border border-zinc-200 dark:border-white/5 shadow-[0_0_30px_-10px_rgba(47,47,228,0.2)] backdrop-blur-xl">
+            <Code2 className="w-8 h-8 text-(--accent-cyan)" />
           </div>
-          <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.02] border border-zinc-200 dark:border-white/[0.05] shadow-[0_0_30px_-10px_rgba(22,46,147,0.2)] backdrop-blur-xl -translate-y-4">
-            <Palette className="w-8 h-8 text-[var(--accent-cyan)]" />
+          <div className="p-4 rounded-2xl bg-white dark:bg-white/2 border border-zinc-200 dark:border-white/5 shadow-[0_0_30px_-10px_rgba(22,46,147,0.2)] backdrop-blur-xl -translate-y-4">
+            <Palette className="w-8 h-8 text-(--accent-cyan)" />
           </div>
-          <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.02] border border-zinc-200 dark:border-white/[0.05] shadow-[0_0_30px_-10px_rgba(77,184,255,0.2)] backdrop-blur-xl">
-            <Cpu className="w-8 h-8 text-[var(--accent-cyan)]" />
+          <div className="p-4 rounded-2xl bg-white dark:bg-white/2 border border-zinc-200 dark:border-white/5 shadow-[0_0_30px_-10px_rgba(77,184,255,0.2)] backdrop-blur-xl">
+            <Cpu className="w-8 h-8 text-(--accent-cyan)" />
           </div>
         </motion.div>
 
@@ -107,7 +107,7 @@ export default function ComingSoon() {
         >
           <Link 
             href="/" 
-            className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-zinc-100 dark:bg-white/[0.05] hover:bg-zinc-200 dark:hover:bg-white/[0.1] border border-zinc-300 dark:border-white/[0.1] text-zinc-900 dark:text-white font-medium transition-all duration-300 w-full sm:w-auto"
+            className="group flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-zinc-100 dark:bg-white/5 hover:bg-zinc-200 dark:hover:bg-white/10 border border-zinc-300 dark:border-white/10 text-zinc-900 dark:text-white font-medium transition-all duration-300 w-full sm:w-auto"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             {t("coming_soon.back_home")}

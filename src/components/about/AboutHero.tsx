@@ -4,15 +4,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import Button from "@/src/components/ui/Button";
-import aboutPreview from "@/src/UI/about.png";
-
 export default function AboutHero() {
   const { t } = useTranslation();
 
   return (
     <section className="relative overflow-hidden pt-2 pb-16 lg:pt-20 lg:pb-24">
       {/* Dynamic Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
 
       {/* Floating Animated Orbs */}
       <motion.div 
@@ -22,7 +20,7 @@ export default function AboutHero() {
           rotate: [0, 90, 0]
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[10%] left-[10%] w-[400px] h-[400px] bg-[var(--accent)]/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"
+        className="absolute top-[10%] left-[10%] w-100 h-100 bg-(--accent)/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"
       />
       <motion.div 
         animate={{ 
@@ -31,7 +29,7 @@ export default function AboutHero() {
           rotate: [0, -90, 0]
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] bg-[var(--accent-warm)]/40 rounded-full blur-[120px] mix-blend-screen pointer-events-none"
+        className="absolute bottom-[10%] right-[10%] w-125 h-125 bg-(--accent-warm)/40 rounded-full blur-[120px] mix-blend-screen pointer-events-none"
       />
       <motion.div 
         animate={{ 
@@ -39,7 +37,7 @@ export default function AboutHero() {
           scale: [1, 1.3, 1]
         }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[30%] left-[40%] w-[350px] h-[350px] bg-[var(--accent-cyan)]/20 rounded-full blur-[100px] mix-blend-screen pointer-events-none"
+        className="absolute top-[30%] left-[40%] w-87.5 h-87.5 bg-(--accent-cyan)/20 rounded-full blur-[100px] mix-blend-screen pointer-events-none"
       />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6">
@@ -55,7 +53,7 @@ export default function AboutHero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="inline-flex items-center gap-2 rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 px-3 py-1.5 text-sm font-medium text-zinc-900 dark:text-white shadow-sm backdrop-blur-md"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-cyan)]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-(--accent-cyan)" />
               {t("about_page.hero.eyebrow")}
             </motion.p>
             <motion.h1
@@ -65,7 +63,7 @@ export default function AboutHero() {
               className="mt-6 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl lg:text-6xl"
             >
               {t("about_page.hero.title_1")} <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent)] bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-(--accent-cyan) to-(--accent) bg-clip-text text-transparent">
                 {t("about_page.hero.title_2")}
               </span>{" "}
               {t("about_page.hero.title_3")}
@@ -95,24 +93,24 @@ export default function AboutHero() {
             initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 0.7, delay: 0.2, type: "spring" }}
-            className="relative mx-auto w-full max-w-md lg:max-w-none"
+            className="relative mx-auto w-full max-w-sm lg:max-w-md"
           >
             {/* Image container with glow and tilt effect */}
             <div className="relative z-10 overflow-hidden rounded-2xl border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 p-2 shadow-2xl backdrop-blur-sm">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-xl sm:aspect-[3/4] lg:aspect-[4/5] group">
+              <div className="relative overflow-hidden rounded-xl group max-h-162.5">
                 <Image
                   alt="About page visual reference"
-                  src={aboutPreview}
-                  placeholder="blur"
-                  fill
-                  className="object-cover object-top transition-transform duration-700 hover:scale-105 brightness-125 contrast-[1.15] saturate-150"
+                  src="/images/dev/dev-working.png"
+                  width={700}
+                  height={600}
+                  className="w-full h-auto transition-transform duration-700 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-[var(--accent-cyan)]/10 mix-blend-overlay pointer-events-none opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-(--accent-cyan)/10 mix-blend-overlay pointer-events-none opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </div>
             </div>
             
             {/* Decorative background elements behind image */}
-            <div className="absolute -inset-4 z-0 rounded-2xl bg-gradient-to-tr from-[var(--accent)]/20 via-[var(--accent-cyan)]/20 to-transparent opacity-50 blur-xl transition-opacity duration-500 group-hover:opacity-80" />
+            <div className="absolute -inset-4 z-0 rounded-2xl bg-linear-to-tr from-(--accent)/20 via-(--accent-cyan)/20 to-transparent opacity-50 blur-xl transition-opacity duration-500 group-hover:opacity-80" />
           </motion.div>
         </div>
       </div>

@@ -146,7 +146,7 @@ export default function ContactClient() {
                 <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay pointer-events-none" />
                 <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                 
-                <a href="/Tran-Dinh-Manh-Huy-CV.pdf" target="_blank" rel="noopener noreferrer" className="relative z-10 flex flex-col items-center gap-3 w-full h-full justify-center text-white">
+                <a href="/Tran-Dinh-Manh-Huy-CV-Intern.pdf" target="_blank" rel="noopener noreferrer" className="relative z-10 flex flex-col items-center gap-3 w-full h-full justify-center text-white">
                   <div className="h-14 w-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:-translate-y-1 transition-transform duration-300 border border-white/30">
                     <Download size={24} className="text-white" />
                   </div>

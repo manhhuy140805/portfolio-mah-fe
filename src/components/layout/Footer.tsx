@@ -75,7 +75,7 @@ export default function Footer() {
             <Link className="transition hover:text-(--accent-cyan)" href="/">Home</Link>
             <Link className="transition hover:text-(--accent-cyan)" href="/about">About Me</Link>
             <Link className="transition hover:text-(--accent-cyan)" href="/projects">Projects</Link>
-            <a className="transition hover:text-(--accent-cyan)" href="/cv.pdf" target="_blank" rel="noopener noreferrer">Resume / CV</a>
+            <a className="transition hover:text-(--accent-cyan)" href="/Tran-Dinh-Manh-Huy-CV.pdf" target="_blank" rel="noopener noreferrer">Resume / CV</a>
           </div>
         </div>
 

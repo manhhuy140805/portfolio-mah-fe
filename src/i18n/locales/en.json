@@ -161,7 +161,8 @@
       "Web App": "Web App",
       "E-Commerce": "E-Commerce",
       "Dashboard": "Dashboard",
-      "Landing Page": "Landing Page"
+      "Landing Page": "Landing Page",
+      "Mobile App": "Mobile App"
     },
     "empty": {
       "title": "No projects found in this category.",
@@ -174,6 +175,8 @@
       "overview": "Overview",
       "my_role": "My Role",
       "outcome": "Outcome",
+      "team_size": "Team Size",
+      "members": "members",
       "deployment": "Deployment",
       "frontend": "Frontend",
       "backend": "Backend",
@@ -182,6 +185,10 @@
         "title": "Live Interactive Demo",
         "subtitle": "Experience the product directly from this page.",
         "click": "Click to Interact"
+      },
+      "gallery": {
+        "title": "App Screenshots",
+        "subtitle": "Actual UI of the application"
       },
       "no_preview": {
         "title": "No live preview available.",
@@ -213,6 +220,30 @@
       "description": "GGZone is a full-stack academic web application prototype built for my Advanced Web Development course. It is designed as a gaming social network and marketplace where users can browse games, join communities, interact with posts, manage profiles, connect with friends, and purchase gaming-related products. The frontend was built with React, TypeScript, Vite, Tailwind CSS, and React Router, following a feature-based architecture with reusable components, centralized API services, protected routes, and JWT authentication. The backend was developed in two versions, ASP.NET and NestJS, with the current demo using the NestJS REST API. The project focuses on demonstrating UI development, API integration, user flows, role-based access, and full-stack application structure for academic purposes.",
       "outcome": "Successfully deployed and active",
       "role": "Full-stack Developer"
+    },
+    "reliefflow": {
+      "title": "ReliefFlow – Flood Relief Management System",
+      "description": "An academic project for the Software Engineering Project course in the second semester of the third year. Developed a transparent flood relief management system as a Software Engineering course project, supporting donation management, warehouse tracking, distribution planning, complaint handling, reporting, and public transparency.",
+      "outcome": "Successfully deployed – transparent flood relief platform",
+      "role": "Team Lead, Full-stack Developer"
+    },
+    "upwork-clone": {
+      "title": "Upwork Clone – Freelance Marketplace",
+      "description": "An academic project for the E-commerce course in the second semester of the third year. Built a full-stack platform supporting job posting, proposals, contracts, progress tracking, escrow-style payment, dispute handling, admin management, and real-time chat.",
+      "outcome": "Full-stack freelance platform with real-time chat and escrow payment",
+      "role": "Team Lead, Full-stack Developer"
+    },
+    "booknest": {
+      "title": "BookNest – Online Book Catalog & Personal Library",
+      "description": "Developed a book management and browsing system with a React front-end and NestJS REST API. The application supports user registration/login, Google OAuth, email verification, password reset, book listing/detail pages, category filtering, search, favorite books, ratings, and admin-oriented APIs for managing books, categories, and users. The back-end uses PostgreSQL with Prisma, JWT authentication, role-based authorization, validation, caching with Redis/Upstash, rate limiting, Cloudinary for book cover images, and Supabase Storage for PDF uploads.",
+      "outcome": "Full-featured book platform with OAuth, ratings, search, and admin management",
+      "role": "Full-stack Developer"
+    },
+    "veggieshop": {
+      "title": "VeggieShop Manager – Android Vegetable Shop App",
+      "description": "VeggieShop Manager is a personal Kotlin Android app following MVVM architecture (ViewModel + Repository + LiveData). Features: product management with Cloudinary photo upload, category management, order creation with flexible unit input (kg, bó, gói, quả, hộp, củ), order history sorted by date, order detail editing with status tracking (Pending / Completed / Cancelled), and a customer shop view with banner, category filter, and product grid — all synced live via Firebase Realtime Database.",
+      "outcome": "Full admin + customer app with real-time Firebase sync",
+      "role": "Android Developer"
     }
   },
   "contact_page": {

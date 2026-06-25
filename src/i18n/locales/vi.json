@@ -161,7 +161,8 @@
       "Web App": "Web App",
       "E-Commerce": "Thương Mại Điện Tử",
       "Dashboard": "Trang Quản Trị",
-      "Landing Page": "Landing Page"
+      "Landing Page": "Landing Page",
+      "Mobile App": "Ứng Dụng Di Động"
     },
     "empty": {
       "title": "Không có dự án nào trong danh mục này.",
@@ -174,14 +175,20 @@
       "overview": "Tổng Quan",
       "my_role": "Vai Trò",
       "outcome": "Kết Quả Đạt Được",
+      "team_size": "Quy Mô Nhóm",
+      "members": "thành viên",
       "deployment": "Triển Khai",
       "frontend": "Frontend",
       "backend": "Backend",
       "technologies": "Công Nghệ",
       "live_demo": {
-        "title": "Trải Nghiệm Trực Tiếp",
-        "subtitle": "Dùng thử sản phẩm ngay trên trang web này.",
-        "click": "Bấm Để Tương Tác"
+        "title": "Bản Demo Trực Tiếp",
+        "subtitle": "Trải nghiệm ứng dụng trong môi trường trình duyệt",
+        "click": "Nhấn để Tương Tác"
+      },
+      "gallery": {
+        "title": "Ảnh Chụp Màn Hình",
+        "subtitle": "Giao diện thực tế của ứng dụng"
       },
       "no_preview": {
         "title": "Bản xem trước hiện chưa có sẵn.",
@@ -213,6 +220,30 @@
       "description": "GGZone là một mẫu ứng dụng web học thuật toàn diện được xây dựng cho khóa học Phát Triển Web Nâng Cao của tôi. Nó được thiết kế như một mạng xã hội và thị trường mua bán game, nơi người dùng có thể duyệt game, tham gia cộng đồng, tương tác với các bài viết, quản lý hồ sơ cá nhân, kết bạn và mua các sản phẩm liên quan đến game. Phía frontend được xây dựng bằng React, TypeScript, Vite, Tailwind CSS và React Router, tuân theo kiến trúc chia theo tính năng với các component tái sử dụng, dịch vụ API tập trung, định tuyến bảo mật và xác thực JWT. Phía backend được phát triển với hai phiên bản: ASP.NET và NestJS, trong đó bản demo hiện tại sử dụng NestJS REST API. Dự án tập trung vào việc thể hiện kỹ năng phát triển UI, tích hợp API, luồng người dùng, phân quyền và cấu trúc ứng dụng toàn diện cho mục đích học thuật.",
       "outcome": "Triển khai thành công và đang hoạt động",
       "role": "Lập Trình Viên Full-stack"
+    },
+    "reliefflow": {
+      "title": "ReliefFlow – Hệ Thống Quản Lý Cứu Trợ Lũ Lụt",
+      "description": "Dự án học thuật cho môn Dự Án Kỹ Thuật Phần Mềm học kỳ 2 năm 3. Xây dựng hệ thống quản lý cứu trợ lũ lụt minh bạch, hỗ trợ quản lý quyên góp, theo dõi kho hàng, lập kế hoạch phân phối, xử lý khiếu nại, báo cáo và công khai minh bạch. Frontend sử dụng ReactJS (JavaScript/JSX), React Router DOM và Tailwind CSS. Backend phát triển với ASP.NET Core Web API (.NET 8), Entity Framework Core, SQL Server và Swagger/OpenAPI.",
+      "outcome": "Triển khai thành công – nền tảng cứu trợ lũ lụt minh bạch",
+      "role": "Trưởng Nhóm, Lập Trình Viên Full-stack"
+    },
+    "upwork-clone": {
+      "title": "Upwork Clone – Nền Tảng Freelance",
+      "description": "Dự án học thuật cho môn Thương Mại Điện Tử học kỳ 2 năm 3. Xây dựng nền tảng full-stack hỗ trợ đăng việc làm, đề xuất, hợp đồng, theo dõi tiến độ, thanh toán ký quỹ, xử lý tranh chấp, quản trị và trò chuyện thời gian thực. Frontend sử dụng ReactJS (JavaScript/JSX), Vite và React Router DOM. Backend phát triển với NestJS, TypeScript, Prisma ORM, PostgreSQL, REST API, Socket.IO và Multer.",
+      "outcome": "Nền tảng freelance full-stack với chat thời gian thực và thanh toán ký quỹ",
+      "role": "Trưởng Nhóm, Lập Trình Viên Full-stack"
+    },
+    "booknest": {
+      "title": "BookNest – Danh Mục Sách & Thư Viện Cá Nhân",
+      "description": "Xây dựng hệ thống quản lý và duyệt sách với frontend React và NestJS REST API. Ứng dụng hỗ trợ đăng ký/đăng nhập, Google OAuth, xác thực email, đặt lại mật khẩu, danh sách/chi tiết sách, lọc theo danh mục, tìm kiếm, yêu thích, đánh giá và các API quản trị để quản lý sách, danh mục và người dùng. Backend sử dụng PostgreSQL với Prisma, xác thực JWT, phân quyền theo vai trò, validation, caching với Redis/Upstash, giới hạn tốc độ, Cloudinary cho ảnh bìa sách và Supabase Storage cho tải lên PDF.",
+      "outcome": "Nền tảng sách đầy đủ tính năng với OAuth, đánh giá, tìm kiếm và quản trị",
+      "role": "Lập Trình Viên Full-stack"
+    },
+    "veggieshop": {
+      "title": "VeggieShop Manager – Ứng Dụng Quản Lý Tiệm Rau",
+      "description": "VeggieShop Manager là ứng dụng Android cá nhân viết bằng Kotlin theo kiến trúc MVVM (ViewModel + Repository + LiveData). Tính năng: quản lý sản phẩm với upload ảnh qua Cloudinary, quản lý danh mục, tạo đơn hàng với nhập số lượng linh hoạt (kg, bó, gói, quả, hộp, củ), lịch sử đơn hàng sắp xếp theo ngày, chỉnh sửa chi tiết đơn với theo dõi trạng thái (Pending / Completed / Cancelled), và giao diện khách hàng với banner, lọc danh mục và lưới sản phẩm — tất cả đồng bộ thời gian thực qua Firebase Realtime Database.",
+      "outcome": "Ứng dụng đầy đủ admin + khách hàng với đồng bộ Firebase thời gian thực",
+      "role": "Lập Trình Viên Android"
     }
   },
   "contact_page": {

@@ -11,7 +11,7 @@ export default function ProjectsClient() {
   const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = ["All", "Web App", "E-Commerce", "Dashboard", "Landing Page"];
+  const categories = ["All", "Web App", "E-Commerce", "Dashboard", "Mobile App"];
 
   const filteredProjects =
     activeCategory === "All"
@@ -96,7 +96,7 @@ export default function ProjectsClient() {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
           className="mt-20 flex flex-col items-center"
         >
-          <div className="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-zinc-200 dark:border-white/10 bg-zinc-100 dark:bg-white/5 p-2 backdrop-blur-md hover:bg-zinc-200 dark:hover:bg-white/10 transition-colors duration-500">
+          <div className="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/5 bg-[#0e0c1a] p-1.5 shadow-xl transition-colors duration-500">
             {categories.map((category) => {
               const isActive = activeCategory === category;
               return (
@@ -104,13 +104,13 @@ export default function ProjectsClient() {
                   key={category}
                   onClick={() => setActiveCategory(category)}
                   className={`relative rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
-                    isActive ? "text-blue-700 dark:text-white" : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200"
+                    isActive ? "text-white" : "text-zinc-400 hover:text-zinc-200"
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activeFilter"
-                      className="absolute inset-0 rounded-xl bg-blue-100 dark:bg-(--accent)/40 shadow-sm dark:shadow-[0_0_15px_rgba(47,47,228,0.5)]"
+                      className="absolute inset-0 rounded-xl bg-[#23237a] shadow-[0_0_15px_rgba(35,35,122,0.6)]"
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}

@@ -8,10 +8,14 @@ export type Project = {
   createdAt?: string;
   demoUrl?: string;
   imageUrl?: string;
+  logoUrl?: string;
+  galleryUrls?: string[];
   outcome?: string;
   role?: string;
   sourceUrl?: string;
+  sourceUrls?: { label: string; url: string }[];
   year?: string;
+  teamSize?: number;
   frontendDeploy?: string;
   backendDeploy?: string;
 };

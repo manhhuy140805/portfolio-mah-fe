@@ -153,6 +153,7 @@ export const portfolioProjects: Project[] = [
     outcome: "Full admin + customer app with real-time Firebase sync",
     role: "Android Developer",
     logoUrl: "/images/LogoProjects/6.png",
+    sourceUrl: "https://github.com/manhhuy140805/veggieshop-kotlin-firebase",
     galleryUrls: [
       "/images/DemoProject/SeSeVegetables/dashboard.jpg",
       "/images/DemoProject/SeSeVegetables/products.jpg",
